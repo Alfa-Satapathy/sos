@@ -1,0 +1,1203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Impact - Our Success Stories & Client Achievements"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../assets/images/fav.png"
+    />
+    <title>Impact - SOS Infocity</title>
+    <link
+      rel="stylesheet preload"
+      href="../assets/css/plugins/fontawesome.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet preload"
+      href="../assets/css/plugins/swiper.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet preload"
+      href="../assets/css/plugins/metismenu.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet preload"
+      href="../assets/css/plugins/magnifying-popup.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet preload"
+      href="../assets/css/plugins/odometer.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet preload"
+      href="../assets/css/vendor/bootstrap.min.css"
+      as="style"
+    />
+    <link rel="stylesheet preload" href="../assets/css/style.css" as="style" />
+    <style>
+      /* Transparent header rules (from digix-main) */
+      .header-transparent {
+        background: transparent !important;
+      }
+      .header-transparent .nav-area ul li a {
+        color: #fff !important;
+      }
+      /* Keep inline SVG icon colors, but make the logo text white when header is transparent or sticky */
+      .header-transparent .logo-area .logo-text,
+      .header--sticky.sticky .logo-area .logo-text {
+        fill: #fff !important;
+      }
+      .header-transparent .logo-area img {
+        filter: none;
+      }
+      /* Sticky state (applies when JS adds .sticky). Override transparent */
+      .header-transparent.header--sticky.sticky,
+      .header--sticky.sticky {
+        background: #050d20 !important; /* match footer background */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        transition:
+          background 0.3s,
+          box-shadow 0.3s;
+      }
+      /* Keep nav links white when sticky */
+      .header-transparent.header--sticky.sticky .nav-area ul li a,
+      .header--sticky.sticky .nav-area ul li a {
+        color: #fff !important;
+      }
+      /* Keep logo image original color (do not force a white filter) */
+      .header-transparent .logo-area img,
+      .header--sticky.sticky .logo-area img {
+        filter: none;
+      }
+      .header-transparent.header--sticky .nav-area ul li.main-nav:hover > a {
+        transition: 0.3s;
+        color: #fff !important;
+      }
+
+      @media only screen and (max-width: 1199px) {
+        .nav-area {
+          display: none;
+        }
+      }
+      .nav-area ul {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      @media only screen and (min-width: 1200px) and (max-width: 1599px) {
+        .nav-area ul {
+          gap: 40px;
+        }
+      }
+      @media screen and (max-width: 1300px) {
+        .nav-area ul {
+          gap: 35px;
+        }
+      }
+      .nav-area ul li {
+        margin: 0;
+        padding: 0;
+      }
+      .nav-area ul li a {
+        font-weight: 600 !important;
+      }
+
+      .has-dropdown.mega-menu > a {
+        position: relative;
+        color: #fff;
+      }
+
+      .has-dropdown::after {
+        position: absolute;
+        content: "\f078";
+        right: -22px;
+        top: 51%;
+        transform: translateY(-50%);
+        font-weight: 400;
+        color: #ffffff;
+        font-family: "Font Awesome 6 Pro";
+        font-weight: 300;
+        font-size: 14px;
+      }
+
+      .has-dropdown.mega-menu > a::after {
+        position: absolute;
+        content: "\f078";
+        right: -22px;
+        top: 53%;
+        transform: translateY(-50%);
+        font-weight: 400;
+        color: #ffffff;
+        font-family: "Font Awesome 6 Pro";
+        font-weight: 300;
+        font-size: 14px;
+      }
+
+      .nav-area ul li.main-nav {
+        padding: 0 0;
+        cursor: pointer;
+      }
+
+      header .main-nav > a {
+        color: #fff;
+      }
+
+      .submenu:hover li a {
+        opacity: 0.6;
+      }
+
+      .mega-menu-item.with-list li a {
+        position: relative;
+      }
+      .mega-menu-item.with-list li a span {
+        padding: 3px 9px;
+        border-radius: 33px;
+        background: var(--color-primary);
+        color: #fff;
+        line-height: 1;
+        font-size: 14px;
+        transition: 0.3s;
+      }
+      .mega-menu-item.with-list li a:hover span {
+        margin-left: 20px;
+      }
+
+      li.has-dropdown {
+        position: relative;
+      }
+      li.has-dropdown .submenu {
+        min-width: 230px;
+        height: auto;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 90;
+        opacity: 0;
+        visibility: hidden;
+        text-align: left;
+        transition: 0.3s;
+        border-radius: 0 0 6px 6px;
+        background-color: #fff;
+        border-left: 0;
+        border-bottom: 0;
+        border-right: 0;
+        display: inline-block;
+        box-shadow: 0 36px 35px rgba(0, 0, 0, 0.08);
+        padding: 15px 10px;
+        transform-origin: 0 0;
+        transform: scaleY(0);
+      }
+      li.has-dropdown .submenu.new {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0;
+        min-width: 450px;
+        padding: 30px;
+      }
+      li.has-dropdown .submenu.new li {
+        flex-basis: 50%;
+      }
+      li.has-dropdown .submenu.new li a {
+        background: none;
+        padding: 12px !important;
+        border-bottom: 1px solid #f3f3f3 !important;
+        border-radius: 0;
+        color: #071431;
+        font-weight: 600;
+        opacity: 1 !important;
+        font-size: 16px !important;
+      }
+      li.has-dropdown .submenu.new li a:hover {
+        background: none;
+        border-bottom: 1px solid var(--color-primary) !important;
+      }
+      li.has-dropdown .submenu li {
+        margin-right: 0;
+        padding: 0;
+      }
+      li.has-dropdown .submenu li a {
+        padding: 6px 16px !important;
+        font-size: 16px;
+        transition: all 0.3s;
+        border-radius: 4px;
+        display: block;
+        padding: 12px 45px 12px 15px;
+        border-radius: 5px;
+        background: #ffffff;
+        transition: all 0.3s;
+        text-align: left;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      li.has-dropdown .submenu li a:hover {
+        opacity: 1;
+        background: #f2f2f8;
+        opacity: 1;
+        color: var(--color-primary) !important;
+      }
+      li.has-dropdown:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+        top: 100%;
+        transform: translateY(0);
+        transform: scaleY(1);
+      }
+      li.has-dropdown:hover::after {
+        content: "\f077";
+      }
+
+      .has-dropdown.mega-menu::after {
+        display: none;
+      }
+
+      header .nav-area ul li.main-nav:hover > a {
+        transition: 0.3s;
+        color: var(--color-primary) !important;
+      }
+      header .nav-area ul li.main-nav:hover::after {
+        color: var(--color-primary) !important;
+      }
+
+      .rts-mega-menu {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 100%;
+        transform: scaleY(0);
+        left: 0;
+        z-index: 90;
+        opacity: 0;
+        visibility: hidden;
+        text-align: left;
+        transition: all 0.5s;
+        border-radius: 0 0 5px 5px !important;
+        background-color: #ffffff;
+        display: inline-block;
+        box-shadow: 0 36px 35px rgba(61, 60, 60, 0.08);
+        transform-origin: 0 0 0;
+        padding: 30px 30px;
+      }
+      .rts-mega-menu.with-add {
+        padding: 0;
+        overflow: hidden;
+        border-radius: 0 0 10px 10px;
+      }
+      .has-dropdown.mega-menu:hover .rts-mega-menu {
+        opacity: 1;
+        visibility: visible;
+        top: 100%;
+        transform: scaleY(1);
+      }
+
+      .has-dropdown.mega-menu:hover > a::after {
+        content: "\f077";
+        color: var(--color-primary);
+      }
+      .odometer,
+      .odometer-inside {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header-one header--sticky header-transparent">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="header-wrapper-main">
+              <div class="logo-area">
+                <a href="../index.html">
+                  <!-- Inline SVG so we can target text paths separately -->
+                  <img
+                    src="../assets/images/logo/02.svg"
+                    alt="SOS Infocity Logo"
+                  />
+                </a>
+              </div>
+              <div class="nav-area">
+                <ul>
+                  <li class="main-nav"><a href="../index.html">Home</a></li>
+                  <li class="main-nav"><a href="about.html">About</a></li>
+                  <li class="main-nav has-dropdown mega-menu">
+                    <a href="#">Solutions</a>
+                    <div class="rts-mega-menu service-mega-menu-style">
+                      <div class="wrapper">
+                        <div class="container">
+                          <div class="row g-5">
+                            <div class="col-lg-4">
+                              <ul class="mega-menu-item parent-nav">
+                                <li>
+                                  <a href="ai-intelligent-solutions.html">
+                                    <div class="single-service-menu">
+                                      <div class="icon">
+                                        <img
+                                          src="../assets/images/feature/01.svg"
+                                          alt="AI"
+                                        />
+                                      </div>
+                                      <div class="info">
+                                        <h5 class="title">
+                                          AI-Based & Intelligent Technology
+                                        </h5>
+                                        <p class="details">
+                                          Smart systems for monitoring,
+                                          automation, and analytics.
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </li>
+
+                                <li>
+                                  <a href="it-network-solutions.html">
+                                    <div class="single-service-menu">
+                                      <div class="icon">
+                                        <img
+                                          src="../assets/images/feature/02.svg"
+                                          alt="IT"
+                                        />
+                                      </div>
+                                      <div class="info">
+                                        <h5 class="title">
+                                          IT & Network Solutions
+                                        </h5>
+                                        <p class="details">
+                                          Reliable infrastructure and network
+                                          environments.
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </li>
+
+                                <li>
+                                  <a href="security-surveillance.html">
+                                    <div class="single-service-menu">
+                                      <div class="icon">
+                                        <img
+                                          src="../assets/images/feature/03.svg"
+                                          alt="Security"
+                                        />
+                                      </div>
+                                      <div class="info">
+                                        <h5 class="title">
+                                          Security & Surveillance
+                                        </h5>
+                                        <p class="details">
+                                          Integrated monitoring and access
+                                          systems.
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+
+                            <div class="col-lg-4">
+                              <ul class="mega-menu-item parent-nav">
+                                <li>
+                                  <a href="connectivity-solutions.html">
+                                    <div class="single-service-menu">
+                                      <div class="icon">
+                                        <img
+                                          src="../assets/images/feature/04.svg"
+                                          alt="Connectivity"
+                                        />
+                                      </div>
+                                      <div class="info">
+                                        <h5 class="title">
+                                          Connectivity Solutions
+                                        </h5>
+                                        <p class="details">
+                                          Structured wired and wireless
+                                          connectivity.
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </li>
+
+                                <li>
+                                  <a href="data-bi-analytics.html">
+                                    <div class="single-service-menu">
+                                      <div class="icon">
+                                        <img
+                                          src="../assets/images/feature/05.svg"
+                                          alt="Analytics"
+                                        />
+                                      </div>
+                                      <div class="info">
+                                        <h5 class="title">
+                                          Data, BI & Analytics
+                                        </h5>
+                                        <p class="details">
+                                          Turning operational data into
+                                          insights.
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </li>
+
+                                <li>
+                                  <a href="new-age-technologies.html">
+                                    <div class="single-service-menu">
+                                      <div class="icon">
+                                        <img
+                                          src="../assets/images/feature/06.svg"
+                                          alt="Emerging Tech"
+                                        />
+                                      </div>
+                                      <div class="info">
+                                        <h5 class="title">
+                                          New-Age Technologies
+                                        </h5>
+                                        <p class="details">
+                                          IoT, blockchain, and emerging systems.
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+
+                            <div class="col-lg-4">
+                              <div class="menu-list">
+                                <h4>Why SOS Infocity</h4>
+                                <ul>
+                                  <li>Field-Ready Solutions</li>
+                                  <li>Large-Scale Deployments</li>
+                                  <li>Operational Stability</li>
+                                  <li>System Integration Expertise</li>
+                                  <li>Long-Term Support</li>
+                                  <li>Security-First Approach</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="main-nav">
+                    <a href="life-at-sos.html">Life at SOS</a>
+                  </li>
+                  <li class="main-nav"><a href="impact.html">Impact</a></li>
+                  <li class="main-nav"><a href="connect.html">Connect</a></li>
+                </ul>
+              </div>
+              <div class="button-wrapper-flex">
+                <a href="connect.html" class="rts-btn btn-primary"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Banner Image Carousel (from digix-main/index.html - exact structure) -->
+    <div class="banner-swiper-main-wrapper-one">
+      <div class="swiper mySwiper-banner-one">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <!-- rts banner arteas start -->
+            <div class="rts-banner-area-one two bg_image">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12"></div>
+                </div>
+              </div>
+            </div>
+            <!-- rts banner arteas end -->
+          </div>
+          <div class="swiper-slide">
+            <!-- rts banner arteas start -->
+            <div class="rts-banner-area-one bg_image">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12"></div>
+                </div>
+              </div>
+            </div>
+            <!-- rts banner arteas end -->
+          </div>
+          <div class="swiper-slide">
+            <!-- rts banner arteas start -->
+            <div class="rts-banner-area-one three bg_image">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12"></div>
+                </div>
+              </div>
+            </div>
+            <!-- rts banner arteas end -->
+          </div>
+        </div>
+        <div class="swiper-button-next">
+          <i class="fa-regular fa-chevron-right"></i>
+        </div>
+        <div class="swiper-button-prev">
+          <i class="fa-regular fa-chevron-left"></i>
+        </div>
+      </div>
+
+      <div class="right-rating-area">
+        <div class="rating-content">
+          <img src="../assets/images/logo/02.svg" alt="logo" class="logo" />
+          <img
+            src="../assets/images/banner/02.png"
+            alt=""
+            class="bottom-content"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= METRICS / FUN FACTS (FIXED) ================= -->
+    <div class="rts-metrics-section rts-section-gap bg_light">
+      <div class="container pt--100">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="fun-facts-main-wrapper">
+              <div class="top-fun-facts">
+                <h4 class="title">
+                  Milestones That Reflect Our Work on Ground
+                </h4>
+                <a href="contact.html" class="btn-line">
+                  <span>Get In Touch</span>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <p>
+                  Our progress is measured through consistent project delivery,
+                  long-term deployments, and multi-location implementations
+                  across sectors.
+                </p>
+              </div>
+
+              <div class="funfacts-bottom-area">
+                <div class="first-area">
+                  <img src="../assets/images/banner/user.png" alt="Users" />
+                  <p class="disc">
+                    4.7 out of 5.00 <br />
+                    <span>2.5k Reviews From Clients</span>
+                  </p>
+                </div>
+
+                <div class="mid-area">
+                  <h2 class="counter title">
+                    <span class="odometer" data-count="2500000000">0</span>
+                  </h2>
+                  <p class="disc">
+                    Maximizing <br />
+                    <span class="color-primary">Client Value Protected</span>
+                  </p>
+                </div>
+
+                <div class="end-area">
+                  <img src="../assets/images/facts/01.png" alt="Milestones" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rts-mission-area rts-section-gap">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="about-wrapper-mission-cyber">
+              <div class="funfacts-area-counter-up-mission">
+                <div class="single-funfacts-area-counter-up-mission">
+                  <div class="icon">
+                    <img
+                      src="../assets/images/about/icons/06.svg"
+                      alt="icons"
+                    />
+                  </div>
+                  <div class="content">
+                    <h2 class="counter title">
+                      <span class="odometer" data-count="300">00</span>+
+                    </h2>
+                    <p class="disc2">Projects Delivered</p>
+                  </div>
+                </div>
+                <div class="single-funfacts-area-counter-up-mission">
+                  <div class="icon">
+                    <img
+                      src="../assets/images/about/icons/07.svg"
+                      alt="icons"
+                    />
+                  </div>
+                  <div class="content">
+                    <h2 class="counter title">
+                      <span class="odometer" data-count="100">00</span>+
+                    </h2>
+                    <p class="disc2">Clients Across Sectors</p>
+                  </div>
+                </div>
+                <div class="single-funfacts-area-counter-up-mission">
+                  <div class="icon">
+                    <img
+                      src="../assets/images/about/icons/08.svg"
+                      alt="icons"
+                    />
+                  </div>
+                  <div class="content">
+                    <h2 class="counter title">
+                      <span class="odometer" data-count="14">00</span>+
+                    </h2>
+                    <p class="disc2">Office Locations</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Working Process -->
+    <div class="rts-section-gap working-process-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="title-center-wrapper">
+              <h2 class="title rts-text-anime-style-1">
+                Our Project Execution Approach
+              </h2>
+              <p class="disc">
+                We follow a structured workflow to ensure clarity, <br />
+                coordination, and continuity across all deployments.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-5 mt--10">
+          <div class="col-lg-3 col-md-6">
+            <div class="single-process-area">
+              <div class="icon">
+                <img src="../assets/images/process/01.svg" alt="process" />
+              </div>
+              <h5 class="title">Initial Understanding</h5>
+              <p class="disc">
+                Review of site conditions, system requirements, and operational
+                priorities.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="single-process-area">
+              <div class="icon">
+                <img src="../assets/images/process/02.svg" alt="process" />
+              </div>
+              <h5 class="title">Design & Planning</h5>
+              <p class="disc">
+                Technical architecture and rollout plan aligned with ground
+                realities.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="single-process-area">
+              <div class="icon">
+                <img src="../assets/images/process/03.svg" alt="process" />
+              </div>
+              <h5 class="title">Implementation</h5>
+              <p class="disc">
+                Deployment by coordinated technical and field teams.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="single-process-area">
+              <div class="icon">
+                <img src="../assets/images/process/04.svg" alt="process" />
+              </div>
+              <h5 class="title">Monitoring & Support</h5>
+              <p class="disc">
+                System health checks, upgrades, and long-term assistance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Clients Carousel (from about-cyber.html) -->
+    <div class="rts-brand-area rts-section-gap">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="title rts-text-anime-style-1 partner-desc">
+              Technology & Implementation Partners
+            </h2>
+            <p class="partner-desc">
+              We work with established hardware, network, and software platforms
+              to ensure compatibility, scalability, and long-term support.
+            </p>
+          </div>
+          <div class="col-lg-12 mt--45">
+            <div class="brand-slider-wrapper">
+              <div class="swiper mySwiper-brand-list">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="single-brand">
+                      <img src="../assets/images/brand/13.svg" alt="brand" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-brand">
+                      <img src="../assets/images/brand/14.svg" alt="brand" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-brand">
+                      <img src="../assets/images/brand/15.svg" alt="brand" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-brand">
+                      <img src="../assets/images/brand/16.svg" alt="brand" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-brand">
+                      <img src="../assets/images/brand/17.svg" alt="brand" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-brand">
+                      <img src="../assets/images/brand/18.svg" alt="brand" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-brand">
+                      <img src="../assets/images/brand/13.svg" alt="brand" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-brand">
+                      <img src="../assets/images/brand/14.svg" alt="brand" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-brand">
+                      <img src="../assets/images/brand/15.svg" alt="brand" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-brand">
+                      <img src="../assets/images/brand/16.svg" alt="brand" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-brand">
+                      <img src="../assets/images/brand/17.svg" alt="brand" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-brand">
+                      <img src="../assets/images/brand/18.svg" alt="brand" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Project Two / Transformative IT Solutions -->
+    <section class="project-two bg_image-project-two rts-section-gapTop">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="title-area-between">
+              <div class="title-left-wrapper">
+                <h2 class="title rts-text-anime-style-1">
+                  Types of Projects Delivered
+                </h2>
+              </div>
+              <div class="right-area">
+                <p class="disc">
+                  Our case studies provide a deep dive into the challenges faced
+                  and the solutions that delivered remarkable results.
+                </p>
+                <a href="solutions.html" class="btn-line">
+                  <span>View All Case</span>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt--30">
+          <div class="outer-box">
+            <!-- Project Block -->
+            <div class="project-block-four active">
+              <div class="inner-box">
+                <div class="content-rotate">
+                  <span>01. City Surveillance & Control Rooms</span>
+                </div>
+                <div class="all-content">
+                  <div class="image-box">
+                    <figure class="image">
+                      <a href="project-details.html">
+                        <img
+                          src="../assets/images/project/01.webp"
+                          alt="Cybersecurity"
+                        />
+                      </a>
+                    </figure>
+                  </div>
+                  <div class="content-box">
+                    <span class="number">01.</span>
+                    <h2 class="title">City Surveillance & Control Rooms</h2>
+                    <p class="disc">
+                      Integrated CCTV, analytics, and command centre systems for
+                      urban monitoring.
+                    </p>
+                    <a href="impact.html" class="btn-line">
+                      <span>View Details</span>
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Block -->
+            <div class="project-block-four">
+              <div class="inner-box">
+                <div class="content-rotate">
+                  <span>02. Campus & Institutional Networks </span>
+                </div>
+                <div class="all-content">
+                  <div class="image-box">
+                    <figure class="image">
+                      <a href="project-details.html">
+                        <img
+                          src="../assets/images/project/28.webp"
+                          alt="Mobile App"
+                        />
+                      </a>
+                    </figure>
+                  </div>
+                  <div class="content-box">
+                    <span class="number">02.</span>
+                    <h2 class="title">Campus & Institutional Networks</h2>
+                    <p class="disc">
+                      IT and connectivity infrastructure for universities and
+                      training institutes.
+                    </p>
+                    <a href="impact.html" class="btn-line">
+                      <span>View Details</span>
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Block -->
+            <div class="project-block-four">
+              <div class="inner-box">
+                <div class="content-rotate">
+                  <span>03. Mining & Industrial Monitoring Systems </span>
+                </div>
+                <div class="all-content">
+                  <div class="image-box">
+                    <figure class="image">
+                      <a href="project-details.html">
+                        <img
+                          src="../assets/images/project/29.webp"
+                          alt="Network Security"
+                        />
+                      </a>
+                    </figure>
+                  </div>
+                  <div class="content-box">
+                    <span class="number">03.</span>
+                    <h2 class="title">
+                      Mining & Industrial Monitoring Systems
+                    </h2>
+                    <p class="disc">
+                      Operational visibility and safety systems across active
+                      sites.
+                    </p>
+                    <a href="impact.html" class="btn-line">
+                      <span>View Details</span>
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Block -->
+            <div class="project-block-four">
+              <div class="inner-box">
+                <div class="content-rotate">
+                  <span>04. Government Digital Infrastructure Programs </span>
+                </div>
+                <div class="all-content">
+                  <div class="image-box">
+                    <figure class="image">
+                      <a href="project-details.html">
+                        <img
+                          src="../assets/images/project/30.webp"
+                          alt="Infrastructure"
+                        />
+                      </a>
+                    </figure>
+                  </div>
+                  <div class="content-box">
+                    <span class="number">04.</span>
+                    <h2 class="title">
+                      Government Digital Infrastructure Programs
+                    </h2>
+                    <p class="disc">
+                      State and department-level IT and connectivity
+                      deployments.
+                    </p>
+                    <a href="impact.html" class="btn-line">
+                      <span>View Details</span>
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Block -->
+            <div class="project-block-four">
+              <div class="inner-box">
+                <div class="content-rotate">
+                  <span>05. Field Data & Analytics Platforms </span>
+                </div>
+                <div class="all-content">
+                  <div class="image-box">
+                    <figure class="image">
+                      <a href="project-details.html">
+                        <img src="../assets/images/project/31.webp" alt="CRM" />
+                      </a>
+                    </figure>
+                  </div>
+                  <div class="content-box">
+                    <span class="number">05.</span>
+                    <h2 class="title">Field Data & Analytics Platforms</h2>
+                    <p class="disc">
+                      Dashboards integrating device, sensor, and reporting data.
+                    </p>
+                    <a href="impact.html" class="btn-line">
+                      <span>View Details</span>
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Block -->
+            <div class="project-block-four">
+              <div class="inner-box">
+                <div class="content-rotate">
+                  <span>06. Focused on Long-Term Operational Stability </span>
+                </div>
+                <div class="all-content">
+                  <div class="image-box">
+                    <figure class="image">
+                      <a href="Impact.html">
+                        <img src="../assets/images/project/32.webp" alt="ERP" />
+                      </a>
+                    </figure>
+                  </div>
+                  <div class="content-box">
+                    <span class="number">06.</span>
+                    <h2 class="title">
+                      Focused on Long-Term Operational Stability
+                    </h2>
+                    <p class="disc">
+                      Rather than short-term installations, our work supports
+                      long-running systems that continue to operate across
+                      years, teams, and infrastructure upgrades. This approach
+                      helps organisations maintain consistency even as
+                      technology and requirements evolve.
+                    </p>
+                    <a href="impact.html" class="btn-line">
+                      <span>View Details</span>
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="rts-footer-one pt--50 bg_dark">
+      <div class="container pb--80">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="left-wiget">
+              <a class="logo" href="../index.html"
+                ><img src="../assets/images/logo/02.svg" alt="Logo"
+              /></a>
+              <p class="disc">IT solutions & cybersecurity leader.</p>
+              <ul class="social-wrapper">
+                <li>
+                  <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="offset-lg-1 col-lg-8 mt_md--50">
+            <div class="footer-wized-wrapper">
+              <div class="single">
+                <h6 class="title">Company</h6>
+                <ul>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="life-at-sos.html">Careers</a></li>
+                  <li><a href="impact.html">Impact</a></li>
+                  <li><a href="connect.html">Contact</a></li>
+                </ul>
+              </div>
+              <div class="single">
+                <h6 class="title">Services</h6>
+                <ul>
+                  <li><a href="solutions.html">Solutions</a></li>
+                  <li><a href="solutions.html">Security</a></li>
+                  <li><a href="solutions.html">Cloud</a></li>
+                </ul>
+              </div>
+              <div class="single">
+                <h6 class="title">Resources</h6>
+                <ul>
+                  <li><a href="#">Support</a></li>
+                  <li><a href="#">Docs</a></li>
+                  <li><a href="#">Blog</a></li>
+                </ul>
+              </div>
+              <div class="single">
+                <h6 class="title">Follow</h6>
+                <ul>
+                  <li>
+                    <a href="https://www.linkedin.com/" target="_blank"
+                      >LinkedIn</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.twitter.com/" target="_blank"
+                      >Twitter</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/" target="_blank"
+                      >Facebook</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-area">
+        <div class="container">
+          <p class="disc">
+            Copyright
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            . SOS Infocity. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="loader-wrapper"><div class="loader"></div></div>
+    <div class="progress-wrap">
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path
+          d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+          style="
+            transition: stroke-dashoffset 10ms linear 0s;
+            stroke-dasharray: 307.919, 307.919;
+            stroke-dashoffset: 307.919;
+          "
+        ></path>
+      </svg>
+    </div>
+
+    <script defer src="../assets/js/plugins/jquery.js"></script>
+    <script defer src="../assets/js/plugins/jquery-appear.js"></script>
+    <script defer src="../assets/js/plugins/odometer.js"></script>
+    <script defer src="../assets/js/plugins/gsap.js"></script>
+    <script defer src="../assets/js/plugins/split-text.js"></script>
+    <script defer src="../assets/js/plugins/scroll-trigger.js"></script>
+    <script defer src="../assets/js/plugins/smooth-scroll.js"></script>
+    <script defer src="../assets/js/plugins/metismenu.js"></script>
+    <script defer src="../assets/js/plugins/popup.js"></script>
+    <script defer src="../assets/js/plugins/contact.form.js"></script>
+    <script defer src="../assets/js/vendor/bootstrap.min.js"></script>
+    <script defer src="../assets/js/plugins/swiper.js"></script>
+    <script defer src="../assets/js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const projectBlocks = document.querySelectorAll(".project-block-four");
+
+        // Open first block by default
+        if (projectBlocks.length > 0) {
+          projectBlocks[0].classList.add("active");
+        }
+
+        projectBlocks.forEach((block) => {
+          block.addEventListener("click", function (e) {
+            // If clicking a link, allow normal navigation
+            if (e.target.closest("a")) return;
+
+            // Remove active from all blocks
+            projectBlocks.forEach((b) => b.classList.remove("active"));
+
+            // Activate clicked block
+            this.classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
