@@ -1,0 +1,379 @@
+/* ====================================================
+   NEW MOBILE NAVIGATION STYLESHEET
+   Fresh implementation, not dependent on existing sidebar
+   ==================================================== */
+
+/* Mobile Nav Container */
+.mobile-nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10000;
+  display: none;
+}
+
+.mobile-nav-wrapper.active {
+  display: flex;
+}
+
+/* Mobile Nav Backdrop/Overlay */
+.mobile-nav-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-nav-wrapper.active .mobile-nav-backdrop {
+  opacity: 1;
+}
+
+/* Mobile Nav Menu Panel */
+.mobile-nav-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background: #fff;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-wrapper.active .mobile-nav-panel {
+  transform: translateX(0);
+}
+
+/* Mobile Nav Header */
+.mobile-nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  flex-shrink: 0;
+}
+
+.mobile-nav-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.mobile-nav-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mobile-nav-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #050d20;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -5px;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-close:active {
+  color: #fe5b0f;
+}
+
+/* Mobile Nav Menu List */
+.mobile-nav-menu {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mobile-nav-menu li {
+  border-bottom: 1px solid #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav-menu > li > a {
+  display: block;
+  padding: 18px 20px;
+  color: #050d20;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-nav-menu > li > a:active {
+  background-color: #f5f5f5;
+  color: #fe5b0f;
+}
+
+.mobile-nav-menu > li > a:hover {
+  background-color: #f9f9f9;
+}
+
+/* Mobile Nav Submenu Handling */
+.mobile-nav-submenu {
+  display: none;
+  background-color: #f9f9f9;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-nav-menu > li.active .mobile-nav-submenu {
+  display: block;
+  max-height: 500px;
+}
+
+.mobile-nav-submenu li {
+  border: none;
+  border-top: 1px solid #f0f0f0;
+}
+
+.mobile-nav-submenu li:first-child {
+  border-top: none;
+}
+
+.mobile-nav-submenu a {
+  display: block;
+  padding: 14px 20px 14px 30px;
+  color: #555;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-nav-submenu a:active {
+  background-color: #efefef;
+  color: #fe5b0f;
+}
+
+.mobile-nav-submenu a:hover {
+  background-color: #f5f5f5;
+}
+
+/* Mobile Nav Toggle Arrow */
+.mobile-nav-toggle-arrow {
+  position: absolute;
+  right: 20px;
+  top: 30%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease;
+  font-size: 12px;
+  color: #999;
+  display: none;
+}
+
+/* Only show arrow on items with submenu */
+.mobile-nav-menu > li.has-submenu .mobile-nav-toggle-arrow {
+  display: inline-block;
+}
+
+.mobile-nav-menu > li.active .mobile-nav-toggle-arrow {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Ensure hidden on non-submenu items */
+.mobile-nav-menu > li:not(.has-submenu) .mobile-nav-toggle-arrow {
+  display: none !important;
+}
+
+/* Mobile Nav CTA Button */
+.mobile-nav-cta {
+  padding: 20px;
+  border-top: 1px solid #f0f0f0;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.mobile-nav-cta a {
+  display: block;
+  background-color: #fe5b0f;
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-nav-cta a:active {
+  background-color: #e54a0a;
+  transform: scale(0.98);
+}
+
+/* Hamburger Button - Add to Header */
+.mobile-menu-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #050d20;
+  padding: 10px;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu-btn:active {
+  color: #fe5b0f;
+}
+
+/* Show hamburger on mobile */
+@media only screen and (max-width: 1199px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .nav-area {
+    display: none !important;
+  }
+
+  .button-wrapper-flex {
+    display: none !important;
+  }
+}
+
+/* Scrollbar Styling */
+.mobile-nav-menu::-webkit-scrollbar,
+.mobile-nav-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mobile-nav-menu::-webkit-scrollbar-track,
+.mobile-nav-panel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.mobile-nav-menu::-webkit-scrollbar-thumb,
+.mobile-nav-panel::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.mobile-nav-menu::-webkit-scrollbar-thumb:hover,
+.mobile-nav-panel::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Prevent Body Scroll When Menu Open */
+body.mobile-nav-open {
+  overflow: hidden;
+}
+
+/* Additional Mobile Optimizations */
+@media only screen and (max-width: 768px) {
+  .mobile-nav-panel {
+    width: 280px;
+  }
+
+  .mobile-nav-menu > li > a {
+    padding: 16px 15px;
+    font-size: 15px;
+  }
+
+  .mobile-nav-submenu a {
+    padding: 13px 15px 13px 25px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .mobile-nav-panel {
+    width: 100%;
+    max-width: 85vw;
+  }
+
+  .mobile-nav-header {
+    padding: 15px;
+  }
+
+  .mobile-nav-menu > li > a {
+    padding: 14px 12px;
+    font-size: 14px;
+  }
+
+  .mobile-nav-submenu a {
+    padding: 12px 12px 12px 22px;
+    font-size: 13px;
+  }
+
+  .mobile-nav-cta {
+    padding: 15px;
+  }
+}
+
+/* Header Adjustments for Mobile Nav Button */
+@media only screen and (max-width: 1199px) {
+  .header-wrapper-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-area {
+    flex: 1;
+  }
+
+  .header-transparent .mobile-menu-btn {
+    color: #fff;
+  }
+
+  .header-transparent.header--sticky.sticky .mobile-menu-btn {
+    color: #fff;
+  }
+}
+
+/* Fix for smooth animations */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Focus visible styles */
+.mobile-nav-menu > li > a:focus-visible,
+.mobile-nav-submenu a:focus-visible,
+.mobile-nav-close:focus-visible,
+.mobile-menu-btn:focus-visible {
+  outline: 2px solid #fe5b0f;
+  outline-offset: 2px;
+}
