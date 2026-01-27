@@ -1,0 +1,762 @@
+/* ====================================================
+   MOBILE OPTIMIZATION STYLESHEET
+   Applied to all pages for enhanced mobile experience
+   ==================================================== */
+
+/* ROOT - Mobile Font Scaling */
+@media only screen and (max-width: 768px) {
+  :root {
+    --font-size-b1: 14px;
+    --font-size-b2: 14px;
+    --font-size-b3: 18px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  :root {
+    --font-size-b1: 13px;
+    --font-size-b2: 13px;
+    --font-size-b3: 16px;
+  }
+}
+
+/* ====== CONTAINER & LAYOUT ====== */
+@media only screen and (max-width: 767px) {
+  .container,
+  .container-faq {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .col-lg-1,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* ====== HEADER & NAVIGATION ====== */
+@media only screen and (max-width: 1199px) {
+  .header-wrapper-main {
+    padding: 15px 0 !important;
+  }
+
+  .logo-area {
+    width: auto;
+  }
+
+  .logo-area img {
+    height: 40px;
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header-one {
+    padding: 12px 0;
+  }
+
+  .logo-area img {
+    height: 35px;
+  }
+
+  .nav-area {
+    display: none !important;
+  }
+
+  .nav-area.mobile-active {
+    display: block !important;
+  }
+
+  .button-wrapper-flex {
+    display: none !important;
+  }
+
+  .button-wrapper-flex.mobile-active {
+    display: block !important;
+  }
+
+  /* Mobile menu toggle button */
+  .mobile-menu-toggle {
+    display: block !important;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: inherit;
+    padding: 5px 10px;
+  }
+
+  .close-icon-menu {
+    font-size: 28px;
+    padding: 10px;
+    margin: -10px;
+  }
+}
+
+/* ====== TYPOGRAPHY - MOBILE FRIENDLY ====== */
+@media only screen and (max-width: 768px) {
+  h1,
+  .title {
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+  }
+
+  h2 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+  }
+
+  h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+
+  h4 {
+    font-size: 18px !important;
+  }
+
+  h5 {
+    font-size: 16px !important;
+  }
+
+  p,
+  .disc {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+
+  .pre {
+    font-size: 12px !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  h1,
+  .title {
+    font-size: 22px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  h3 {
+    font-size: 18px !important;
+  }
+}
+
+/* ====== BUTTONS & LINKS ====== */
+@media only screen and (max-width: 768px) {
+  .rts-btn,
+  button,
+  .btn-line,
+  a.button,
+  .round-btn {
+    padding: 12px 24px !important;
+    font-size: 14px !important;
+    min-height: 44px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+
+  .rts-btn:active,
+  button:active,
+  a.button:active {
+    transform: scale(0.98);
+  }
+
+  .btn-line {
+    padding: 10px 16px !important;
+  }
+
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* ====== SPACING - MOBILE FRIENDLY ====== */
+@media only screen and (max-width: 768px) {
+  .rts-section-gap {
+    padding: 40px 0 !important;
+  }
+
+  .rts-section-gapBottom {
+    padding-bottom: 40px !important;
+  }
+
+  .mt--40 {
+    margin-top: 30px !important;
+  }
+
+  .mt--60 {
+    margin-top: 40px !important;
+  }
+
+  .mt--70 {
+    margin-top: 50px !important;
+  }
+
+  .pb--40 {
+    padding-bottom: 30px !important;
+  }
+
+  .pt--50 {
+    padding-top: 40px !important;
+  }
+
+  .g-5 {
+    gap: 20px !important;
+  }
+
+  .mb--20 {
+    margin-bottom: 15px !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .rts-section-gap {
+    padding: 30px 0 !important;
+  }
+
+  .mt--40,
+  .mt--60,
+  .mt--70 {
+    margin-top: 25px !important;
+  }
+
+  .g-5 {
+    gap: 15px !important;
+  }
+}
+
+/* ====== IMAGES - RESPONSIVE ====== */
+@media only screen and (max-width: 768px) {
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .swiper-wrapper {
+    padding-bottom: 30px;
+  }
+
+  .swiper-pagination {
+    bottom: 0;
+    padding: 10px 0;
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+}
+
+/* ====== FORM ELEMENTS ====== */
+@media only screen and (max-width: 768px) {
+  input,
+  textarea,
+  select {
+    width: 100% !important;
+    padding: 12px !important;
+    font-size: 16px !important;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(254, 91, 15, 0.1);
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .form-group,
+  .rts-form-group {
+    margin-bottom: 15px !important;
+  }
+}
+
+/* ====== FEATURE AREAS ====== */
+@media only screen and (max-width: 768px) {
+  .feature-area-left-three {
+    margin-bottom: 30px;
+  }
+
+  .single-feature-area-three {
+    padding: 20px !important;
+    text-align: center;
+  }
+
+  .single-feature-area-three .icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px;
+  }
+
+  .single-feature-area-three .icon img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .feature-area-left-three h2 {
+    margin-bottom: 20px;
+  }
+}
+
+/* ====== CARDS & BOXES ====== */
+@media only screen and (max-width: 768px) {
+  .single-feature-area-three,
+  .card,
+  .box,
+  .case-card,
+  .blog-card,
+  .product-wrapper {
+    margin-bottom: 20px;
+    padding: 15px !important;
+  }
+
+  .card-body,
+  .box-body {
+    padding: 15px !important;
+  }
+}
+
+/* ====== ACCORDIONS ====== */
+@media only screen and (max-width: 768px) {
+  .accordion {
+    margin-bottom: 0;
+  }
+
+  .accordion-item,
+  .accordion .single-accordion {
+    margin-bottom: 10px !important;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .accordion-header,
+  .accordion-button,
+  .accordion-title {
+    padding: 15px !important;
+    font-size: 14px !important;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .accordion-body {
+    padding: 15px !important;
+    font-size: 14px;
+  }
+
+  .accordion-button:not(.collapsed)::after {
+    transform: rotate(-180deg);
+  }
+}
+
+/* ====== SIDE-BY-SIDE LAYOUTS ====== */
+@media only screen and (max-width: 768px) {
+  .about-three-wrapper .row {
+    flex-direction: column;
+  }
+
+  .about-three-wrapper [class*="col-"] {
+    margin-bottom: 20px;
+  }
+
+  .title-area-between {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title-left-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .right-area {
+    margin-bottom: 0;
+  }
+}
+
+/* ====== TABLE RESPONSIVENESS ====== */
+@media only screen and (max-width: 768px) {
+  table {
+    font-size: 12px !important;
+  }
+
+  table th,
+  table td {
+    padding: 10px 5px !important;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ====== FOOTER ====== */
+@media only screen and (max-width: 768px) {
+  .rts-footer-one {
+    padding: 30px 0 !important;
+  }
+
+  .footer-wized-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-wized-wrapper .single {
+    margin-bottom: 20px;
+  }
+
+  .copyright-area {
+    padding: 20px 0 !important;
+  }
+
+  .copyright-1 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .copyright-1 p {
+    margin: 5px 0;
+  }
+}
+
+/* ====== CALL TO ACTION ====== */
+@media only screen and (max-width: 768px) {
+  .call-to-action-wrapper-three,
+  .cta-wrapper {
+    padding: 30px 20px !important;
+    text-align: center;
+  }
+
+  .call-to-action-wrapper-three h3 {
+    margin-bottom: 15px;
+  }
+
+  .call-to-action-wrapper-three .button-wrapper {
+    margin-top: 20px;
+    flex-direction: column;
+  }
+
+  .call-to-action-wrapper-three a {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* ====== BANNER SECTIONS ====== */
+@media only screen and (max-width: 768px) {
+  .banner-style-one-wrapper-inner h2 {
+    font-size: 28px !important;
+    line-height: 1.3;
+  }
+
+  .banner-style-one-wrapper-inner p {
+    font-size: 16px !important;
+    line-height: 1.5;
+  }
+
+  .banner-style-one-wrapper-inner .button-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .banner-style-one-wrapper-inner .rts-btn {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* ====== MODALS & OVERLAYS ====== */
+@media only screen and (max-width: 768px) {
+  .modal-dialog {
+    margin: 20px;
+    max-width: calc(100% - 40px);
+  }
+
+  .modal-body {
+    padding: 20px;
+  }
+
+  .modal-header {
+    padding: 20px;
+  }
+
+  .modal-footer {
+    padding: 15px 20px;
+  }
+}
+
+/* ====== TOUCH TARGETS (WCAG 2.5.5) ====== */
+@media only screen and (max-width: 768px) {
+  button,
+  a,
+  input[type="checkbox"],
+  input[type="radio"],
+  .clickable,
+  [role="button"],
+  [role="link"] {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 10px 12px;
+  }
+
+  a {
+    padding: 5px;
+  }
+}
+
+/* ====== DROPDOWN MENUS ====== */
+@media only screen and (max-width: 1199px) {
+  .mega-menu,
+  .dropdown-menu,
+  .rts-mega-menu {
+    display: none !important;
+  }
+
+  .has-dropdown > a::after {
+    display: none;
+  }
+}
+
+/* ====== SIDEBAR ====== */
+@media only screen and (max-width: 768px) {
+  .side-bar {
+    width: 100%;
+    max-width: 280px;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .side-bar.active {
+    transform: translateX(0);
+  }
+
+  .rts-sidebar-menu-desktop {
+    padding: 20px;
+  }
+
+  .mobile-menu-main {
+    padding-top: 20px;
+  }
+
+  .mainmenu li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .mainmenu a {
+    display: block;
+    padding: 10px 0;
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* ====== SLIDERS & CAROUSELS ====== */
+@media only screen and (max-width: 768px) {
+  .swiper {
+    margin-left: -15px;
+    margin-right: -15px;
+    width: calc(100% + 30px);
+  }
+
+  .swiper-slide {
+    padding: 0 10px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+  }
+}
+
+/* ====== STICKY ELEMENTS ====== */
+@media only screen and (max-width: 768px) {
+  .progress-wrap {
+    display: none;
+  }
+
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+/* ====== TEXT ANIMATION SAFETY ====== */
+@media only screen and (max-width: 768px) {
+  .rts-text-anime-style-1,
+  .text-animation,
+  [class*="anime"] {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .split-text {
+    display: inline;
+  }
+}
+
+/* ====== PRODUCT SHOWCASE ====== */
+@media only screen and (max-width: 768px) {
+  .product-wrapper {
+    margin-bottom: 30px;
+  }
+
+  .product-wrapper .inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .product-wrapper .left-content,
+  .product-wrapper .image-area {
+    width: 100%;
+  }
+
+  .product-sticky-wrapper-main {
+    position: relative;
+  }
+}
+
+/* ====== UTILITY CLASSES FOR MOBILE ====== */
+.hide-on-mobile {
+  display: none !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .show-on-mobile {
+    display: none !important;
+  }
+
+  .hide-on-mobile {
+    display: block !important;
+  }
+}
+
+/* ====== LANDSCAPE ORIENTATION ====== */
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  .banner-video-wrapper,
+  .full-screen-hero {
+    height: auto;
+    min-height: 400px;
+  }
+
+  h1,
+  .title {
+    font-size: 24px !important;
+  }
+
+  .rts-section-gap {
+    padding: 30px 0 !important;
+  }
+}
+
+/* ====== SMALL PHONES (320px+) ====== */
+@media only screen and (max-width: 360px) {
+  .container,
+  .container-faq {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .rts-btn,
+  button {
+    font-size: 12px !important;
+    padding: 10px 16px !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    word-break: break-word;
+  }
+
+  table {
+    font-size: 11px !important;
+  }
+}
+
+/* ====== SPECIFIC DEVICE OPTIMIZATIONS ====== */
+
+/* iPhone notch compensation */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+
+  .header-one,
+  .rts-footer-one {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+}
+
+/* ====== PRINT STYLES ====== */
+@media print {
+  .header-one,
+  .rts-footer-one,
+  .side-bar,
+  .mobile-menu-toggle,
+  .back-to-top,
+  .progress-wrap {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+}

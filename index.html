@@ -1,563 +1,679 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SOS Infocity - Your trusted IT Solutions & Cyber Security partner"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/images/fav.png"
+    />
+    <title>SOS Infocity - IT Solutions & Cyber Security</title>
+    <link
+      rel="stylesheet preload"
+      href="assets/css/plugins/fontawesome.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet preload"
+      href="assets/css/plugins/swiper.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet preload"
+      href="assets/css/plugins/metismenu.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet preload"
+      href="assets/css/plugins/magnifying-popup.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet preload"
+      href="assets/css/plugins/odometer.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet preload"
+      href="assets/css/vendor/bootstrap.min.css"
+      as="style"
+    />
+    <link rel="stylesheet preload" href="assets/css/style.css" as="style" />
+    <link
+      rel="stylesheet preload"
+      href="assets/css/mobile-optimizations.css"
+      as="style"
+    />
+    <style>
+      /* ================= HEADER ================= */
+      .header-transparent {
+        background: transparent !important;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="SOS Infocity - Your trusted IT Solutions & Cyber Security partner" />
-  <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png" />
-  <title>SOS Infocity - IT Solutions & Cyber Security</title>
-  <link rel="stylesheet preload" href="assets/css/plugins/fontawesome.css" as="style" />
-  <link rel="stylesheet preload" href="assets/css/plugins/swiper.css" as="style" />
-  <link rel="stylesheet preload" href="assets/css/plugins/metismenu.css" as="style" />
-  <link rel="stylesheet preload" href="assets/css/plugins/magnifying-popup.css" as="style" />
-  <link rel="stylesheet preload" href="assets/css/plugins/odometer.css" as="style" />
-  <link rel="stylesheet preload" href="assets/css/vendor/bootstrap.min.css" as="style" />
-  <link rel="stylesheet preload" href="assets/css/style.css" as="style" />
-  <style>
-    /* ================= HEADER ================= */
-    .header-transparent {
-      background: transparent !important;
-    }
+      .header-transparent .nav-area ul li a {
+        color: #fff !important;
+      }
 
-    .header-transparent .nav-area ul li a {
-      color: #fff !important;
-    }
+      .header-transparent.header--sticky.sticky {
+        background: #050d20 !important;
+      }
 
-    .header-transparent.header--sticky.sticky {
-      background: #050d20 !important;
-    }
+      /* ================= HERO VIDEO ================= */
+      .banner-video-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
 
-    /* ================= HERO VIDEO ================= */
-    .banner-video-wrapper {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
+      .banner-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
 
-    .banner-video {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;
-    }
+      .banner-video-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(5, 13, 32, 0.6);
+        z-index: 2;
+      }
 
-    .banner-video-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(5, 13, 32, 0.6);
-      z-index: 2;
-    }
+      /* ================= HERO CENTERING ================= */
+      .banner-content-layer {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #ffffff;
+      }
 
-    /* ================= HERO CENTERING ================= */
-    .banner-content-layer {
-      position: absolute;
-      inset: 0;
-      z-index: 3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #ffffff;
-    }
+      /* kill left bias from theme */
+      .banner-content-layer .container,
+      .banner-content-layer .row,
+      .banner-content-layer .col-lg-12 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
 
-    /* kill left bias from theme */
-    .banner-content-layer .container,
-    .banner-content-layer .row,
-    .banner-content-layer .col-lg-12 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
+      /* ================= HERO CONTENT ================= */
+      .banner-style-one-wrapper-inner {
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        opacity: 1 !important;
+        /* 🔥 animation fix */
+        transform: none !important;
+        /* 🔥 animation fix */
+      }
 
-    /* ================= HERO CONTENT ================= */
-    .banner-style-one-wrapper-inner {
-      max-width: 900px;
-      width: 100%;
-      margin: 0 auto;
-      text-align: center;
-      opacity: 1 !important;
-      /* 🔥 animation fix */
-      transform: none !important;
-      /* 🔥 animation fix */
-    }
+      .banner-style-one-wrapper-inner * {
+        opacity: 1 !important;
+        /* 🔥 animation fix */
+        transform: none !important;
+        /* 🔥 animation fix */
+      }
 
-    .banner-style-one-wrapper-inner * {
-      opacity: 1 !important;
-      /* 🔥 animation fix */
-      transform: none !important;
-      /* 🔥 animation fix */
-    }
-
-    /* headline */
-    .banner-style-one-wrapper-inner h2 {
-      font-size: 64px;
-      font-weight: 600;
-      line-height: 1.2;
-      letter-spacing: -1px;
-      color: #ffffff;
-      margin: 0;
-    }
-
-    /* paragraph */
-    .banner-style-one-wrapper-inner p {
-      font-size: 28px;
-      font-weight: 600;
-      line-height: 1.6;
-      margin: 20px auto 0;
-      max-width: 900px;
-      color: #ededed;
-    }
-
-    /* CTA */
-    .banner-style-one-wrapper-inner .button-wrapper {
-      margin-top: 35px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .banner-style-one-wrapper-inner .rts-btn {
-      background: #ffffff;
-      color: #050d20;
-      font-weight: 700;
-    }
-
-    @media (max-width: 768px) {
+      /* headline */
       .banner-style-one-wrapper-inner h2 {
-        font-size: 36px;
+        font-size: 64px;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -1px;
+        color: #ffffff;
+        margin: 0;
       }
 
+      /* paragraph */
       .banner-style-one-wrapper-inner p {
-        font-size: 18px;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 1.6;
+        margin: 20px auto 0;
+        max-width: 900px;
+        color: #ededed;
       }
-    }
-  </style>
-</head>
 
-<body class="radious-4 demo-default">
-  <!-- Header Navigation -->
-  <header class="header-one header--sticky header-transparent">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="header-wrapper-main">
-            <div class="logo-area">
-              <a href="index.html">
-                <img src="assets/images/logo/02.svg" alt="SOS Infocity Logo" />
-              </a>
-            </div>
+      /* CTA */
+      .banner-style-one-wrapper-inner .button-wrapper {
+        margin-top: 35px;
+        display: flex;
+        justify-content: center;
+      }
 
-            <div class="nav-area">
-              <ul>
-                <li class="main-nav"><a href="index.html">Home</a></li>
-                <li class="main-nav"><a href="pages/about.html">About</a></li>
+      .banner-style-one-wrapper-inner .rts-btn {
+        background: #ffffff;
+        color: #050d20;
+        font-weight: 700;
+      }
 
-                <li class="main-nav has-dropdown mega-menu">
-                  <a href="#">Solutions</a>
-                  <div class="rts-mega-menu service-mega-menu-style">
-                    <div class="wrapper">
-                      <div class="container">
-                        <div class="row g-5">
-                          <div class="col-lg-4">
-                            <ul class="mega-menu-item parent-nav">
-                              <li>
-                                <a href="pages/ai-intelligent-solutions.html">
-                                  <div class="single-service-menu">
-                                    <div class="icon">
-                                      <img src="./assets/images/feature/01.svg" alt="AI" />
-                                    </div>
-                                    <div class="info">
-                                      <h5 class="title">
-                                        AI-Based & Intelligent Technology
-                                      </h5>
-                                      <p class="details">
-                                        Smart systems for monitoring,
-                                        automation, and analytics.
-                                      </p>
-                                    </div>
-                                  </div>
-                                </a>
-                              </li>
+      @media (max-width: 768px) {
+        .banner-style-one-wrapper-inner h2 {
+          font-size: 36px;
+        }
 
-                              <li>
-                                <a href="pages/it-network-solutions.html">
-                                  <div class="single-service-menu">
-                                    <div class="icon">
-                                      <img src="./assets/images/feature/02.svg" alt="IT" />
-                                    </div>
-                                    <div class="info">
-                                      <h5 class="title">
-                                        IT & Network Solutions
-                                      </h5>
-                                      <p class="details">
-                                        Reliable infrastructure and network
-                                        environments.
-                                      </p>
-                                    </div>
-                                  </div>
-                                </a>
-                              </li>
+        .banner-style-one-wrapper-inner p {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
 
-                              <li>
-                                <a href="pages/security-surveillance.html">
-                                  <div class="single-service-menu">
-                                    <div class="icon">
-                                      <img src="./assets/images/feature/03.svg" alt="Security" />
-                                    </div>
-                                    <div class="info">
-                                      <h5 class="title">
-                                        Security & Surveillance
-                                      </h5>
-                                      <p class="details">
-                                        Integrated monitoring and access
-                                        systems.
-                                      </p>
-                                    </div>
-                                  </div>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
+  <body class="radious-4 demo-default">
+    <!-- Header Navigation -->
+    <header class="header-one header--sticky header-transparent">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="header-wrapper-main">
+              <div class="logo-area">
+                <a href="index.html">
+                  <img
+                    src="assets/images/logo/02.svg"
+                    alt="SOS Infocity Logo"
+                  />
+                </a>
+              </div>
 
-                          <div class="col-lg-4">
-                            <ul class="mega-menu-item parent-nav">
-                              <li>
-                                <a href="pages/connectivity-solutions.html">
-                                  <div class="single-service-menu">
-                                    <div class="icon">
-                                      <img src="./assets/images/feature/04.svg" alt="Connectivity" />
-                                    </div>
-                                    <div class="info">
-                                      <h5 class="title">
-                                        Connectivity Solutions
-                                      </h5>
-                                      <p class="details">
-                                        Structured wired and wireless
-                                        connectivity.
-                                      </p>
-                                    </div>
-                                  </div>
-                                </a>
-                              </li>
+              <div class="nav-area">
+                <ul>
+                  <li class="main-nav"><a href="index.html">Home</a></li>
+                  <li class="main-nav"><a href="pages/about.html">About</a></li>
 
-                              <li>
-                                <a href="pages/data-bi-analytics.html">
-                                  <div class="single-service-menu">
-                                    <div class="icon">
-                                      <img src="./assets/images/feature/05.svg" alt="Analytics" />
+                  <li class="main-nav has-dropdown mega-menu">
+                    <a href="#">Solutions</a>
+                    <div class="rts-mega-menu service-mega-menu-style">
+                      <div class="wrapper">
+                        <div class="container">
+                          <div class="row g-5">
+                            <div class="col-lg-4">
+                              <ul class="mega-menu-item parent-nav">
+                                <li>
+                                  <a href="pages/ai-intelligent-solutions.html">
+                                    <div class="single-service-menu">
+                                      <div class="icon">
+                                        <img
+                                          src="./assets/images/feature/01.svg"
+                                          alt="AI"
+                                        />
+                                      </div>
+                                      <div class="info">
+                                        <h5 class="title">
+                                          AI-Based & Intelligent Technology
+                                        </h5>
+                                        <p class="details">
+                                          Smart systems for monitoring,
+                                          automation, and analytics.
+                                        </p>
+                                      </div>
                                     </div>
-                                    <div class="info">
-                                      <h5 class="title">
-                                        Data, BI & Analytics
-                                      </h5>
-                                      <p class="details">
-                                        Turning operational data into
-                                        insights.
-                                      </p>
-                                    </div>
-                                  </div>
-                                </a>
-                              </li>
+                                  </a>
+                                </li>
 
-                              <li>
-                                <a href="pages/new-age-technologies.html">
-                                  <div class="single-service-menu">
-                                    <div class="icon">
-                                      <img src="./assets/images/feature/06.svg" alt="Emerging Tech" />
+                                <li>
+                                  <a href="pages/it-network-solutions.html">
+                                    <div class="single-service-menu">
+                                      <div class="icon">
+                                        <img
+                                          src="./assets/images/feature/02.svg"
+                                          alt="IT"
+                                        />
+                                      </div>
+                                      <div class="info">
+                                        <h5 class="title">
+                                          IT & Network Solutions
+                                        </h5>
+                                        <p class="details">
+                                          Reliable infrastructure and network
+                                          environments.
+                                        </p>
+                                      </div>
                                     </div>
-                                    <div class="info">
-                                      <h5 class="title">
-                                        New-Age Technologies
-                                      </h5>
-                                      <p class="details">
-                                        IoT, blockchain, and emerging systems.
-                                      </p>
-                                    </div>
-                                  </div>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
+                                  </a>
+                                </li>
 
-                          <div class="col-lg-4">
-                            <div class="menu-list">
-                              <h4>Why SOS Infocity</h4>
-                              <ul>
-                                <li>Field-Ready Solutions</li>
-                                <li>Large-Scale Deployments</li>
-                                <li>Operational Stability</li>
-                                <li>System Integration Expertise</li>
-                                <li>Long-Term Support</li>
-                                <li>Security-First Approach</li>
+                                <li>
+                                  <a href="pages/security-surveillance.html">
+                                    <div class="single-service-menu">
+                                      <div class="icon">
+                                        <img
+                                          src="./assets/images/feature/03.svg"
+                                          alt="Security"
+                                        />
+                                      </div>
+                                      <div class="info">
+                                        <h5 class="title">
+                                          Security & Surveillance
+                                        </h5>
+                                        <p class="details">
+                                          Integrated monitoring and access
+                                          systems.
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </li>
                               </ul>
+                            </div>
+
+                            <div class="col-lg-4">
+                              <ul class="mega-menu-item parent-nav">
+                                <li>
+                                  <a href="pages/connectivity-solutions.html">
+                                    <div class="single-service-menu">
+                                      <div class="icon">
+                                        <img
+                                          src="./assets/images/feature/04.svg"
+                                          alt="Connectivity"
+                                        />
+                                      </div>
+                                      <div class="info">
+                                        <h5 class="title">
+                                          Connectivity Solutions
+                                        </h5>
+                                        <p class="details">
+                                          Structured wired and wireless
+                                          connectivity.
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </li>
+
+                                <li>
+                                  <a href="pages/data-bi-analytics.html">
+                                    <div class="single-service-menu">
+                                      <div class="icon">
+                                        <img
+                                          src="./assets/images/feature/05.svg"
+                                          alt="Analytics"
+                                        />
+                                      </div>
+                                      <div class="info">
+                                        <h5 class="title">
+                                          Data, BI & Analytics
+                                        </h5>
+                                        <p class="details">
+                                          Turning operational data into
+                                          insights.
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </li>
+
+                                <li>
+                                  <a href="pages/new-age-technologies.html">
+                                    <div class="single-service-menu">
+                                      <div class="icon">
+                                        <img
+                                          src="./assets/images/feature/06.svg"
+                                          alt="Emerging Tech"
+                                        />
+                                      </div>
+                                      <div class="info">
+                                        <h5 class="title">
+                                          New-Age Technologies
+                                        </h5>
+                                        <p class="details">
+                                          IoT, blockchain, and emerging systems.
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="pages/software-engineering.html">
+                                    <div class="single-service-menu">
+                                      <div class="icon">
+                                        <img
+                                          src="./assets/images/feature/07.svg"
+                                          alt="Emerging Tech"
+                                        />
+                                      </div>
+                                      <div class="info">
+                                        <h5 class="title">
+                                          Software Engineering Services
+                                        </h5>
+                                        <p class="details">
+                                          design and Development applications
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+
+                            <div class="col-lg-4">
+                              <div class="menu-list">
+                                <h4>Why SOS Infocity</h4>
+                                <ul>
+                                  <li>Field-Ready Solutions</li>
+                                  <li>Large-Scale Deployments</li>
+                                  <li>Operational Stability</li>
+                                  <li>System Integration Expertise</li>
+                                  <li>Long-Term Support</li>
+                                  <li>Security-First Approach</li>
+                                </ul>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </li>
-                <li class="main-nav">
-                  <a href="pages/life-at-sos.html">Life at SOS</a>
-                </li>
-                <li class="main-nav">
-                  <a href="pages/impact.html">Impact</a>
-                </li>
-                <li class="main-nav">
-                  <a href="pages/connect.html">Connect</a>
-                </li>
-              </ul>
-            </div>
+                  </li>
+                  <li class="main-nav">
+                    <a href="pages/life-at-sos.html">Life at SOS</a>
+                  </li>
+                  <li class="main-nav">
+                    <a href="pages/impact.html">Impact</a>
+                  </li>
+                  <li class="main-nav">
+                    <a href="pages/connect.html">Connect</a>
+                  </li>
+                </ul>
+              </div>
 
-            <div class="button-wrapper-flex">
-              <a href="pages/connect.html" class="rts-btn btn-primary">
-                Get In Touch
-              </a>
+              <div class="button-wrapper-flex">
+                <a href="pages/connect.html" class="rts-btn btn-primary">
+                  Get In Touch
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- Banner Section - IT Solutions Hero -->
-  <div class="banner-swiper-main-wrapper-one">
-    <div class="banner-video-wrapper">
-      <video class="banner-video" autoplay muted loop playsinline>
-        <source src="/assets/Hero.MP4" type="video/mp4" />
-      </video>
+    <!-- Banner Section - IT Solutions Hero -->
+    <div class="banner-swiper-main-wrapper-one">
+      <div class="banner-video-wrapper">
+        <video class="banner-video" autoplay muted loop playsinline>
+          <source src="./assets/videos/hero.mp4" type="video/mp4" />
+        </video>
 
-      <div class="banner-video-overlay"></div>
+        <div class="banner-video-overlay"></div>
 
-      <div class="banner-content-layer">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="banner-style-one-wrapper-inner">
-                <h2>
-                  Technology that Keeps Your Operations Steady, Secure & Connected
-                </h2>
-                <p>
-                  We help organisations run their IT, networks, data, security, and emerging
-                  technology needs with clarity, consistency, and long-term stability.
-                </p>
-                <div class="button-wrapper">
-                  <a href="/pages/about.html" class="rts-btn btn-primary btn-white">
-                    Explore Our Solutions
-                  </a>
+        <div class="banner-content-layer">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="banner-style-one-wrapper-inner">
+                  <h2>
+                    Technology that Keeps Your Operations Steady, Secure &
+                    Connected
+                  </h2>
+                  <p>
+                    We help organisations run their IT, networks, data,
+                    security, and emerging technology needs with clarity,
+                    consistency, and long-term stability.
+                  </p>
+                  <div class="button-wrapper">
+                    <a
+                      href="pages/about.html"
+                      class="rts-btn btn-primary btn-white"
+                    >
+                      Explore Our Solutions
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
-  </div>
 
+    <!-- Services Section -->
+    <div class="rts-feature-area-three rts-section-gap">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <div class="feature-area-left-three">
+              <div class="title-left-wrapper">
+                <span class="pre">Our Services</span>
+                <h2 class="title rts-text-anime-style-1">
+                  Comprehensive IT Solutions for Modern Businesses
+                </h2>
+              </div>
+              <p class="disc mb--20">
+                SOS Infotech & Telecom offers a comprehensive suite of
+                technology services that support everyday digital operations.
+                From IT infrastructure and secure connectivity to data insights
+                and smart tech, our solutions help organisations stay ready for
+                what comes next.
+              </p>
+              <a href="pages/solutions.html" class="btn-line"
+                ><span>Explore All Services</span>
+                <i class="fa-solid fa-chevron-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="single-feature-area-three">
+              <div class="icon">
+                <img src="assets/images/feature/01.svg" alt="icon" />
+              </div>
+              <div class="content">
+                <h3 class="title">AI-Based & Intelligent Technology</h3>
+                <p class="disc">
+                  Smart systems that automate tasks and bring real-time insights
+                  to operations.
+                </p>
+                <a href="pages/solutions.html" class="round-btn">
+                  <i class="fa-sharp-duotone fa-light fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="single-feature-area-three">
+              <div class="icon">
+                <img src="assets/images/feature/02.svg" alt="icon" />
+              </div>
+              <div class="content">
+                <h3 class="title">IT & Network Solutions</h3>
+                <p class="disc extra-space">
+                  Reliable infrastructure and networks that form the backbone of
+                  daily work.
+                </p>
+                <a href="pages/solutions.html" class="round-btn">
+                  <i class="fa-sharp-duotone fa-light fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="single-feature-area-three">
+              <div class="icon">
+                <img src="assets/images/feature/03.svg" alt="icon" />
+              </div>
+              <div class="content">
+                <h3 class="title">Security & Surveillance Solutions</h3>
+                <p class="disc extra-space-t3">
+                  Systems that support monitoring, access control, and safer
+                  environments.
+                </p>
+                <a href="pages/solutions.html" class="round-btn">
+                  <i class="fa-sharp-duotone fa-light fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="single-feature-area-three">
+              <div class="icon">
+                <img src="assets/images/feature/04.svg" alt="icon" />
+              </div>
+              <div class="content">
+                <h3 class="title">Connectivity Solutions</h3>
+                <p class="disc extra-space-t2">
+                  Steady wireless and wired connections that keep teams linked.
+                </p>
+                <a href="pages/solutions.html" class="round-btn">
+                  <i class="fa-sharp-duotone fa-light fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="single-feature-area-three">
+              <div class="icon">
+                <img src="assets/images/feature/05.svg" alt="icon" />
+              </div>
+              <div class="content">
+                <h3 class="title">Data, BI & Analytics Solutions</h3>
+                <p class="disc extra-space">
+                  Clear dashboards and analytics that help teams see what
+                  matters.
+                </p>
+                <a href="pages/solutions.html" class="round-btn">
+                  <i class="fa-sharp-duotone fa-light fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="single-feature-area-three">
+              <div class="icon">
+                <img src="assets/images/feature/06.svg" alt="icon" />
+              </div>
+              <div class="content">
+                <h3 class="title">
+                  New-Age Technologies (IoT, Blockchain & Emerging Tech)
+                </h3>
+                <p class="disc">
+                  Modern tools that bring automation, device connectivity, and
+                  future readiness.
+                </p>
+                <a href="pages/solutions.html" class="round-btn">
+                  <i class="fa-sharp-duotone fa-light fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- Services Section -->
-  <div class="rts-feature-area-three rts-section-gap">
-    <div class="container">
-      <div class="row g-5">
-        <div class="col-lg-6">
-          <div class="feature-area-left-three">
-            <div class="title-left-wrapper">
-              <span class="pre">Our Services</span>
+    <!-- About Company Section -->
+    <div class="rts-about-area rts-section-gap bg_dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="title-center-wrapper">
+              <span class="pre">About Company</span>
               <h2 class="title rts-text-anime-style-1">
-                Comprehensive IT Solutions for Modern Businesses
+                Built for Reliable Delivery<br />
+                Across Complex Environments
               </h2>
             </div>
-            <p class="disc mb--20">
-              SOS Infotech & Telecom offers a comprehensive suite of
-              technology services that support everyday digital operations.
-              From IT infrastructure and secure connectivity to data insights
-              and smart tech, our solutions help organisations stay ready for
-              what comes next.
-            </p>
-            <a href="pages/solutions.html" class="btn-line"><span>Explore All Services</span>
-              <i class="fa-solid fa-chevron-right"></i></a>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-          <div class="single-feature-area-three">
-            <div class="icon">
-              <img src="assets/images/feature/01.svg" alt="icon" />
-            </div>
-            <div class="content">
-              <h3 class="title">AI-Based & Intelligent Technology</h3>
-              <p class="disc">
-                Smart systems that automate tasks and bring real-time insights
-                to operations.
-              </p>
-              <a href="pages/solutions.html" class="round-btn">
-                <i class="fa-sharp-duotone fa-light fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-          <div class="single-feature-area-three">
-            <div class="icon">
-              <img src="assets/images/feature/02.svg" alt="icon" />
-            </div>
-            <div class="content">
-              <h3 class="title">IT & Network Solutions</h3>
-              <p class="disc extra-space">
-                Reliable infrastructure and networks that form the backbone of
-                daily work.
-              </p>
-              <a href="pages/solutions.html" class="round-btn">
-                <i class="fa-sharp-duotone fa-light fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-          <div class="single-feature-area-three">
-            <div class="icon">
-              <img src="assets/images/feature/03.svg" alt="icon" />
-            </div>
-            <div class="content">
-              <h3 class="title">Security & Surveillance Solutions</h3>
-              <p class="disc extra-space-t3">
-                Systems that support monitoring, access control, and safer
-                environments.
-              </p>
-              <a href="pages/solutions.html" class="round-btn">
-                <i class="fa-sharp-duotone fa-light fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-          <div class="single-feature-area-three">
-            <div class="icon">
-              <img src="assets/images/feature/04.svg" alt="icon" />
-            </div>
-            <div class="content">
-              <h3 class="title">Connectivity Solutions</h3>
-              <p class="disc extra-space-t2">
-                Steady wireless and wired connections that keep teams linked.
-              </p>
-              <a href="pages/solutions.html" class="round-btn">
-                <i class="fa-sharp-duotone fa-light fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-          <div class="single-feature-area-three">
-            <div class="icon">
-              <img src="assets/images/feature/05.svg" alt="icon" />
-            </div>
-            <div class="content">
-              <h3 class="title">Data, BI & Analytics Solutions</h3>
-              <p class="disc extra-space">
-                Clear dashboards and analytics that help teams see what
-                matters.
-              </p>
-              <a href="pages/solutions.html" class="round-btn">
-                <i class="fa-sharp-duotone fa-light fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-          <div class="single-feature-area-three">
-            <div class="icon">
-              <img src="assets/images/feature/06.svg" alt="icon" />
-            </div>
-            <div class="content">
-              <h3 class="title">
-                New-Age Technologies (IoT, Blockchain & Emerging Tech)
-              </h3>
-              <p class="disc">
-                Modern tools that bring automation, device connectivity, and
-                future readiness.
-              </p>
-              <a href="pages/solutions.html" class="round-btn">
-                <i class="fa-sharp-duotone fa-light fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- About Company Section -->
-  <div class="rts-about-area rts-section-gap bg_dark">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="title-center-wrapper">
-            <span class="pre">About Company</span>
-            <h2 class="title rts-text-anime-style-1">
-              Built for Reliable Delivery<br />
-              Across Complex Environments
-            </h2>
-          </div>
-        </div>
-      </div>
-      <div class="row mt--40">
-        <div class="col-lg-12">
-          <div class="about-three-wrapper">
-            <div class="row">
-              <div class="col-lg-3 pr--70 pr_sm--10">
-                <div class="about-nav-area">
-                  <ul class="nav nav-tabs" id="aboutTabs" role="tablist">
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link active" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission"
-                        type="button" role="tab" aria-controls="mission" aria-selected="true">
-                        <span>How We Work</span>
-                      </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision"
-                        type="button" role="tab" aria-controls="vision" aria-selected="false">
-                        <span>Delivery Strength</span>
-                      </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="values-tab" data-bs-toggle="tab" data-bs-target="#values"
-                        type="button" role="tab" aria-controls="values" aria-selected="false">
-                        <span>Long-Term Support</span>
-                      </button>
-                    </li>
-                  </ul>
+        <div class="row mt--40">
+          <div class="col-lg-12">
+            <div class="about-three-wrapper">
+              <div class="row">
+                <div class="col-lg-3 pr--70 pr_sm--10">
+                  <div class="about-nav-area">
+                    <ul class="nav nav-tabs" id="aboutTabs" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button
+                          class="nav-link active"
+                          id="mission-tab"
+                          data-bs-toggle="tab"
+                          data-bs-target="#mission"
+                          type="button"
+                          role="tab"
+                          aria-controls="mission"
+                          aria-selected="true"
+                        >
+                          <span>How We Work</span>
+                        </button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button
+                          class="nav-link"
+                          id="vision-tab"
+                          data-bs-toggle="tab"
+                          data-bs-target="#vision"
+                          type="button"
+                          role="tab"
+                          aria-controls="vision"
+                          aria-selected="false"
+                        >
+                          <span>Delivery Strength</span>
+                        </button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button
+                          class="nav-link"
+                          id="values-tab"
+                          data-bs-toggle="tab"
+                          data-bs-target="#values"
+                          type="button"
+                          role="tab"
+                          aria-controls="values"
+                          aria-selected="false"
+                        >
+                          <span>Long-Term Support</span>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-              <div class="col-lg-9">
-                <div class="nav-content-about-three-area">
-                  <div class="tab-content" id="aboutTabsContent">
-                    <div class="tab-pane fade show active" id="mission" role="tabpanel" aria-labelledby="mission-tab">
-                      <div class="about-content-three">
-                        <div class="image-top-area-about">
-                          <div class="thumbnail-1">
-                            <img src="assets/images/about/03.webp" alt="about" />
+                <div class="col-lg-9">
+                  <div class="nav-content-about-three-area">
+                    <div class="tab-content" id="aboutTabsContent">
+                      <div
+                        class="tab-pane fade show active"
+                        id="mission"
+                        role="tabpanel"
+                        aria-labelledby="mission-tab"
+                      >
+                        <div class="about-content-three">
+                          <div class="image-top-area-about">
+                            <div class="thumbnail-1">
+                              <img
+                                src="assets/images/about/03.webp"
+                                alt="about"
+                              />
+                            </div>
+                            <div class="thumbnail-2">
+                              <img
+                                src="assets/images/about/04.webp"
+                                alt="about"
+                              />
+                            </div>
                           </div>
-                          <div class="thumbnail-2">
-                            <img src="assets/images/about/04.webp" alt="about" />
+                          <div class="content-area-about">
+                            <p class="disc">
+                              We follow clear planning and structured execution
+                              to ensure every solution fits smoothly into
+                              existing systems. From assessment to deployment,
+                              each step is handled with defined timelines and
+                              coordination across technical and on-ground teams.
+                            </p>
                           </div>
-                        </div>
-                        <div class="content-area-about">
-                          <p class="disc">
-                            We follow clear planning and structured execution
-                            to ensure every solution fits smoothly into
-                            existing systems. From assessment to deployment,
-                            each step is handled with defined timelines and
-                            coordination across technical and on-ground teams.
-                          </p>
-                        </div>
-                        <div class="progress-area-about-wrapper">
-                          <!-- <div class="progress-wrapper-main">
+                          <div class="progress-area-about-wrapper">
+                            <!-- <div class="progress-wrapper-main">
                             <div class="single-progress-area-h" data-sal-delay="150" data-sal="slide-up"
                               data-sal-duration="800">
                               <div class="progress-top">
@@ -585,91 +701,123 @@
                               </div>
                             </div>
                           </div> -->
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="tab-pane fade" id="vision" role="tabpanel" aria-labelledby="vision-tab">
-                      <div class="about-content-three two">
-                        <div class="image-top-area-about">
-                          <div class="thumbnail">
-                            <img src="assets/images/about/18.webp" alt="about" />
+                      <div
+                        class="tab-pane fade"
+                        id="vision"
+                        role="tabpanel"
+                        aria-labelledby="vision-tab"
+                      >
+                        <div class="about-content-three two">
+                          <div class="image-top-area-about">
+                            <div class="thumbnail">
+                              <img
+                                src="assets/images/about/18.webp"
+                                alt="about"
+                              />
+                            </div>
                           </div>
-                        </div>
-                        <div class="content-area-about">
-                          <p class="disc">
-                            Our multi-location teams and partner network allow
-                            us to deliver projects across cities, campuses,
-                            and industrial sites. This helps maintain
-                            consistent standards, faster response, and
-                            dependable implementation across different
-                            environments.
-                          </p>
-                        </div>
-                        <div class="counter-area">
-                          <ul>
-                            <li>
-                              <div class="icon">
-                                <img src="assets/images/about/icons/12.svg" alt="" />
-                              </div>
-                              <div class="content">
-                                <h5>25+</h5>
-                                <p>Year IT Experience</p>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="icon">
-                                <img src="assets/images/about/icons/13.svg" alt="" />
-                              </div>
-                              <div class="content">
-                                <h5>23K</h5>
-                                <p>Wonderful Client</p>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="icon">
-                                <img src="assets/images/about/icons/14.svg" alt="" />
-                              </div>
-                              <div class="content">
-                                <h5>2M</h5>
-                                <p>Project Done</p>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tab-pane fade" id="values" role="tabpanel" aria-labelledby="values-tab">
-                      <div class="about-content-three three">
-                        <div class="image-top-area-about">
-                          <div class="thumbnail">
-                            <img src="assets/images/about/19.webp" alt="about" />
-                          </div>
-                        </div>
-                        <div class="content-area-about">
-                          <p class="disc">
-                            Beyond project completion, we provide ongoing
-                            technical support, system monitoring, and upgrades
-                            when needed. This ensures solutions remain stable,
-                            secure, and aligned with operational needs over
-                            time.
-                          </p>
-                          <p class="disc">
-                            At the heart of our company lies a dedication to
-                            creating future-ready IT solutions. We stay ahead
-                            of technological trends to ensure your business is
-                            always equipped with the latest tools and
-                            strategies for success.
-                          </p>
-                          <div class="signature-area-wrapper">
-                            <img src="assets/images/others/sign-03.svg" alt="signature" />
-                          </div>
-                          <div class="clients-area-clients">
-                            <img src="assets/images/about/avatar.png" alt="about" />
+                          <div class="content-area-about">
                             <p class="disc">
-                              2.5k Client Connect with <br />
-                              our Company
+                              Our multi-location teams and partner network allow
+                              us to deliver projects across cities, campuses,
+                              and industrial sites. This helps maintain
+                              consistent standards, faster response, and
+                              dependable implementation across different
+                              environments.
                             </p>
                           </div>
+                          <div class="counter-area">
+                            <ul>
+                              <li>
+                                <div class="icon">
+                                  <img
+                                    src="assets/images/about/icons/12.svg"
+                                    alt=""
+                                  />
+                                </div>
+                                <div class="content">
+                                  <h5>25+</h5>
+                                  <p>Year IT Experience</p>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="icon">
+                                  <img
+                                    src="assets/images/about/icons/13.svg"
+                                    alt=""
+                                  />
+                                </div>
+                                <div class="content">
+                                  <h5>23K</h5>
+                                  <p>Wonderful Client</p>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="icon">
+                                  <img
+                                    src="assets/images/about/icons/14.svg"
+                                    alt=""
+                                  />
+                                </div>
+                                <div class="content">
+                                  <h5>2M</h5>
+                                  <p>Project Done</p>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tab-pane fade"
+                        id="values"
+                        role="tabpanel"
+                        aria-labelledby="values-tab"
+                      >
+                        <div class="about-content-three three">
+                          <div class="image-top-area-about">
+                            <div class="thumbnail">
+                              <img
+                                src="assets/images/about/19.webp"
+                                alt="about"
+                              />
+                            </div>
+                          </div>
+                          <div class="content-area-about">
+                            <p class="disc">
+                              Beyond project completion, we provide ongoing
+                              technical support, system monitoring, and upgrades
+                              when needed. This ensures solutions remain stable,
+                              secure, and aligned with operational needs over
+                              time.
+                            </p>
+                            <p class="disc">
+                              At the heart of our company lies a dedication to
+                              creating future-ready IT solutions. We stay ahead
+                              of technological trends to ensure your business is
+                              always equipped with the latest tools and
+                              strategies for success.
+                            </p>
+                            <div class="signature-area-wrapper">
+                              <img
+                                src="assets/images/others/sign-03.svg"
+                                alt="signature"
+                              />
+                            </div>
+                            <div class="clients-area-clients">
+                              <img
+                                src="assets/images/about/avatar.png"
+                                alt="about"
+                              />
+                              <p class="disc">
+                                2.5k Client Connect with <br />
+                                our Company
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -681,685 +829,853 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- rts product area start -->
-  <div class="rts-product-area bg_dark rts-section-gap">
-    <div class="container">
-      <div class="title-center-wrapper">
-        <h2 class="title rts-text-anime-style-1 mt--0">
-          Software Products for <br />
-          Business Challenge
-        </h2>
-      </div>
-      <div class="product-sticky-wrapper-main mt--60">
-        <!-- product area start -->
-        <div class="product-wrapper">
-          <div class="inner one">
-            <div class="left-content">
-              <h3 class="title">Built for Real-World Operations</h3>
-              <p class="disc">
-                Our solutions are designed to work smoothly within existing
-                systems and daily workflows, without creating unnecessary
-                complexity.
-              </p>
-              <ul class="feature-list">
-                <li>
-                  <i class="fa-regular fa-check"></i> Easy integration with
-                  current infrastructure
-                </li>
-                <li>
-                  <i class="fa-regular fa-check"></i>Supports multiple teams
-                  and locations
-                </li>
-                <li>
-                  <i class="fa-regular fa-check"></i> Designed for steady
-                  long-term use
-                </li>
-                <li>
-                  <i class="fa-regular fa-check"></i>Simple for everyday users
-                  to adopt
-                </li>
-              </ul>
-            </div>
-            <div class="image-area">
-              <img src="assets/images/project/13.webp" width="563" alt="" />
-            </div>
-          </div>
+    <!-- rts product area start -->
+    <div class="rts-product-area bg_dark rts-section-gap">
+      <div class="container">
+        <div class="title-center-wrapper">
+          <h2 class="title rts-text-anime-style-1 mt--0">
+            Software Products for <br />
+            Business Challenge
+          </h2>
         </div>
-        <!-- product area end -->
-        <!-- product area start -->
-        <div class="product-wrapper">
-          <div class="inner two">
-            <div class="left-content">
-              <h3 class="title">Clear Visibility and Better Coordination</h3>
-              <p class="disc">
-                Connected systems and dashboards help teams view operations
-                clearly and respond faster across departments and sites.
-              </p>
-              <ul class="feature-list">
-                <li>
-                  <i class="fa-regular fa-check"></i>Real-time monitoring and
-                  reporting
-                </li>
-                <li>
-                  <i class="fa-regular fa-check"></i>Shared access to key
-                  information
-                </li>
-                <li>
-                  <i class="fa-regular fa-check"></i>Faster coordination
-                  between teams
-                </li>
-                <li>
-                  <i class="fa-regular fa-check"></i>Supports data-driven
-                  planning
-                </li>
-              </ul>
-            </div>
-            <div class="image-area">
-              <img src="assets/images/project/14.webp" width="563" alt="" />
-            </div>
-          </div>
-        </div>
-        <!-- product area end -->
-      </div>
-    </div>
-  </div>
-  <!-- rts product area end -->
-
-  <!-- Industries We Serve Section -->
-  <div class="rts-case-area rts-section-gap bg_light">
-    <div class="container pb--40">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="title-area-between">
-            <div class="title-left-wrapper">
-              <span class="pre">Industries We Serve</span>
-              <h2 class="title rts-text-anime-style-1">
-                Reliable IT & Network Solutions Across Industries
-              </h2>
-            </div>
-            <div class="right-area">
-              <a href="pages/impact.html" class="btn-line">
-                <span>View All Projects</span>
-                <i class="fa-solid fa-chevron-right"></i>
-              </a>
+        <div class="product-sticky-wrapper-main mt--60">
+          <!-- product area start -->
+          <div class="product-wrapper">
+            <div class="inner one">
+              <div class="left-content">
+                <h3 class="title">Built for Real-World Operations</h3>
+                <p class="disc">
+                  Our solutions are designed to work smoothly within existing
+                  systems and daily workflows, without creating unnecessary
+                  complexity.
+                </p>
+                <ul class="feature-list">
+                  <li>
+                    <i class="fa-regular fa-check"></i> Easy integration with
+                    current infrastructure
+                  </li>
+                  <li>
+                    <i class="fa-regular fa-check"></i>Supports multiple teams
+                    and locations
+                  </li>
+                  <li>
+                    <i class="fa-regular fa-check"></i> Designed for steady
+                    long-term use
+                  </li>
+                  <li>
+                    <i class="fa-regular fa-check"></i>Simple for everyday users
+                    to adopt
+                  </li>
+                </ul>
+              </div>
+              <div class="image-area">
+                <img src="assets/images/project/13.webp" width="563" alt="" />
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="row g-5 mt--10">
-        <div class="col-lg-12">
-          <div class="swiper mySwiper-case-one">
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide">
-                <div class="single-case-style-one">
-                  <a href="pages/impact.html" class="thumbnail-case">
-                    <img src="assets/images/case/01.webp" alt="case" />
-                  </a>
-                  <a href="pages/impact.html" class="inner-content" style="text-align: center;">
-                    <span style="display: block;">Government & Public Sector</span>
-                  </a>
-                </div>
+          <!-- product area end -->
+          <!-- product area start -->
+          <div class="product-wrapper">
+            <div class="inner two">
+              <div class="left-content">
+                <h3 class="title">Clear Visibility and Better Coordination</h3>
+                <p class="disc">
+                  Connected systems and dashboards help teams view operations
+                  clearly and respond faster across departments and sites.
+                </p>
+                <ul class="feature-list">
+                  <li>
+                    <i class="fa-regular fa-check"></i>Real-time monitoring and
+                    reporting
+                  </li>
+                  <li>
+                    <i class="fa-regular fa-check"></i>Shared access to key
+                    information
+                  </li>
+                  <li>
+                    <i class="fa-regular fa-check"></i>Faster coordination
+                    between teams
+                  </li>
+                  <li>
+                    <i class="fa-regular fa-check"></i>Supports data-driven
+                    planning
+                  </li>
+                </ul>
               </div>
-
-              <div class="swiper-slide">
-                <div class="single-case-style-one">
-                  <a href="pages/impact.html" class="thumbnail-case">
-                    <img src="assets/images/case/02.webp" alt="case" />
-                  </a>
-                  <a href="pages/impact.html" class="inner-content" style="text-align: center;">
-                    <span style="display: block;">Banking & Financial Services</span>
-                  </a>
-                </div>
+              <div class="image-area">
+                <img src="assets/images/project/14.webp" width="563" alt="" />
               </div>
-
-              <div class="swiper-slide">
-                <div class="single-case-style-one">
-                  <a href="pages/impact.html" class="thumbnail-case">
-                    <img src="assets/images/case/03.webp" alt="case" />
-                  </a>
-                  <a href="pages/impact.html" class="inner-content" style="text-align: center;">
-                    <span style="display: block;">Telecom</span>
-                  </a>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="single-case-style-one">
-                  <a href="pages/impact.html" class="thumbnail-case">
-                    <img src="assets/images/case/04.webp" alt="case" />
-                  </a>
-                  <a href="pages/impact.html" class="inner-content" style="text-align: center;">
-                    <span style="display: block;">Steel & Power</span>
-                  </a>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="single-case-style-one">
-                  <a href="pages/impact.html" class="thumbnail-case">
-                    <img src="assets/images/case/04.webp" alt="case" />
-                  </a>
-                  <a href="pages/impact.html" class="inner-content" style="text-align: center;">
-                    <span style="display: block;">Metal & Mining</span>
-                  </a>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="single-case-style-one">
-                  <a href="pages/impact.html" class="thumbnail-case">
-                    <img src="assets/images/case/04.webp" alt="case" />
-                  </a>
-                  <a href="pages/impact.html" class="inner-content" style="text-align: center;">
-                    <span style="display: block;">Cement & Chemical</span>
-                  </a>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="single-case-style-one">
-                  <a href="pages/impact.html" class="thumbnail-case">
-                    <img src="assets/images/case/04.webp" alt="case" />
-                  </a>
-                  <a href="pages/impact.html" class="inner-content" style="text-align: center;">
-                    <span style="display: block;">Education & Universities</span>
-                  </a>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="single-case-style-one">
-                  <a href="pages/impact.html" class="thumbnail-case">
-                    <img src="assets/images/case/04.webp" alt="case" />
-                  </a>
-                  <a href="pages/impact.html" class="inner-content" style="text-align: center;">
-                    <span style="display: block;">NGO & Development Sector</span>
-                  </a>
-                </div>
-              </div>
-
             </div>
-            <div class="swiper-pagination"></div>
           </div>
+          <!-- product area end -->
         </div>
       </div>
     </div>
-  </div>
+    <!-- rts product area end -->
 
-
-
-
-  <!-- rts case studies area start -->
-  <div class="rts-case-studies rts-section-gap">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="title-area-between">
-            <div class="title-left-wrapper">
-              <span class="pre">Case Studies</span>
-              <h2 class="title rts-text-anime-style-1">
-                Our Success Stories<br />
-                (Featured Case Studies)
-              </h2>
-            </div>
-            <div class="right-area">
-              <p class="disc">
-                we deliver results. Our success is measured by the protection
-                we provide to our clients, across industries and around the
-                world.
-              </p>
-              <a href="pages/solutions.html" class="btn-line"><span>View All Cases</span><i
-                  class="fa-solid fa-chevron-right"></i></a>
+    <!-- Industries We Serve Section -->
+    <div class="rts-case-area rts-section-gap bg_light">
+      <div class="container pb--40">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="title-area-between">
+              <div class="title-left-wrapper">
+                <span class="pre">Industries We Serve</span>
+                <h2 class="title rts-text-anime-style-1">
+                  Reliable IT & Network Solutions Across Industries
+                </h2>
+              </div>
+              <div class="right-area">
+                <a href="pages/impact.html" class="btn-line">
+                  <span>View All Projects</span>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="row mt--70">
-        <div class="col-lg-12">
-          <div class="accordion-faq-one in-working-process in-case-cyber">
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                    <span>2021. </span> State Network Infrastructure Upgrade
-                  </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <img src="assets/images/case/05.webp" alt="why-choose" />
-                    <p class="disc">
-                      Core network systems upgraded across multiple offices to
-                      support stable connectivity and improved system
-                      performance.
-                    </p>
+
+        <div class="row g-5 mt--10">
+          <div class="col-lg-12">
+            <div class="swiper mySwiper-case-one">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="single-case-style-one">
+                    <a href="pages/impact.html" class="thumbnail-case">
+                      <img src="assets/images/case/01.webp" alt="case" />
+                    </a>
+                    <a
+                      href="pages/impact.html"
+                      class="inner-content"
+                      style="text-align: center"
+                    >
+                      <span style="display: block"
+                        >Government & Public Sector</span
+                      >
+                    </a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="single-case-style-one">
+                    <a href="pages/impact.html" class="thumbnail-case">
+                      <img src="assets/images/case/02.webp" alt="case" />
+                    </a>
+                    <a
+                      href="pages/impact.html"
+                      class="inner-content"
+                      style="text-align: center"
+                    >
+                      <span style="display: block"
+                        >Banking & Financial Services</span
+                      >
+                    </a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="single-case-style-one">
+                    <a href="pages/impact.html" class="thumbnail-case">
+                      <img src="assets/images/case/03.webp" alt="case" />
+                    </a>
+                    <a
+                      href="pages/impact.html"
+                      class="inner-content"
+                      style="text-align: center"
+                    >
+                      <span style="display: block">Telecom</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="single-case-style-one">
+                    <a href="pages/impact.html" class="thumbnail-case">
+                      <img src="assets/images/case/04.webp" alt="case" />
+                    </a>
+                    <a
+                      href="pages/impact.html"
+                      class="inner-content"
+                      style="text-align: center"
+                    >
+                      <span style="display: block">Steel & Power</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="single-case-style-one">
+                    <a href="pages/impact.html" class="thumbnail-case">
+                      <img src="assets/images/case/04.webp" alt="case" />
+                    </a>
+                    <a
+                      href="pages/impact.html"
+                      class="inner-content"
+                      style="text-align: center"
+                    >
+                      <span style="display: block">Metal & Mining</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="single-case-style-one">
+                    <a href="pages/impact.html" class="thumbnail-case">
+                      <img src="assets/images/case/04.webp" alt="case" />
+                    </a>
+                    <a
+                      href="pages/impact.html"
+                      class="inner-content"
+                      style="text-align: center"
+                    >
+                      <span style="display: block">Cement & Chemical</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="single-case-style-one">
+                    <a href="pages/impact.html" class="thumbnail-case">
+                      <img src="assets/images/case/04.webp" alt="case" />
+                    </a>
+                    <a
+                      href="pages/impact.html"
+                      class="inner-content"
+                      style="text-align: center"
+                    >
+                      <span style="display: block"
+                        >Education & Universities</span
+                      >
+                    </a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="single-case-style-one">
+                    <a href="pages/impact.html" class="thumbnail-case">
+                      <img src="assets/images/case/04.webp" alt="case" />
+                    </a>
+                    <a
+                      href="pages/impact.html"
+                      class="inner-content"
+                      style="text-align: center"
+                    >
+                      <span style="display: block"
+                        >NGO & Development Sector</span
+                      >
+                    </a>
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    <span>2022. </span>Cloud & Data Platform <br />
-                    Modernisation
-                  </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <img src="assets/images/case/05.webp" alt="why-choose" />
-                    <p class="disc">
-                      Migration and restructuring of digital platforms to
-                      support smoother access, storage, and reporting
-                      workflows.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    <span>2023. </span>City Surveillance &<br />
-                    Monitoring Integration
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <img src="assets/images/case/05.webp" alt="why-choose" />
-                    <p class="disc">
-                      Deployment of connected monitoring systems with
-                      centralised viewing for coordinated field and control
-                      room operations.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    <span>2024. </span>Multi-Department Digital Systems
-                    Rollout
-                  </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <img src="assets/images/case/05.webp" alt="why-choose" />
-                    <p class="disc">
-                      Integrated IT, connectivity, and monitoring platforms
-                      deployed across departments to support shared digital
-                      operations
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- rts case studies area end -->
 
-  <!-- rts faq area start -->
-  <div class="rts-faq-area-start rts-section-gap">
-    <div class="container-faq">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="title-center-wrapper">
-            <span class="pre">FAQ</span>
-            <h2 class="title rts-text-anime-style-1">
-              Get the Answers to Your <br />
-              Security Concerns
-            </h2>
-          </div>
-        </div>
-      </div>
-      <div class="row mt--40">
-        <div class="col-lg-12">
-          <div class="accordon-pricing-wrapper-three full-width">
-            <div class="accordion" id="pricingAccordion">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                    What type of organisations does SOS work with?
-                  </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                  data-bs-parent="#pricingAccordion">
-                  <div class="accordion-body">
-                    We work with government bodies, educational institutions,
-                    industrial organisations, NGOs, and enterprise clients
-                    across different sectors and locations.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Can SOS handle projects across multiple cities or sites?
-                  </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                  data-bs-parent="#pricingAccordion">
-                  <div class="accordion-body">
-                    Yes. Our teams are experienced in delivering and
-                    supporting projects across campuses, districts, and
-                    multi-location setups.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Do your solutions work with existing systems?
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                  data-bs-parent="#pricingAccordion">
-                  <div class="accordion-body">
-                    Our solutions are designed to integrate with current
-                    infrastructure wherever possible, so operations continue
-                    without major changes.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFour">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                    Does SOS provide support after project completion?
-                  </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                  data-bs-parent="#pricingAccordion">
-                  <div class="accordion-body">
-                    Yes. We offer ongoing technical support, system
-                    monitoring, and maintenance services based on project
-                    requirements.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                    Can projects be customised for specific operational needs?
-                  </button>
-                </h2>
-                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                  data-bs-parent="#pricingAccordion">
-                  <div class="accordion-body">
-                    Yes. Each deployment is planned according to site
-                    conditions, usage requirements, and long-term operational
-                    goals.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingSix">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                    How do we start a discussion with the SOS team?
-                  </button>
-                </h2>
-                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                  data-bs-parent="#pricingAccordion">
-                  <div class="accordion-body">
-                    You can connect through the enquiry form, email, or phone.
-                    Our team will review your requirements and guide the next
-                    steps.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- rts faq area end -->
-
-  <!-- CTA Section -->
-  <div class="rts-call-to-action-area rts-section-gapBottom">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="call-to-action-wrapper-three">
-            <h3 class="title rts-text-anime-style-1">Ready to Talk?</h3>
-            <p class="disc">
-              Whether you want to refine what you have or explore new tools,
-              let’s connect.
-            </p>
-            <a href="pages/connect.html" class="rts-btn btn-primary">Request a Consultation</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <div class="rts-footer-one pt--50 bg_dark">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="call-to-action-area-top-footer-three">
-            <div class="left-area">
-              <span>Subscribe to Our Newsletter</span>
-            </div>
-            <div class="right-area">
-              <form action="#">
-                <input type="email" placeholder="Enter your email..." required />
-                <button class="rts-btn btn-primary" type="submit">
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container pb--80">
-      <div class="row">
-        <div class="col-lg-3">
-          <div class="left-wiget">
-            <a class="logo" href="index.html">
-              <img src="assets/images/logo/02.svg" alt="SOS Infocity" />
-            </a>
-            <p class="disc">
-              Leading provider of IT solutions and cybersecurity services.
-            </p>
-            <ul class="social-wrapper">
-              <li>
-                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-              </li>
-              <li>
-                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-              </li>
-              <li>
-                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="offset-lg-1 col-lg-8 mt_md--50 mt_sm--20">
-          <div class="footer-wized-wrapper">
-            <div class="single">
-              <h6 class="title">Company</h6>
-              <ul>
-                <li><a href="pages/about.html">About Us</a></li>
-                <li><a href="pages/life-at-sos.html">Careers</a></li>
-                <li><a href="pages/impact.html">Case Studies</a></li>
-                <li><a href="pages/connect.html">Contact</a></li>
-              </ul>
-            </div>
-            <div class="single">
-              <h6 class="title">Services</h6>
-              <ul>
-                <li><a href="pages/solutions.html">All Solutions</a></li>
-                <li><a href="pages/solutions.html">Cybersecurity</a></li>
-                <li><a href="pages/solutions.html">Cloud Services</a></li>
-                <li><a href="pages/solutions.html">IT Consulting</a></li>
-              </ul>
-            </div>
-            <div class="single">
-              <h6 class="title">Resources</h6>
-              <ul>
-                <li><a href="#">Support Center</a></li>
-                <li><a href="#">Documentation</a></li>
-                <li><a href="#">Community</a></li>
-                <li><a href="#">Blog</a></li>
-              </ul>
-            </div>
-            <div class="single">
-              <h6 class="title">Follow Us</h6>
-              <ul>
-                <li>
-                  <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-                </li>
-                <li>
-                  <a href="https://www.twitter.com/" target="_blank">Twitter</a>
-                </li>
-                <li>
-                  <a href="https://www.youtube.com/" target="_blank">YouTube</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="copyright-area">
+    <!-- rts case studies area start -->
+    <div class="rts-case-studies rts-section-gap">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="copyright-1">
-              <p class="disc">
-                Copyright
-                <script>
-                  document.write(new Date().getFullYear());
-                </script>
-                . SOS Infocity. All Rights Reserved.
-              </p>
-              <ul>
-                <li><a href="pages/about.html">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Sitemap</a></li>
-              </ul>
+            <div class="title-area-between">
+              <div class="title-left-wrapper">
+                <span class="pre">Case Studies</span>
+                <h2 class="title rts-text-anime-style-1">
+                  Our Success Stories<br />
+                  (Featured Case Studies)
+                </h2>
+              </div>
+              <div class="right-area">
+                <p class="disc">
+                  we deliver results. Our success is measured by the protection
+                  we provide to our clients, across industries and around the
+                  world.
+                </p>
+                <a href="pages/solutions.html" class="btn-line"
+                  ><span>View All Cases</span
+                  ><i class="fa-solid fa-chevron-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt--70">
+          <div class="col-lg-12">
+            <div class="accordion-faq-one in-working-process in-case-cyber">
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      <span>2021. </span> State Network Infrastructure Upgrade
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseOne"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <img src="assets/images/case/05.webp" alt="why-choose" />
+                      <p class="disc">
+                        Core network systems upgraded across multiple offices to
+                        support stable connectivity and improved system
+                        performance.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      <span>2022. </span>Cloud & Data Platform <br />
+                      Modernisation
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTwo"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <img src="assets/images/case/05.webp" alt="why-choose" />
+                      <p class="disc">
+                        Migration and restructuring of digital platforms to
+                        support smoother access, storage, and reporting
+                        workflows.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      <span>2023. </span>City Surveillance &<br />
+                      Monitoring Integration
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseThree"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <img src="assets/images/case/05.webp" alt="why-choose" />
+                      <p class="disc">
+                        Deployment of connected monitoring systems with
+                        centralised viewing for coordinated field and control
+                        room operations.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour"
+                      aria-expanded="false"
+                      aria-controls="collapseFour"
+                    >
+                      <span>2024. </span>Multi-Department Digital Systems
+                      Rollout
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseFour"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <img src="assets/images/case/05.webp" alt="why-choose" />
+                      <p class="disc">
+                        Integrated IT, connectivity, and monitoring platforms
+                        deployed across departments to support shared digital
+                        operations
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    <!-- rts case studies area end -->
 
-  <!-- Mobile Sidebar -->
-  <div id="side-bar" class="side-bar header-two">
-    <div class="rts-sidebar-menu-desktop">
-      <div class="logo-area">
-        <a class="logo" href="index.html"><img src="assets/images/logo/02.svg" alt="SOS Infocity" /></a>
-        <button class="close-icon-menu" aria-label="Close Menu">
-          <i class="far fa-times"></i>
-        </button>
-      </div>
-      <div class="mobile-menu-main">
-        <nav class="nav-main mainmenu-nav mt--30">
-          <ul class="mainmenu metismenu" id="mobile-menu-active">
-            <li><a href="index.html" class="main">Home</a></li>
-            <li><a href="pages/about.html" class="main">About</a></li>
-            <li class="has-droupdown">
-              <a href="#" class="main">Solutions</a>
-              <ul class="submenu mm-collapse">
-                <li><a href="pages/solutions.html">All Solutions</a></li>
-                <li><a href="pages/solutions.html">Cybersecurity</a></li>
-                <li><a href="pages/solutions.html">Cloud Services</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="pages/life-at-sos.html" class="main">Life at SOS</a>
-            </li>
-            <li><a href="pages/impact.html" class="main">Impact</a></li>
-            <li><a href="pages/connect.html" class="main">Connect</a></li>
-          </ul>
-        </nav>
+    <!-- rts faq area start -->
+    <div class="rts-faq-area-start rts-section-gap">
+      <div class="container-faq">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="title-center-wrapper">
+              <span class="pre">FAQ</span>
+              <h2 class="title rts-text-anime-style-1">
+                Get the Answers to Your <br />
+                Security Concerns
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row mt--40">
+          <div class="col-lg-12">
+            <div class="accordon-pricing-wrapper-three full-width">
+              <div class="accordion" id="pricingAccordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      What type of organisations does SOS work with?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseOne"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#pricingAccordion"
+                  >
+                    <div class="accordion-body">
+                      We work with government bodies, educational institutions,
+                      industrial organisations, NGOs, and enterprise clients
+                      across different sectors and locations.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      Can SOS handle projects across multiple cities or sites?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingTwo"
+                    data-bs-parent="#pricingAccordion"
+                  >
+                    <div class="accordion-body">
+                      Yes. Our teams are experienced in delivering and
+                      supporting projects across campuses, districts, and
+                      multi-location setups.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Do your solutions work with existing systems?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#pricingAccordion"
+                  >
+                    <div class="accordion-body">
+                      Our solutions are designed to integrate with current
+                      infrastructure wherever possible, so operations continue
+                      without major changes.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour"
+                      aria-expanded="true"
+                      aria-controls="collapseFour"
+                    >
+                      Does SOS provide support after project completion?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseFour"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingFour"
+                    data-bs-parent="#pricingAccordion"
+                  >
+                    <div class="accordion-body">
+                      Yes. We offer ongoing technical support, system
+                      monitoring, and maintenance services based on project
+                      requirements.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFive">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFive"
+                      aria-expanded="false"
+                      aria-controls="collapseFive"
+                    >
+                      Can projects be customised for specific operational needs?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseFive"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingFive"
+                    data-bs-parent="#pricingAccordion"
+                  >
+                    <div class="accordion-body">
+                      Yes. Each deployment is planned according to site
+                      conditions, usage requirements, and long-term operational
+                      goals.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSix">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseSix"
+                      aria-expanded="false"
+                      aria-controls="collapseSix"
+                    >
+                      How do we start a discussion with the SOS team?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseSix"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingSix"
+                    data-bs-parent="#pricingAccordion"
+                  >
+                    <div class="accordion-body">
+                      You can connect through the enquiry form, email, or phone.
+                      Our team will review your requirements and guide the next
+                      steps.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+    <!-- rts faq area end -->
 
-  <!-- Loader -->
-  <div class="loader-wrapper">
-    <div class="loader"></div>
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-  </div>
+    <!-- CTA Section -->
+    <div class="rts-call-to-action-area rts-section-gapBottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="call-to-action-wrapper-three">
+              <h3 class="title rts-text-anime-style-1">Ready to Talk?</h3>
+              <p class="disc">
+                Whether you want to refine what you have or explore new tools,
+                let’s connect.
+              </p>
+              <a href="pages/connect.html" class="rts-btn btn-primary"
+                >Request a Consultation</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- Progress Bar -->
-  <div class="progress-wrap">
-    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="
+    <!-- Footer -->
+    <div class="rts-footer-one pt--50 bg_dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="call-to-action-area-top-footer-three">
+              <div class="left-area">
+                <span>Subscribe to Our Newsletter</span>
+              </div>
+              <div class="right-area">
+                <form action="#">
+                  <input
+                    type="email"
+                    placeholder="Enter your email..."
+                    required
+                  />
+                  <button class="rts-btn btn-primary" type="submit">
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container pb--80">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="left-wiget">
+              <a class="logo" href="index.html">
+                <img src="assets/images/logo/02.svg" alt="SOS Infocity" />
+              </a>
+              <p class="disc">
+                Leading provider of IT solutions and cybersecurity services.
+              </p>
+              <ul class="social-wrapper">
+                <li>
+                  <a href="#" aria-label="Facebook"
+                    ><i class="fa-brands fa-facebook"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#" aria-label="LinkedIn"
+                    ><i class="fa-brands fa-linkedin"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#" aria-label="Twitter"
+                    ><i class="fa-brands fa-twitter"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#" aria-label="YouTube"
+                    ><i class="fa-brands fa-youtube"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="offset-lg-1 col-lg-8 mt_md--50 mt_sm--20">
+            <div class="footer-wized-wrapper">
+              <div class="single">
+                <h6 class="title">Company</h6>
+                <ul>
+                  <li><a href="pages/about.html">About Us</a></li>
+                  <li><a href="pages/life-at-sos.html">Careers</a></li>
+                  <li><a href="pages/impact.html">Case Studies</a></li>
+                  <li><a href="pages/connect.html">Contact</a></li>
+                </ul>
+              </div>
+              <div class="single">
+                <h6 class="title">Services</h6>
+                <ul>
+                  <li><a href="pages/solutions.html">All Solutions</a></li>
+                  <li><a href="pages/solutions.html">Cybersecurity</a></li>
+                  <li><a href="pages/solutions.html">Cloud Services</a></li>
+                  <li><a href="pages/solutions.html">IT Consulting</a></li>
+                </ul>
+              </div>
+              <div class="single">
+                <h6 class="title">Resources</h6>
+                <ul>
+                  <li><a href="#">Support Center</a></li>
+                  <li><a href="#">Documentation</a></li>
+                  <li><a href="#">Community</a></li>
+                  <li><a href="#">Blog</a></li>
+                </ul>
+              </div>
+              <div class="single">
+                <h6 class="title">Follow Us</h6>
+                <ul>
+                  <li>
+                    <a href="https://www.facebook.com/" target="_blank"
+                      >Facebook</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/" target="_blank"
+                      >LinkedIn</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.twitter.com/" target="_blank"
+                      >Twitter</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/" target="_blank"
+                      >YouTube</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="copyright-1">
+                <p class="disc">
+                  Copyright
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  . SOS Infocity. All Rights Reserved.
+                </p>
+                <ul>
+                  <li><a href="pages/about.html">Privacy Policy</a></li>
+                  <li><a href="#">Terms of Service</a></li>
+                  <li><a href="#">Sitemap</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Sidebar -->
+    <div id="side-bar" class="side-bar header-two">
+      <div class="rts-sidebar-menu-desktop">
+        <div class="logo-area">
+          <a class="logo" href="index.html"
+            ><img src="assets/images/logo/02.svg" alt="SOS Infocity"
+          /></a>
+          <button class="close-icon-menu" aria-label="Close Menu">
+            <i class="far fa-times"></i>
+          </button>
+        </div>
+        <div class="mobile-menu-main">
+          <nav class="nav-main mainmenu-nav mt--30">
+            <ul class="mainmenu metismenu" id="mobile-menu-active">
+              <li><a href="index.html" class="main">Home</a></li>
+              <li><a href="pages/about.html" class="main">About</a></li>
+              <li class="has-droupdown">
+                <a href="#" class="main">Solutions</a>
+                <ul class="submenu mm-collapse">
+                  <li><a href="pages/solutions.html">All Solutions</a></li>
+                  <li><a href="pages/solutions.html">Cybersecurity</a></li>
+                  <li><a href="pages/solutions.html">Cloud Services</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="pages/life-at-sos.html" class="main">Life at SOS</a>
+              </li>
+              <li><a href="pages/impact.html" class="main">Impact</a></li>
+              <li><a href="pages/connect.html" class="main">Connect</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader-wrapper">
+      <div class="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-wrap">
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path
+          d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+          style="
             transition: stroke-dashoffset 10ms linear 0s;
             stroke-dasharray: 307.919, 307.919;
             stroke-dashoffset: 307.919;
-          "></path>
-    </svg>
-  </div>
+          "
+        ></path>
+      </svg>
+    </div>
 
-  <!-- Scripts -->
-  <script defer src="assets/js/plugins/jquery.js"></script>
-  <script defer src="assets/js/plugins/jquery-appear.js"></script>
-  <script defer src="assets/js/plugins/odometer.js"></script>
-  <script defer src="assets/js/plugins/gsap.js"></script>
-  <script defer src="assets/js/plugins/split-text.js"></script>
-  <script defer src="assets/js/plugins/scroll-trigger.js"></script>
-  <script defer src="assets/js/plugins/smooth-scroll.js"></script>
-  <script defer src="assets/js/plugins/metismenu.js"></script>
-  <script defer src="assets/js/plugins/popup.js"></script>
-  <script defer src="assets/js/plugins/contact.form.js"></script>
-  <script defer src="assets/js/vendor/bootstrap.min.js"></script>
-  <script defer src="assets/js/plugins/swiper.js"></script>
-  <script defer src="assets/js/main.js"></script>
+    <!-- Scripts -->
+    <script defer src="assets/js/plugins/jquery.js"></script>
+    <script defer src="assets/js/plugins/jquery-appear.js"></script>
+    <script defer src="assets/js/plugins/odometer.js"></script>
+    <script defer src="assets/js/plugins/gsap.js"></script>
+    <script defer src="assets/js/plugins/split-text.js"></script>
+    <script defer src="assets/js/plugins/scroll-trigger.js"></script>
+    <script defer src="assets/js/plugins/smooth-scroll.js"></script>
+    <script defer src="assets/js/plugins/metismenu.js"></script>
+    <script defer src="assets/js/plugins/popup.js"></script>
+    <script defer src="assets/js/plugins/contact.form.js"></script>
+    <script defer src="assets/js/vendor/bootstrap.min.js"></script>
+    <script defer src="assets/js/plugins/swiper.js"></script>
+    <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/mobile-optimizations.js"></script>
 
-  <!-- Product Stacking Effect Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const wrapper = document.querySelector(".product-sticky-wrapper-main");
-      const cards = document.querySelectorAll(".product-wrapper");
+    <!-- Product Stacking Effect Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const wrapper = document.querySelector(".product-sticky-wrapper-main");
+        const cards = document.querySelectorAll(".product-wrapper");
 
-      if (!wrapper || cards.length === 0) return;
+        if (!wrapper || cards.length === 0) return;
 
-      const cardHeight = 450; // Approximate height of each card
-      const startOffset = wrapper.offsetTop;
+        const cardHeight = 450; // Approximate height of each card
+        const startOffset = wrapper.offsetTop;
 
-      window.addEventListener("scroll", function () {
-        const scrollTop = window.scrollY;
-        const scrollFromStart = scrollTop - startOffset;
+        window.addEventListener("scroll", function () {
+          const scrollTop = window.scrollY;
+          const scrollFromStart = scrollTop - startOffset;
 
-        cards.forEach((card, index) => {
-          const moveDistance = Math.max(
-            0,
-            scrollFromStart - index * cardHeight * 10,
-          );
-          const baseTransform = -moveDistance * 0.1; // Adjust multiplier for stack speed
+          cards.forEach((card, index) => {
+            const moveDistance = Math.max(
+              0,
+              scrollFromStart - index * cardHeight * 10,
+            );
+            const baseTransform = -moveDistance * 0.1; // Adjust multiplier for stack speed
 
-          card.style.transform = `translateY(${baseTransform}px)`;
-          card.style.position = "relative";
+            card.style.transform = `translateY(${baseTransform}px)`;
+            card.style.position = "relative";
+          });
         });
       });
-    });
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
