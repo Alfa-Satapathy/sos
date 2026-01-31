@@ -21827,7 +21827,14 @@ header.heder-two .sub-dropdown:hover::after {
 header.heder-two .sub-dropdown .submenu.third-lvl.base {
   display: block;
 }
+.logo-area {
+  padding: 12px 0;
+}
 
+.logo-area img {
+  height: 80px;
+  width: auto;
+}
 header.header-three .sub-dropdown:hover .submenu.third-lvl.base {
   opacity: 1 !important;
   min-width: 185px !important;
