@@ -14141,6 +14141,61 @@ body.demo-app-development .rts-mega-menu.sm-mega-70 {
   right: 0;
 }
 
+.banner-swiper-main-wrapper-one {
+  width: 100%;
+}
+
+.banner-video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Video */
+.banner-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Dark overlay */
+.banner-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Content */
+.banner-content-layer {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.banner-style-one-wrapper-inner {
+  color: #fff;
+  max-width: 800px;
+}
+
+.banner-style-one-wrapper-inner h2 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.banner-style-one-wrapper-inner p {
+  margin-top: 16px;
+  font-size: 18px;
+}
+
 /* Loaded Styles */
 .loaded .loader-wrapper .loader-section.section-left {
   transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
