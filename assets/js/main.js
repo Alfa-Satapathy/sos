@@ -112,7 +112,11 @@
     },
     preloader: function () {
       window.addEventListener('load', function () {
-        document.querySelector('body').classList.add("loaded")
+        document.querySelector('body').classList.add("loaded");
+        const loaderWrapper = document.querySelector('.loader-wrapper');
+        if (loaderWrapper) {
+          loaderWrapper.classList.add("loaded");
+        }
       });
     },
     sideMenu: function () {
