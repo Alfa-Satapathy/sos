@@ -14752,10 +14752,19 @@ body.demo-app-development .rts-mega-menu.sm-mega-70 {
   border: 1.5px solid #eaf0ff;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 .single-feature-area-three .icon {
   margin-bottom: 30px;
   transition: transform 0.4s ease;
+  flex-shrink: 0;
+}
+.single-feature-area-three .content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 .single-feature-area-three .content .title {
   font-size: 28px;
@@ -14764,12 +14773,17 @@ body.demo-app-development .rts-mega-menu.sm-mega-70 {
   font-weight: 600;
   letter-spacing: -0.3px;
   transition: color 0.3s ease;
+  flex-shrink: 0;
 }
 .single-feature-area-three .content p.disc {
   font-size: 18px;
   color: #717383;
   margin-bottom: 30px;
   line-height: 1.6;
+  flex-grow: 1;
+}
+.single-feature-area-three .content .round-btn {
+  flex-shrink: 0;
 }
 .single-feature-area-three:hover {
   border-color: var(--color-primary);
