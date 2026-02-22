@@ -40,7 +40,7 @@
               </ul>
             </li>
             <li><a href="${getNavPath('pages/impact.html')}">Impact</a></li>
-            <li><a href="${getNavPath('pages/life-at-sos.html')}">Careers</a></li>
+            <li><a href="${getNavPath('pages/life-at-sos.html')}">Life at SOS</a></li>
             <li><a href="${getNavPath('pages/connect.html')}">Contact</a></li>
           </ul>
           <div class="mobile-nav-cta">

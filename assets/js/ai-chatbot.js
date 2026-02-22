@@ -313,7 +313,7 @@ class SOSAIChatbot {
     }
 
     if (suggestions.length > 0) {
-      this.addBotMessage('Based on what you've told me, I think these could help:');
+      this.addBotMessage('Based on what you\'ve told me, I think these could help:');
       suggestions.forEach((service, idx) => {
         setTimeout(() => {
           this.addServiceCard(service);
