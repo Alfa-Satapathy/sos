@@ -24641,3 +24641,41 @@ i[class*="icon"] {
 .accordion-item:focus-within {
   box-shadow: 0 0 0 3px rgba(254, 91, 15, 0.1);
 }
+/* ================= NETWORK BACKGROUND OVERLAY ================= */
+.network-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+  display: block;
+}
+
+.bg_dark {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg_dark .container,
+.bg_dark .row {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure footer SVG doesn't create extra space */
+.rts-footer-one.bg_dark {
+  position: relative;
+}
+
+.rts-footer-one.bg_dark .network-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
