@@ -24679,3 +24679,237 @@ i[class*="icon"] {
   width: 100%;
   height: 100%;
 }
+
+/* ============================================
+   GLASSY NAVBAR EFFECT FOR ALL PAGES
+   ============================================ */
+
+/* Header-relative (for pages like about.html with white background) */
+.header-relative {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-relative.sticky {
+  background: transparent !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-bottom: 1px solid rgba(100, 200, 255, 0.1) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+.header-relative.sticky .nav-area ul li a {
+  transition: all 0.3s ease;
+  color: #050d20 !important;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.header-relative.sticky .nav-area ul li a:hover {
+  color: #64c8ff !important;
+  text-shadow: 0 0 15px rgba(100, 200, 255, 0.2);
+}
+
+.header-relative.sticky .logo-area a {
+  filter: drop-shadow(0 0 8px rgba(100, 200, 255, 0.2));
+}
+
+/* Hide scrollbars globally */
+::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+html {
+  scrollbar-width: none !important;
+}
+
+
+
+/* Global Transitions */
+body * {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Enhanced Form Elements */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-body);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #64c8ff;
+  box-shadow: 0 0 20px rgba(100, 200, 255, 0.2), inset 0 0 10px rgba(100, 200, 255, 0.05);
+  outline: none;
+}
+
+::placeholder {
+  color: rgba(113, 115, 131, 0.6);
+  transition: color 0.3s ease;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: rgba(100, 200, 255, 0.7);
+}
+
+/* Premium Link Styling */
+a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* Premium Button Enhancements */
+.rts-btn,
+button,
+input[type="submit"],
+input[type="button"] {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Text Selection Enhancement */
+::selection {
+  background: #64c8ff;
+  color: #050d20;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: #64c8ff;
+  color: #050d20;
+  text-shadow: none;
+}
+
+/* Enhanced Image Styling */
+img {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus States for Accessibility */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #64c8ff;
+  outline-offset: 2px;
+}
+
+/* Enhanced List Items */
+ul li,
+ol li {
+  transition: all 0.2s ease;
+}
+
+/* Table Enhancements */
+table tr {
+  transition: all 0.2s ease;
+}
+
+table tbody tr:hover {
+  background-color: rgba(100, 200, 255, 0.05);
+}
+
+table td,
+table th {
+  border-color: rgba(100, 200, 255, 0.15);
+}
+
+/* Premium Code Block Styling */
+code,
+pre {
+  background: rgba(0, 0, 0, 0.1);
+  border-left: 3px solid #64c8ff;
+  transition: all 0.3s ease;
+}
+
+/* Blockquote Enhancement */
+blockquote {
+  border-left: 4px solid #64c8ff;
+  padding-left: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Premium Loading Animation */
+@keyframes premiumPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.loading,
+[data-loading] {
+  animation: premiumPulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Premium Utility Classes */
+.premium-shadow {
+  box-shadow: 0 10px 30px rgba(100, 200, 255, 0.15) !important;
+  transition: box-shadow 0.3s ease;
+}
+
+.premium-shadow:hover {
+  box-shadow: 0 15px 40px rgba(100, 200, 255, 0.25) !important;
+}
+
+.premium-border {
+  border: 1px solid rgba(100, 200, 255, 0.2) !important;
+  transition: border-color 0.3s ease;
+}
+
+.premium-border:hover {
+  border-color: rgba(100, 200, 255, 0.5) !important;
+}
+
+.premium-glow {
+  text-shadow: 0 0 10px rgba(100, 200, 255, 0.3);
+  transition: text-shadow 0.3s ease;
+}
+
+.premium-glow:hover {
+  text-shadow: 0 0 20px rgba(100, 200, 255, 0.6);
+}
+
+/* Enhanced Hrule */
+hr {
+  background: linear-gradient(90deg, transparent 0%, rgba(100, 200, 255, 0.3) 50%, transparent 100%);
+  border: none;
+  height: 1px;
+}
+
+/* Reduce Motion for Users who Prefer It */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
