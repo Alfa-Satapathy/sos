@@ -50,7 +50,7 @@
       as="style"
     />
   </head>
-  <body class="demo-cybersecurity">
+  <body class="radious-4 demo-default">
     <header class="header-one header-relative header--sticky">
       <div class="container">
         <div class="row">
@@ -693,7 +693,27 @@
     </div>
 
     <!-- Footer -->
-    <div class="rts-footer-one pt--50 bg_dark">
+  <!-- Footer -->
+  <div class="rts-footer-one pt--50 bg_dark">
+    <svg class="network-bg-overlay" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <style>
+          .network-line { stroke: rgba(255, 255, 255, 0.15); stroke-width: 1; }
+          .network-node { fill: rgba(100, 200, 255, 0.3); }
+          .network-node-small { fill: rgba(100, 200, 255, 0.2); }
+          .neuron-connection { stroke: rgba(70, 150, 255, 0.2); stroke-width: 1.5; }
+        </style>
+        <radialGradient id="nodeGradient7" cx="40%" cy="40%">
+          <stop offset="0%" style="stop-color:rgba(150, 200, 255, 0.4);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgba(70, 150, 255, 0.1);stop-opacity:1" />
+        </radialGradient>
+      </defs>
+      <line x1="100" y1="80" x2="300" y2="150" class="network-line"/><line x1="300" y1="150" x2="500" y2="100" class="network-line"/><line x1="500" y1="100" x2="700" y2="180" class="network-line"/><line x1="700" y1="180" x2="900" y2="120" class="network-line"/><line x1="900" y1="120" x2="1100" y2="200" class="network-line"/><line x1="200" y1="300" x2="400" y2="280" class="network-line"/><line x1="400" y1="280" x2="600" y2="350" class="network-line"/><line x1="600" y1="350" x2="800" y2="320" class="network-line"/><line x1="800" y1="320" x2="1000" y2="380" class="network-line"/><line x1="150" y1="500" x2="350" y2="480" class="network-line"/><line x1="350" y1="480" x2="550" y2="520" class="network-line"/><line x1="550" y1="520" x2="750" y2="500" class="network-line"/><line x1="750" y1="500" x2="950" y2="540" class="network-line"/><line x1="950" y1="540" x2="1100" y2="480" class="network-line"/><line x1="300" y1="150" x2="280" y2="300" class="network-line"/><line x1="500" y1="100" x2="520" y2="280" class="network-line"/><line x1="700" y1="180" x2="720" y2="350" class="network-line"/><line x1="900" y1="120" x2="920" y2="320" class="network-line"/><line x1="100" y1="80" x2="400" y2="280" class="network-line"/><line x1="500" y1="100" x2="800" y2="320" class="network-line"/><line x1="900" y1="120" x2="350" y2="480" class="network-line"/><line x1="600" y1="350" x2="150" y2="500" class="network-line"/><line x1="600" y1="300" x2="400" y2="150" class="neuron-connection"/><line x1="600" y1="300" x2="800" y2="150" class="neuron-connection"/><line x1="600" y1="300" x2="350" y2="480" class="neuron-connection"/><line x1="600" y1="300" x2="850" y2="500" class="neuron-connection"/>
+      <circle cx="100" cy="80" r="4" class="network-node" fill="url(#nodeGradient7)"/><circle cx="500" cy="100" r="4" class="network-node" fill="url(#nodeGradient7)"/><circle cx="900" cy="120" r="4" class="network-node" fill="url(#nodeGradient7)"/><circle cx="150" cy="500" r="4" class="network-node" fill="url(#nodeGradient7)"/><circle cx="950" cy="540" r="4" class="network-node" fill="url(#nodeGradient7)"/><circle cx="600" cy="300" r="6" class="network-node" fill="url(#nodeGradient7)"/>
+      <circle cx="300" cy="150" r="3" class="network-node-small"/><circle cx="700" cy="180" r="3" class="network-node-small"/><circle cx="400" cy="280" r="3" class="network-node-small"/><circle cx="800" cy="320" r="3" class="network-node-small"/><circle cx="350" cy="480" r="3" class="network-node-small"/><circle cx="850" cy="500" r="3" class="network-node-small"/><circle cx="200" cy="300" r="3" class="network-node-small"/><circle cx="1000" cy="380" r="3" class="network-node-small"/><circle cx="1100" cy="200" r="3" class="network-node-small"/><circle cx="1100" cy="480" r="3" class="network-node-small"/>
+      <circle cx="250" cy="200" r="2" class="network-node-small"/><circle cx="550" cy="150" r="2" class="network-node-small"/><circle cx="750" cy="250" r="2" class="network-node-small"/><circle cx="450" cy="400" r="2" class="network-node-small"/><circle cx="650" cy="420" r="2" class="network-node-small"/><circle cx="500" cy="520" r="2" class="network-node-small"/><circle cx="1050" cy="350" r="2" class="network-node-small"/>
+      <line x1="250" y1="200" x2="300" y2="150" class="network-line"/><line x1="550" y1="150" x2="500" y2="100" class="network-line"/><line x1="750" y1="250" x2="700" y2="180" class="network-line"/><line x1="450" y1="400" x2="400" y2="280" class="network-line"/><line x1="650" y1="420" x2="600" y2="300" class="network-line"/>
+    </svg>
       <div class="container pb--80">
         <div class="row">
           <div class="col-lg-3">
@@ -714,6 +734,9 @@
                 <li>
                   <a href="#"><i class="fa-brands fa-twitter"></i></a>
                 </li>
+                <li>
+                  <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </li>
               </ul>
             </div>
           </div>
@@ -722,7 +745,7 @@
               <div class="single">
                 <h6 class="title">Company</h6>
                 <ul>
-                  <li><a href="about.html">About</a></li>
+                  <li><a href="about.html">About Us</a></li>
                   <li><a href="life-at-sos.html">Life at SOS</a></li>
                   <li><a href="impact.html">Case Studies</a></li>
                   <li><a href="connect.html">Contact</a></li>
@@ -756,6 +779,11 @@
                   <li>
                     <a href="https://www.twitter.com/" target="_blank"
                       >Twitter</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/" target="_blank"
+                      >YouTube</a
                     >
                   </li>
                 </ul>
