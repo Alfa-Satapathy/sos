@@ -22446,7 +22446,18 @@ header.header-three .rts-mega-menu.service-mega-menu-style {
   border-radius: 5px;
   border: 1px solid #eaf0ff;
   display: block;
-  transition: 0.3s;
+  transition: none;
+}
+.rts-mega-menu.service-mega-menu-style li a:hover {
+  background: #ffffff;
+  border: 1px solid #eaf0ff;
+  box-shadow: none;
+  transform: none;
+}
+.rts-mega-menu.service-mega-menu-style .mega-menu-item li:hover a {
+  background: #ffffff;
+  border: 1px solid #eaf0ff;
+  border-radius: 5px;
 }
 .rts-mega-menu.service-mega-menu-style li a.free-consultation {
   background: var(--color-primary);
@@ -22463,6 +22474,12 @@ header.header-three .rts-mega-menu.service-mega-menu-style {
 .rts-mega-menu.service-mega-menu-style li a .single-service-menu {
   display: flex;
   align-items: flex-start;
+  transition: none;
+}
+.rts-mega-menu.service-mega-menu-style li a .single-service-menu:hover {
+  transform: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 .rts-mega-menu.service-mega-menu-style li a .single-service-menu .icon {
   border-radius: 4px;
@@ -24684,34 +24701,51 @@ i[class*="icon"] {
    GLASSY NAVBAR EFFECT FOR ALL PAGES
    ============================================ */
 
-/* Header-relative (for pages like about.html with white background) */
-.header-relative {
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+/* Floating navbar shell (all pages) */
+.header-one {
+  padding-top: 10px;
 }
 
-.header-relative.sticky {
+.header-one .container {
+  max-width: calc(100% - 48px);
+}
+
+@media only screen and (max-width: 767px) {
+  .header-one .container {
+    max-width: calc(100% - 20px);
+  }
+}
+
+/* Home page only: keep navbar over video (no white gap area) */
+.header-one.header-relative.home-navbar-overlay {
+  position: absolute;
+}
+
+.header-one .header-wrapper-main {
+  background: #ffffff;
+  border: 1px solid rgba(7, 20, 49, 0.1);
+  border-radius: 16px;
+  padding: 8px 18px;
+  box-shadow: 0 10px 26px rgba(7, 20, 49, 0.1);
+}
+
+/* Sticky: blue transparent glassy effect */
+.header-one.header--sticky.sticky {
   background: transparent !important;
+  box-shadow: none !important;
+}
+
+.header-one.header--sticky.sticky .header-wrapper-main {
+  background: rgba(5, 13, 32, 0.62) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
-  background: rgba(255, 255, 255, 0.7) !important;
-  border-bottom: 1px solid rgba(100, 200, 255, 0.1) !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24) !important;
 }
 
-.header-relative.sticky .nav-area ul li a {
-  transition: all 0.3s ease;
-  color: #050d20 !important;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
-
-.header-relative.sticky .nav-area ul li a:hover {
-  color: #64c8ff !important;
-  text-shadow: 0 0 15px rgba(100, 200, 255, 0.2);
-}
-
-.header-relative.sticky .logo-area a {
-  filter: drop-shadow(0 0 8px rgba(100, 200, 255, 0.2));
+.header-one.header--sticky.sticky .nav-area ul li.main-nav > a,
+.header-one.header--sticky.sticky .nav-area ul li.main-nav > a::after {
+  color: #ffffff !important;
 }
 
 /* Hide scrollbars globally */
@@ -24894,6 +24928,44 @@ html {
 
 .premium-glow:hover {
   text-shadow: 0 0 20px rgba(100, 200, 255, 0.6);
+}
+
+/* ============================================
+   GLOBAL NAVBAR CTA STYLE (ALL PAGES)
+   Match "Explore Our Solutions" button look
+   ============================================ */
+header .button-wrapper-flex > .rts-btn.btn-primary {
+  background: linear-gradient(120deg, #ff7f45, #ff6024);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 10px;
+  padding: 16px 36px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  box-shadow: none;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+header .button-wrapper-flex > .rts-btn.btn-primary::after {
+  content: none;
+}
+
+header .button-wrapper-flex > .rts-btn.btn-primary:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  filter: brightness(1.04);
+  box-shadow: none;
+}
+
+header .button-wrapper-flex > .rts-btn.btn-primary:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.95);
+  outline-offset: 2px;
 }
 
 /* Enhanced Hrule */
