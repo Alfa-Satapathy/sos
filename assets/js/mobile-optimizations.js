@@ -258,11 +258,9 @@
     fixViewportHeight();
     preventZoomOnFocus();
     initSmoothScroll();
-    initTouchFeedback();
     initLazyLoad();
     handleOrientationChange();
     fixFullHeight();
-    disableDoubleTapZoom();
     handleBackButton();
     initNetworkStatus();
     initMobileMenu();

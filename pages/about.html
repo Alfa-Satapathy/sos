@@ -836,14 +836,21 @@
       const activeHeader = transparentHeader || relativeHeader;
       
       if (activeHeader) {
-        // Detect scroll and apply glassy effect
-        window.addEventListener('scroll', function() {
-          if (window.scrollY > 50) {
-            activeHeader.classList.add('sticky');
-          } else {
-            activeHeader.classList.remove('sticky');
-          }
-        });
+        let isTicking = false;
+
+        const updateStickyState = () => {
+          activeHeader.classList.toggle('sticky', window.scrollY > 50);
+          isTicking = false;
+        };
+
+        const onScroll = () => {
+          if (isTicking) return;
+          isTicking = true;
+          window.requestAnimationFrame(updateStickyState);
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        updateStickyState();
       }
 
       // Smooth scroll for navigation links

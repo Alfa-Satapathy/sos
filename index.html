@@ -194,7 +194,7 @@
   <div class="banner-swiper-main-wrapper-one">
     <div class="banner-video-wrapper">
 
-      <video class="banner-video" autoplay muted loop playsinline preload="auto">
+      <video class="banner-video" autoplay muted loop playsinline preload="metadata">
         <source src="assets/videos/hero.MP4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -1449,14 +1449,21 @@
       const activeHeader = transparentHeader || relativeHeader;
       
       if (activeHeader) {
-        // Detect scroll and apply glassy effect
-        window.addEventListener('scroll', function() {
-          if (window.scrollY > 50) {
-            activeHeader.classList.add('sticky');
-          } else {
-            activeHeader.classList.remove('sticky');
-          }
-        });
+        let isTicking = false;
+
+        const updateStickyState = () => {
+          activeHeader.classList.toggle('sticky', window.scrollY > 50);
+          isTicking = false;
+        };
+
+        const onScroll = () => {
+          if (isTicking) return;
+          isTicking = true;
+          window.requestAnimationFrame(updateStickyState);
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        updateStickyState();
       }
 
       // Smooth scroll for navigation links
@@ -1476,37 +1483,8 @@
   <script defer src="assets/js/mobile-optimizations.js"></script>
   <script defer src="assets/js/mobile-nav.js"></script>
 
-  <!-- Product Stacking Effect Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const wrapper = document.querySelector(".product-sticky-wrapper-main");
-      const cards = document.querySelectorAll(".product-wrapper");
-
-      if (!wrapper || cards.length === 0) return;
-
-      const cardHeight = 450; // Approximate height of each card
-      const startOffset = wrapper.offsetTop;
-
-      window.addEventListener("scroll", function () {
-        const scrollTop = window.scrollY;
-        const scrollFromStart = scrollTop - startOffset;
-
-        cards.forEach((card, index) => {
-          const moveDistance = Math.max(
-            0,
-            scrollFromStart - index * cardHeight * 10,
-          );
-          const baseTransform = -moveDistance * 0.1; // Adjust multiplier for stack speed
-
-          card.style.transform = `translateY(${baseTransform}px)`;
-          card.style.position = "relative";
-        });
-      });
-    });
-  </script>
-
   <!-- ================= SOS CHATBOT WIDGET ================= -->
-  <script src="assets/js/chatbot-widget.js"></script>
+  <script defer src="assets/js/chatbot-widget.js"></script>
 
 </body>
 

@@ -641,6 +641,27 @@
   }
 }
 
+/* ====== MOBILE PERFORMANCE MODE ====== */
+@media only screen and (max-width: 768px) {
+  .network-bg-overlay {
+    display: none !important;
+  }
+
+  .banner-video,
+  .cta-bg-video {
+    filter: none !important;
+    transform: none !important;
+  }
+
+  .single-feature-area-three,
+  .single-case-style-one,
+  .product-wrapper,
+  .header-one .header-wrapper-main,
+  .rts-btn {
+    transition: none !important;
+  }
+}
+
 /* ====== PRODUCT SHOWCASE ====== */
 @media only screen and (max-width: 768px) {
   .product-wrapper {
