@@ -364,6 +364,21 @@ body.mobile-nav-open {
   }
 }
 
+@media only screen and (max-width: 767px) {
+  .header-one .container {
+    max-width: calc(100% - 36px);
+  }
+
+  .header-one .header-wrapper-main .logo-area {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .header-one .header-wrapper-main .logo-area a {
+    margin-left: auto;
+  }
+}
+
 /* Fix for smooth animations */
 * {
   -webkit-tap-highlight-color: transparent;
