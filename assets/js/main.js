@@ -27,6 +27,14 @@
     return window.matchMedia('(max-width: 991px)').matches ||
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   };
+  const runWhenBrowserIdle = (callback, fallbackDelay = 120) => {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(callback, { timeout: 1200 });
+      return;
+    }
+
+    window.setTimeout(callback, fallbackDelay);
+  };
   var rtsJs = {
     m: function (e) {
       rtsJs.d();
@@ -43,17 +51,21 @@
 
       rtsJs.preloader();
       rtsJs.sideMenu();
-      rtsJs.swiperActivation();
       rtsJs.backtoTop();
       rtsJs.vedioActivation();
       rtsJs.odoMeter();
       rtsJs.smoothScroll();
+      rtsJs.optimizeBackgroundVideos();
 
-      if (!lowPowerMode) {
-        rtsJs.fonklsAnimation();
-        rtsJs.splitText();
-        rtsJs.productStickyAnimation();
-      }
+      runWhenBrowserIdle(function () {
+        rtsJs.swiperActivation();
+
+        if (!lowPowerMode) {
+          rtsJs.fonklsAnimation();
+          rtsJs.splitText();
+          rtsJs.productStickyAnimation();
+        }
+      });
     },
     fonklsAnimation: function () {
           let endTl = gsap.timeline({
@@ -150,8 +162,16 @@
       });
     },
     swiperActivation: function () {
+      const createSwiper = function (selector, options) {
+        if (typeof Swiper === 'undefined' || !document.querySelector(selector)) {
+          return null;
+        }
+
+        return new Swiper(selector, options);
+      };
+
       $(document).ready(function () {
-        var swiper = new Swiper(".mySwiper-digital-agency-brand", {
+        var swiper = createSwiper(".mySwiper-digital-agency-brand", {
           slidesPerView: 6,
           spaceBetween: 30,
           loop: true,
@@ -192,7 +212,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = new Swiper(".mySwiper-testimonails", {
+        var swiper = createSwiper(".mySwiper-testimonails", {
           slidesPerView: 3.8,
           spaceBetween: 30,
           loop: true,
@@ -234,7 +254,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = new Swiper(".mySwiper-testimonails-four", {
+        var swiper = createSwiper(".mySwiper-testimonails-four", {
           slidesPerView: 3.8,
           spaceBetween: 30,
           loop: true,
@@ -276,7 +296,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = new Swiper(".mySwiper-testimonials-three", {
+        var swiper = createSwiper(".mySwiper-testimonials-three", {
           slidesPerView: 1,
           spaceBetween: 30,
           loop: true,
@@ -314,7 +334,7 @@
         });
       });
       $(document).ready(function () {
-        var caseSwiper = new Swiper(".mySwiper-case-one", {
+        var caseSwiper = createSwiper(".mySwiper-case-one", {
           slidesPerView: 4,
           spaceBetween: 30,
           loop: true,
@@ -353,7 +373,7 @@
 
         var caseSliderEl = document.querySelector(".mySwiper-case-one");
 
-        if (caseSliderEl) {
+        if (caseSliderEl && caseSwiper) {
           var caseWheelLocked = false;
           var caseWheelUnlockTimeout;
 
@@ -386,7 +406,7 @@
         }
       });
       $(document).ready(function () {
-        var swiper = new Swiper(".mySwiper-service-main", {
+        var swiper = createSwiper(".mySwiper-service-main", {
           slidesPerView: 3.8,
           spaceBetween: 30,
           loop: true,
@@ -424,7 +444,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = new Swiper(".mySwiper-blog", {
+        var swiper = createSwiper(".mySwiper-blog", {
           slidesPerView: 3,
           spaceBetween: 30,
           loop: true,
@@ -462,7 +482,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = new Swiper(".mySwiper-brand-three", {
+        var swiper = createSwiper(".mySwiper-brand-three", {
           slidesPerView: 6,
           spaceBetween: 30,
           loop: true,
@@ -496,7 +516,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = new Swiper(".mySwiper-testimoanils-agency", {
+        var swiper = createSwiper(".mySwiper-testimoanils-agency", {
           slidesPerView: 1,
           spaceBetween: 0,
           loop: true,
@@ -512,7 +532,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = new Swiper(".mySwiper-brand-2", {
+        var swiper = createSwiper(".mySwiper-brand-2", {
           slidesPerView: 5,
           spaceBetween: 60,
           loop: true,
@@ -543,7 +563,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = new Swiper(".mySwiper-team-one", {
+        var swiper = createSwiper(".mySwiper-team-one", {
           slidesPerView: 4,
           spaceBetween: 30,
           loop: true,
@@ -585,7 +605,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = new Swiper(".mySwiper-banner-one", {
+        var swiper = createSwiper(".mySwiper-banner-one", {
           slidesPerView: 1,
           spaceBetween: 0,
           effect: "fade",
@@ -615,7 +635,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = new Swiper(".mySwiper-brand-7", {
+        var swiper = createSwiper(".mySwiper-brand-7", {
           slidesPerView: 3,
           spaceBetween: 30,
           loop: true,
@@ -652,7 +672,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = new Swiper(".mySwiper-brand-list", {
+        var swiper = createSwiper(".mySwiper-brand-list", {
           slidesPerView: 6,
           spaceBetween: 30,
           loop: true,
@@ -696,81 +716,144 @@
 
     },
 
-    splitText: function (e) {
-      if ($('.rts-text-anime-style-1').length) {
-        let animatedTextElements = document.querySelectorAll('.rts-text-anime-style-1');
+    optimizeBackgroundVideos: function () {
+      const ctaVideos = document.querySelectorAll('.cta-bg-video');
+      if (!ctaVideos.length) return;
 
-        animatedTextElements.forEach((element) => {
-          //Reset if needed
-          if (element.animation) {
-            element.animation.progress(1).kill();
-            element.split.revert();
-          }
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            const video = entry.target;
 
-          element.split = new SplitText(element, {
-            type: "lines,words,chars",
-            linesClass: "split-line",
+            if (entry.isIntersecting) {
+              const playPromise = video.play();
+              if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch(function () { });
+              }
+              return;
+            }
+
+            video.pause();
           });
-          gsap.set(element, { perspective: 400 });
-
-          gsap.set(element.split.chars, {
-            opacity: 0,
-            x: "50",
-          });
-
-          element.animation = gsap.to(element.split.chars, {
-            scrollTrigger: { trigger: element, start: "top 95%" },
-            x: "0",
-            y: "0",
-            rotateX: "0",
-            opacity: 1,
-            duration: 1,
-            ease: Back.easeOut,
-            stagger: 0.02,
-          });
+        }, {
+          threshold: 0.1
         });
+
+        ctaVideos.forEach(function (video) {
+          observer.observe(video);
+        });
+
+        return;
       }
+
+      ctaVideos.forEach(function (video) {
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(function () { });
+        }
+      });
+    },
+
+    splitText: function (e) {
+      if (!$('.rts-text-anime-style-1').length || typeof SplitText === 'undefined' || typeof gsap === 'undefined') {
+        return;
+      }
+
+      const animatedTextElements = document.querySelectorAll('.rts-text-anime-style-1');
+
+      const createSplitAnimation = function (element) {
+        if (!element || element.dataset.splitInitialized === 'true') {
+          return;
+        }
+
+        element.dataset.splitInitialized = 'true';
+
+        if (element.animation) {
+          element.animation.progress(1).kill();
+          element.split.revert();
+        }
+
+        element.split = new SplitText(element, {
+          type: "lines,words,chars",
+          linesClass: "split-line",
+        });
+
+        gsap.set(element, { perspective: 400 });
+
+        gsap.set(element.split.chars, {
+          opacity: 0,
+          x: "50",
+        });
+
+        element.animation = gsap.to(element.split.chars, {
+          scrollTrigger: { trigger: element, start: "top 95%" },
+          x: "0",
+          y: "0",
+          rotateX: "0",
+          opacity: 1,
+          duration: 1,
+          ease: Back.easeOut,
+          stagger: 0.02,
+        });
+      };
+
+      if ('IntersectionObserver' in window) {
+        const splitTextObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              createSplitAnimation(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          rootMargin: '160px 0px',
+          threshold: 0.01,
+        });
+
+        animatedTextElements.forEach(function (element) {
+          splitTextObserver.observe(element);
+        });
+
+        return;
+      }
+
+      animatedTextElements.forEach(function (element) {
+        createSplitAnimation(element);
+      });
     },
 
     productStickyAnimation: function () {
-      if ($('.product-sticky-wrapper-main').length) {
-        const container = document.querySelector('.product-sticky-wrapper-main');
-        const productWrappers = document.querySelectorAll('.product-wrapper');
-        
-        // Create a timeline for all products
-        const timeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: container,
-            start: "top center",
-            end: "bottom center",
-            scrub: 1.2,
-            markers: false,
-          },
-        });
-
-        // Animate each product card in sequence
-        productWrappers.forEach((wrapper, index) => {
-          // Initial state
-          gsap.set(wrapper, {
-            opacity: 0,
-            y: 80,
-            scale: 0.9,
-          });
-
-          // Add animation to timeline
-          timeline.to(
-            wrapper,
-            {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              duration: 1,
-              ease: "power3.out",
-            },
-            index * 0.3 // Stagger between cards
-          );
-        });
+      if (!$('.product-sticky-wrapper-main').length || typeof gsap === 'undefined') {
+        return;
       }
+
+      const productWrappers = document.querySelectorAll('.product-sticky-wrapper-main .product-wrapper');
+      if (!productWrappers.length) {
+        return;
+      }
+
+      productWrappers.forEach((wrapper, index) => {
+        const fromX = index % 2 === 0 ? 120 : -120;
+
+        gsap.fromTo(
+          wrapper,
+          {
+            opacity: 0,
+            x: fromX,
+          },
+          {
+            opacity: 1,
+            x: 0,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: wrapper,
+              start: "top 88%",
+              end: "top 52%",
+              scrub: 0.9,
+            },
+          }
+        );
+      });
     },
 
     backtoTop: function () {
