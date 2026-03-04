@@ -23,6 +23,10 @@
 (function ($) {
   'use strict';
   let device_width = window.innerWidth;
+  const isLowPowerDevice = () => {
+    return window.matchMedia('(max-width: 991px)').matches ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  };
   var rtsJs = {
     m: function (e) {
       rtsJs.d();
@@ -35,17 +39,21 @@
         this._html = $('html')
     },
     methods: function (e) {
-      rtsJs.fonklsAnimation();
+      const lowPowerMode = isLowPowerDevice();
+
       rtsJs.preloader();
       rtsJs.sideMenu();
       rtsJs.swiperActivation();
-      rtsJs.splitText();
       rtsJs.backtoTop();
-      rtsJs.stickyHeader();
       rtsJs.vedioActivation();
       rtsJs.odoMeter();
       rtsJs.smoothScroll();
-      rtsJs.productStickyAnimation();
+
+      if (!lowPowerMode) {
+        rtsJs.fonklsAnimation();
+        rtsJs.splitText();
+        rtsJs.productStickyAnimation();
+      }
     },
     fonklsAnimation: function () {
           let endTl = gsap.timeline({
@@ -735,7 +743,28 @@
       $(document).ready(function () {
         "use strict";
 
-        var progressPath = document.querySelector('.progress-wrap path');
+        const progressWrap = document.querySelector('.progress-wrap');
+        if (!progressWrap) return;
+
+        if (isLowPowerDevice()) {
+          const offset = 50;
+          const toggleProgress = function () {
+            progressWrap.classList.toggle('active-progress', window.scrollY > offset);
+          };
+
+          window.addEventListener('scroll', toggleProgress, { passive: true });
+          toggleProgress();
+
+          progressWrap.addEventListener('click', function (event) {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+
+          return;
+        }
+
+        var progressPath = progressWrap.querySelector('path');
+        if (!progressPath) return;
         var pathLength = progressPath.getTotalLength();
         progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
         progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
@@ -795,14 +824,6 @@
 
     odoMeter: function () {
       $(document).ready(function () {
-        function isInViewport(element) {
-          const rect = element.getBoundingClientRect();
-          return (
-            rect.top >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-          );
-        }
-
         function triggerOdometer(element) {
           const $element = $(element);
           if (!$element.hasClass('odometer-triggered')) {
@@ -810,6 +831,40 @@
             $element.html(countNumber);
             $element.addClass('odometer-triggered'); // Add a class to prevent re-triggering
           }
+        }
+
+        const odometerElements = document.querySelectorAll('.odometer');
+        if (!odometerElements.length) return;
+
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver(
+            function (entries, obs) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  triggerOdometer(entry.target);
+                  obs.unobserve(entry.target);
+                }
+              });
+            },
+            {
+              threshold: 0.25,
+              rootMargin: '0px 0px -10% 0px'
+            }
+          );
+
+          odometerElements.forEach(function (element) {
+            observer.observe(element);
+          });
+
+          return;
+        }
+
+        function isInViewport(element) {
+          const rect = element.getBoundingClientRect();
+          return (
+            rect.top >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+          );
         }
 
         function handleOdometer() {
