@@ -225,7 +225,7 @@
 
 .rts-case-area .single-case-style-one {
   border-radius: 18px;
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid #e8edf7;
   background: #ffffff;
   box-shadow: 0 12px 30px rgba(16, 35, 66, 0.09);

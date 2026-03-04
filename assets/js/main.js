@@ -314,7 +314,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = new Swiper(".mySwiper-case-one", {
+        var caseSwiper = new Swiper(".mySwiper-case-one", {
           slidesPerView: 4,
           spaceBetween: 30,
           loop: true,
@@ -350,6 +350,40 @@
             }
           },
         });
+
+        var caseSliderEl = document.querySelector(".mySwiper-case-one");
+
+        if (caseSliderEl) {
+          var caseWheelLocked = false;
+          var caseWheelUnlockTimeout;
+
+          caseSliderEl.addEventListener("wheel", function (event) {
+            var wheelDelta = Math.abs(event.deltaY) > Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
+
+            if (wheelDelta === 0) {
+              return;
+            }
+
+            event.preventDefault();
+
+            if (caseWheelLocked || caseSwiper.animating) {
+              return;
+            }
+
+            caseWheelLocked = true;
+
+            if (wheelDelta > 0) {
+              caseSwiper.slideNext();
+            } else {
+              caseSwiper.slidePrev();
+            }
+
+            clearTimeout(caseWheelUnlockTimeout);
+            caseWheelUnlockTimeout = setTimeout(function () {
+              caseWheelLocked = false;
+            }, 280);
+          }, { passive: false });
+        }
       });
       $(document).ready(function () {
         var swiper = new Swiper(".mySwiper-service-main", {
