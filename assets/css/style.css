@@ -14607,7 +14607,7 @@ body.demo-app-development .rts-mega-menu.sm-mega-70 {
 .banner-video-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.79);
   z-index: 2;
   pointer-events: none;
 }
