@@ -24519,6 +24519,11 @@ header.header-three .sub-dropdown .submenu.third-lvl.base {
   text-align: center;
 }
 
+.rts-brand-area .title-center-wrapper .partner-desc {
+  max-width: 720px;
+  margin: 18px auto 0;
+}
+
 .brand-slider-wrapper {
   position: relative;
   overflow: hidden;
