@@ -131,13 +131,26 @@
           });
     },
     preloader: function () {
-      window.addEventListener('load', function () {
+      // Hide loader quickly using DOMContentLoaded (when HTML is parsed)
+      // instead of waiting for all resources (images, videos, fonts) to load
+      const hideLoader = function () {
         document.querySelector('body').classList.add("loaded");
         const loaderWrapper = document.querySelector('.loader-wrapper');
         if (loaderWrapper) {
           loaderWrapper.classList.add("loaded");
         }
-      });
+      };
+
+      // Use DOMContentLoaded - fires when HTML is parsed, not when all resources load
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', hideLoader);
+      } else {
+        // DOM already loaded
+        hideLoader();
+      }
+
+      // Fallback: Force hide loader after 3 seconds max
+      setTimeout(hideLoader, 3000);
     },
     sideMenu: function () {
       // metismenu active

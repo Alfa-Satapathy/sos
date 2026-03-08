@@ -14565,9 +14565,9 @@ body.demo-app-development .rts-mega-menu.sm-mega-70 {
   }
 }
 
-/* Loaded Styles */
+/* Loaded Styles - Optimized for faster hide */
 .loaded .loader-wrapper .loader-section.section-left {
-  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 0;
 }
 
