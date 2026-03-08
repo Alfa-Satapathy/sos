@@ -17827,19 +17827,26 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 32px;
   padding-bottom: 30px;
   border-bottom: 1px solid #f6f6f6;
   flex-wrap: wrap;
+}
+.fun-facts-main-wrapper .top-fun-facts .metrics-section-copy {
+  flex: 1 1 640px;
+  max-width: 720px;
+}
+.fun-facts-main-wrapper .top-fun-facts .metrics-section-copy .title {
+  margin-top: 0;
+}
+.fun-facts-main-wrapper .top-fun-facts .metrics-section-copy .disc {
+  max-width: 640px;
+  margin-top: 18px;
 }
 @media only screen and (max-width: 767px) {
   .fun-facts-main-wrapper .top-fun-facts {
     gap: 25px;
   }
-}
-.fun-facts-main-wrapper .top-fun-facts .title {
-  margin-bottom: 0;
-  font-size: 36px;
-  font-weight: 500;
 }
 .fun-facts-main-wrapper .funfacts-bottom-area {
   padding-top: 40px;
@@ -24408,9 +24415,6 @@ header.header-three .sub-dropdown .submenu.third-lvl.base {
   }
   .fun-facts-main-wrapper .funfacts-bottom-area .mid-area .title {
     font-size: 24px;
-  }
-  .fun-facts-main-wrapper .top-fun-facts .title {
-    font-size: 28px;
   }
   .digital-agency-content-inner-wrapper .title {
     font-size: 28px;
