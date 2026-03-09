@@ -373,6 +373,40 @@
             }
           },
         });
+
+        var productSliderEl = document.querySelector(".mySwiper-product-cards");
+
+        if (productSliderEl && productSwiper) {
+          var productWheelLocked = false;
+          var productWheelUnlockTimeout;
+
+          productSliderEl.addEventListener("wheel", function (event) {
+            var wheelDelta = Math.abs(event.deltaY) > Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
+
+            if (wheelDelta === 0) {
+              return;
+            }
+
+            event.preventDefault();
+
+            if (productWheelLocked || productSwiper.animating) {
+              return;
+            }
+
+            productWheelLocked = true;
+
+            if (wheelDelta < 0) {
+              productSwiper.slideNext();
+            } else {
+              productSwiper.slidePrev();
+            }
+
+            clearTimeout(productWheelUnlockTimeout);
+            productWheelUnlockTimeout = setTimeout(function () {
+              productWheelLocked = false;
+            }, 280);
+          }, { passive: false });
+        }
       });
       $(document).ready(function () {
         var caseSwiper = createSwiper(".mySwiper-case-one", {
