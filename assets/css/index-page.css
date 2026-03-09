@@ -623,10 +623,6 @@
     padding: 72px 0;
   }
 
-  .rts-product-area .product-sticky-wrapper-main {
-    grid-template-columns: 1fr;
-  }
-
   .rts-product-area .product-sticky-wrapper-main .product-wrapper .inner {
     padding: 24px;
   }
