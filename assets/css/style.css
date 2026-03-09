@@ -18591,6 +18591,17 @@ button {
   box-shadow: none;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
+@media only screen and (max-width: 767px) {
+  .call-to-action-wrapper-three.cta-video-theme .rts-btn {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 16px 20px;
+    white-space: normal;
+    line-height: 1.35;
+    text-align: center;
+  }
+}
 .call-to-action-wrapper-three.cta-video-theme .rts-btn::after {
   content: none;
 }
