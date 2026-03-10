@@ -44,7 +44,9 @@
             <li><a href="${getNavPath('pages/connect.html')}">Contact</a></li>
           </ul>
           <div class="mobile-nav-cta">
-            <a href="${getNavPath('pages/connect.html')}">Get Started</a>
+            <a href="${getNavPath('pages/connect.html')}">Contact Us</a>
+            <a href="javascript:void(0);" aria-disabled="true" title="Workspace login link pending">Workspace Login</a>
+            <a href="javascript:void(0);" aria-disabled="true" title="Access mail link pending">Access Mail</a>
           </div>
         </div>
       </div>
@@ -129,10 +131,10 @@
     });
 
     // Close CTA button link
-    const ctaLink = document.querySelector(".mobile-nav-cta a");
-    if (ctaLink) {
+    const ctaLinks = document.querySelectorAll(".mobile-nav-cta a");
+    ctaLinks.forEach((ctaLink) => {
       ctaLink.addEventListener("click", closeMenu);
-    }
+    });
 
     // ========== PREVENT SCROLL PROPAGATION ==========
     const mobileNavPanel = document.getElementById("mobileNavPanel");
@@ -186,20 +188,28 @@
 
   // ========== HELPER FUNCTIONS ==========
   function getImagePath(imagePath) {
-    // Determine if we're on a page or index
-    const isPage = window.location.pathname.includes("/pages/");
-    return isPage ? `../assets/images/${imagePath}` : `assets/images/${imagePath}`;
+    const pathname = window.location.pathname.replace(/\\/g, "/");
+    const isNestedPage = pathname.includes("/pages/") || pathname.includes("/blog/");
+    return isNestedPage ? `../assets/images/${imagePath}` : `assets/images/${imagePath}`;
   }
 
   function getNavPath(path) {
-    const isPage = window.location.pathname.includes("/pages/");
+    const pathname = window.location.pathname.replace(/\\/g, "/");
+    const isPage = pathname.includes("/pages/");
+    const isBlog = pathname.includes("/blog/");
     if (path.startsWith("pages/")) {
-      return isPage ? path.replace("pages/", "") : path;
+      if (isPage) {
+        return path.replace("pages/", "");
+      }
+      if (isBlog) {
+        return `../${path}`;
+      }
+      return path;
     }
     if (path === "index.html") {
-      return isPage ? "../index.html" : "index.html";
+      return isPage || isBlog ? "../index.html" : "index.html";
     }
-    return isPage ? `../${path}` : path;
+    return isPage || isBlog ? `../${path}` : path;
   }
 
   // ========== INITIALIZE ==========
