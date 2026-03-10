@@ -14312,8 +14312,9 @@ a.btn-line:hover::after {
 .title-center-wrapper span.pre {
   display: inline-block;
   padding: 8px 16px;
-  border: 1px solid #dbe7ff;
-  color: var(--color-primary);
+  border: 1px solid #ff6f35;
+  background: #ff6f35;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 500;
   border-radius: 8px;
@@ -14450,8 +14451,9 @@ a .title:hover {
 .radious-4 .title-center-wrapper span.pre {
   display: inline-block;
   padding: 2px 13px;
-  border: 1px solid #dbe7ff;
-  color: var(--color-primary);
+  border: 1px solid #ff6f35;
+  background: #ff6f35;
+  color: #ffffff;
   font-size: 14px;
   font-weight: 400;
   border-radius: 5px;
