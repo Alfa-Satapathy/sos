@@ -48,6 +48,75 @@
   background: rgba(10, 25, 47, 0.79);
 }
 
+/* ================= NAV CTA GROUP ================= */
+.home-navbar-overlay .nav-area ul {
+  gap: 34px;
+}
+
+.home-navbar-overlay .button-wrapper-flex.nav-cta-group {
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.home-navbar-overlay .button-wrapper-flex.nav-cta-group .rts-btn.btn-primary {
+  min-height: 44px;
+  padding: 0 18px;
+  font-size: 14px;
+  border-radius: 12px;
+}
+
+.mobile-nav-buttons {
+  margin-top: 24px;
+  display: grid;
+  gap: 12px;
+}
+
+.mobile-nav-buttons .rts-btn.btn-primary {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+  color: #10213d;
+  border: 1px solid rgba(16, 33, 61, 0.1);
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgba(16, 33, 61, 0.08);
+}
+
+.mobile-nav-buttons .rts-btn.btn-primary::after {
+  content: none;
+}
+
+.mobile-nav-buttons .rts-btn.btn-primary:hover {
+  color: #10213d;
+}
+
+.mobile-nav-buttons .rts-btn.btn-primary[aria-disabled="true"] {
+  background: linear-gradient(180deg, #f8fafe 0%, #eef3f9 100%);
+  color: #2f466b;
+  border-color: rgba(16, 33, 61, 0.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 10px 24px rgba(16, 33, 61, 0.08);
+}
+
+.mobile-nav-buttons .rts-btn.btn-primary:not([aria-disabled="true"]) {
+  background: linear-gradient(135deg, #ff8147 0%, #ff5b22 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 16px 30px rgba(255, 91, 34, 0.22);
+}
+
+.mobile-nav-buttons .rts-btn.btn-primary:not([aria-disabled="true"]):hover {
+  color: #ffffff;
+}
+
 /* ================= HERO CONTENT ================= */
 .banner-content-layer {
   position: absolute;
@@ -165,7 +234,6 @@
 
 .title-left-wrapper .pre,
 .title-center-wrapper .pre {
-  color: #ff7a3e;
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -687,6 +755,22 @@
 
   .rts-product-area .product-sticky-wrapper-main .product-wrapper .inner:hover {
     transform: none;
+  }
+}
+
+@media (max-width: 1399px) {
+  .home-navbar-overlay .nav-area ul {
+    gap: 24px;
+  }
+
+  .home-navbar-overlay .button-wrapper-flex.nav-cta-group {
+    gap: 8px;
+  }
+
+  .home-navbar-overlay .button-wrapper-flex.nav-cta-group .rts-btn.btn-primary {
+    min-height: 42px;
+    padding: 0 16px;
+    font-size: 14px;
   }
 }
 
