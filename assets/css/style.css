@@ -17026,6 +17026,8 @@ button {
   border: 1px solid #dbe7ff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
   position: relative;
+  border-radius: 20px;
+  overflow: hidden;
 }
 .single-testimonails-style-one .quote {
   position: absolute;
@@ -17574,11 +17576,11 @@ button {
 .why-choose-left-content .reason-wrapper .single-reason .icon {
   height: 64px;
   width: 64px;
-  background: #fff;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #e2efff;
+  border: none;
 }
 .why-choose-left-content .reason-wrapper .single-reason .title {
   font-weight: 500;
