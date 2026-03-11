@@ -6,6 +6,47 @@
 (function () {
   "use strict";
 
+  function normalizePath(pathname) {
+    const clean = (pathname || "").replace(/\\/g, "/").split("?")[0].split("#")[0];
+    if (!clean || clean === "/") return "/index.html";
+    if (clean.endsWith("/")) return `${clean}index.html`;
+    return clean;
+  }
+
+  function markCurrentLinks(root) {
+    if (!root) return;
+
+    const currentPath = normalizePath(window.location.pathname);
+    const links = root.querySelectorAll('a[href]:not([href="#"]):not([href^="javascript"])');
+
+    links.forEach((link) => {
+      let linkPath = "";
+      try {
+        linkPath = normalizePath(new URL(link.getAttribute("href"), window.location.href).pathname);
+      } catch {
+        return;
+      }
+
+      const isMatch =
+        linkPath === currentPath ||
+        (linkPath.endsWith("/index.html") && currentPath.endsWith("/index.html") && linkPath === currentPath);
+
+      if (isMatch) {
+        link.classList.add("is-current");
+        link.setAttribute("aria-current", "page");
+
+        const parentDropdown = link.closest("li.has-dropdown, li.has-droupdown, li.has-submenu");
+        if (parentDropdown) {
+          const parentLink = parentDropdown.querySelector(":scope > a");
+          if (parentLink) {
+            parentLink.classList.add("is-current");
+            parentLink.setAttribute("aria-current", "page");
+          }
+        }
+      }
+    });
+  }
+
   // ========== MOBILE NAVIGATION INITIALIZATION ==========
   function initMobileNavigation() {
     // Create mobile nav HTML
@@ -66,7 +107,8 @@
         hamburger.className = "mobile-menu-btn";
         hamburger.id = "mobileMenuBtn";
         hamburger.setAttribute("aria-label", "Open menu");
-        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+        hamburger.innerHTML =
+          '<span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span>';
         headerWrapper.insertBefore(hamburger, headerWrapper.firstChild);
       }
     }
@@ -85,12 +127,14 @@
       mobileNavWrapper.classList.add("active");
       document.body.classList.add("mobile-nav-open");
       mobileMenuBtn.setAttribute("aria-expanded", "true");
+      mobileMenuBtn.classList.add("is-open");
     }
 
     function closeMenu() {
       mobileNavWrapper.classList.remove("active");
       document.body.classList.remove("mobile-nav-open");
       mobileMenuBtn.setAttribute("aria-expanded", "false");
+      mobileMenuBtn.classList.remove("is-open");
     }
 
     // ========== EVENT LISTENERS ==========
@@ -145,13 +189,17 @@
     }
 
     // ========== PREVENT BODY SCROLL WHEN MENU OPEN ==========
-    document.addEventListener("touchmove", (e) => {
+    document.addEventListener(
+      "touchmove",
+      (e) => {
       if (mobileNavWrapper.classList.contains("active")) {
         if (!mobileNavPanel.contains(e.target)) {
           e.preventDefault();
         }
       }
-    });
+      },
+      { passive: false }
+    );
 
     // ========== CLOSE MENU ON ESCAPE KEY ==========
     document.addEventListener("keydown", (e) => {
@@ -219,6 +267,8 @@
       return;
     }
     initMobileNavigation();
+    markCurrentLinks(document.querySelector(".header-one .nav-area"));
+    markCurrentLinks(document.getElementById("mobileNavMenu"));
   }
 
   init();

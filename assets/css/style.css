@@ -25046,10 +25046,20 @@ header .button-wrapper-flex > .rts-btn.btn-primary:focus-visible {
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.2;
+  position: relative;
+  z-index: 1;
 }
 
 .header-one .nav-area ul li.main-nav:hover > a {
   color: #ff6b2c;
+}
+
+.header-one .nav-area ul li.main-nav > a.is-current {
+  color: var(--color-primary);
+}
+
+.header-one.header--sticky.sticky .nav-area ul li.main-nav > a.is-current {
+  color: var(--color-primary);
 }
 
 .header-one .button-wrapper-flex.nav-cta-group {
