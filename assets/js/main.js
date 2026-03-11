@@ -149,8 +149,8 @@
         hideLoader();
       }
 
-      // Fallback: Force hide loader after 3 seconds max
-      setTimeout(hideLoader, 3000);
+      // Fallback: Force hide loader after a short delay (mobile-friendly)
+      setTimeout(hideLoader, 1500);
     },
     sideMenu: function () {
       // metismenu active
