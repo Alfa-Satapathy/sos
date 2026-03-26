@@ -1,9 +1,5 @@
-/*!
- * metismenu https://github.com/onokumus/metismenu#readme
- * A jQuery menu plugin
- * @version 3.0.6
- * @author Osman Nuri Okumus <onokumus@gmail.com> (https://github.com/onokumus)
- * @license: MIT
+/*
+ * Licensed under the MIT license.
  */
 !(function (e, n) { "object" == typeof exports && "undefined" != typeof module ? (module.exports = n(require("jquery"))) : "function" == typeof define && define.amd ? define(["jquery"], n) : ((e = e || self).metisMenu = n(e.jQuery)) })(this, function (o) {
     "use strict"; function a() {
