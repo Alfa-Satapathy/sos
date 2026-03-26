@@ -884,31 +884,21 @@
 
       const animatedTextElements = document.querySelectorAll('.rts-text-anime-style-1');
 
-      const createSplitAnimation = function (element) {
-        if (!element || element.dataset.splitInitialized === 'true') {
+      const createCustomAnimation = function (element) {
+        if (!element || element.dataset.animationInitialized === 'true') {
           return;
         }
 
-        element.dataset.splitInitialized = 'true';
-
-        if (element.animation) {
-          element.animation.progress(1).kill();
-          element.split.revert();
-        }
-
-        element.split = new SplitText(element, {
-          type: "lines,words,chars",
-          linesClass: "split-line",
-        });
+        element.dataset.animationInitialized = 'true';
 
         gsap.set(element, { perspective: 400 });
 
-        gsap.set(element.split.chars, {
+        gsap.set(element, {
           opacity: 0,
           x: "50",
         });
 
-        element.animation = gsap.to(element.split.chars, {
+        gsap.to(element, {
           scrollTrigger: { trigger: element, start: "top 95%" },
           x: "0",
           y: "0",
@@ -921,10 +911,10 @@
       };
 
       if ('IntersectionObserver' in window) {
-        const splitTextObserver = new IntersectionObserver(function (entries, observer) {
+        const observer = new IntersectionObserver(function (entries, observer) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-              createSplitAnimation(entry.target);
+              createCustomAnimation(entry.target);
               observer.unobserve(entry.target);
             }
           });
@@ -934,14 +924,14 @@
         });
 
         animatedTextElements.forEach(function (element) {
-          splitTextObserver.observe(element);
+          observer.observe(element);
         });
 
         return;
       }
 
       animatedTextElements.forEach(function (element) {
-        createSplitAnimation(element);
+        createCustomAnimation(element);
       });
     },
 
