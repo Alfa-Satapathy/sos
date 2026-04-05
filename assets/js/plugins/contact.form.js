@@ -1,56 +1,70 @@
-/**
- *
- * Template : Fluxi HTML TEMPLATE
- * Author : reacthemes
- * Author URI : https://reactheme.com/ 
- *
- **/
-
-(function ($) {
+(function () {
     'use strict';
-    // Get the form.
-    var form = $('#contact-form');
 
-    // Get the messages div.
-    var formMessages = $('#form-messages');
+    var form = document.getElementById('contact-form');
+    var formMessages = document.getElementById('form-messages');
 
-    // Set up an event listener for the contact form.
-    $(form).submit(function (e) {
-        // Stop the browser from submitting the form.
-        e.preventDefault();
+    if (!form || !formMessages) {
+        return;
+    }
 
-        // Serialize the form data.
-        var formData = $(form).serialize();
+    var submitButton = form.querySelector('button[type="submit"]');
+    var defaultSuccessMessage = 'Thank you. Your message has been sent successfully.';
+    var defaultErrorMessage = 'Your message could not be sent right now. Please try again.';
 
-        // Submit the form using AJAX.
-        $.ajax({
-            type: 'POST',
-            url: $(form).attr('action'),
-            data: formData
-        })
-            .done(function (response) {
-                // Make sure that the formMessages div has the 'success' class.
-                $(formMessages).removeClass('error');
-                $(formMessages).addClass('success');
+    function setMessage(type, message) {
+        formMessages.classList.remove('success', 'error');
+        formMessages.classList.add(type);
+        formMessages.textContent = message;
+    }
 
-                // Set the message text.
-                $(formMessages).text(response);
+    function setSubmittingState(isSubmitting) {
+        if (!submitButton) {
+            return;
+        }
 
-                // Clear the form.
-                $('#name, #email,  #subject, #message').val('');
-            })
-            .fail(function (data) {
-                // Make sure that the formMessages div has the 'error' class.
-                $(formMessages).removeClass('success');
-                $(formMessages).addClass('error');
+        submitButton.disabled = isSubmitting;
+        submitButton.setAttribute('aria-busy', String(isSubmitting));
+    }
 
-                // Set the message text.
-                if (data.responseText !== '') {
-                    $(formMessages).text(data.responseText);
-                } else {
-                    $(formMessages).text('Oops! An error occured and your message could not be sent.');
+    function buildFormData() {
+        return new FormData(form);
+    }
+
+    async function submitForm(event) {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        setSubmittingState(true);
+        setMessage('success', 'Sending your message...');
+
+        try {
+            var response = await fetch(form.action, {
+                method: form.method || 'POST',
+                body: buildFormData(),
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
                 }
             });
-    });
 
-})(jQuery);
+            var responseText = (await response.text()).trim();
+
+            if (!response.ok) {
+                throw new Error(responseText || defaultErrorMessage);
+            }
+
+            setMessage('success', responseText || defaultSuccessMessage);
+            form.reset();
+        } catch (error) {
+            setMessage('error', error.message || defaultErrorMessage);
+        } finally {
+            setSubmittingState(false);
+        }
+    }
+
+    form.addEventListener('submit', submitForm);
+})();

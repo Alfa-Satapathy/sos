@@ -1,50 +1,7 @@
-/*=================Scss Indexing=============
-1.variables
-2.typography
-3.spacing
-4.reset
-5.forms
-6.mixins
-7.shortcode
-8.animations
-9.text-animation
-10.sal
-11.header
-12.mobile-menu
-13.button
-14.nav
-15.banner
-16.swiper
-17.funfacts
-18.cta
-19.about
-20.common
-21.service
-22.projects
-23.working-process
-24.blog
-25.blog-details
-26.footer
-27.search-input
-28./side-bar
-29.team
-30.testimonials
-31.faq
-32.pricing
-33.date-picker
-34.time-picker
-35.appoinment
-36.awesome-feedback
-37.contact
-38.pre-loader.scss
-39.back-to-top
 
 
 
-==============================================  */
 
-
-/* Default  */
 
 @import'default/variables';
 @import'default/typography';
@@ -56,7 +13,7 @@
 @import'default/spacing';
 
 
-/* Elements  */
+
 @import'elements/banner';
 @import'elements/buttons';
 @import'elements/about';
@@ -87,7 +44,7 @@
 @import'elements/feature';
 
 
-/* Header  */
+
 @import'header/header';
 @import'header/nav';
 @import'header/dropdown';

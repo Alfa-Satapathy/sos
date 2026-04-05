@@ -1,7 +1,4 @@
-/* ====================================================
-   NEW MOBILE NAVIGATION JAVASCRIPT
-   Fresh implementation - completely independent system
-   ==================================================== */
+
 
 (function () {
   "use strict";
@@ -46,10 +43,7 @@
       }
     });
   }
-
-  // ========== MOBILE NAVIGATION INITIALIZATION ==========
   function initMobileNavigation() {
-    // Create mobile nav HTML
     const mobileNavHTML = `
       <div class="mobile-nav-wrapper" id="mobileNavWrapper">
         <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
@@ -92,13 +86,9 @@
         </div>
       </div>
     `;
-
-    // Insert mobile nav into body
     const navContainer = document.createElement("div");
     navContainer.innerHTML = mobileNavHTML;
     document.body.insertBefore(navContainer.firstElementChild, document.body.firstChild);
-
-    // Add hamburger button to header
     const header = document.querySelector(".header-one");
     if (header) {
       const headerWrapper = header.querySelector(".header-wrapper-main");
@@ -112,8 +102,6 @@
         headerWrapper.insertBefore(hamburger, headerWrapper.firstChild);
       }
     }
-
-    // Get references to elements
     const mobileNavWrapper = document.getElementById("mobileNavWrapper");
     const mobileMenuBtn = document.getElementById("mobileMenuBtn");
     const mobileNavClose = document.getElementById("mobileNavClose");
@@ -121,8 +109,6 @@
     const mobileNavMenu = document.getElementById("mobileNavMenu");
 
     if (!mobileNavWrapper || !mobileMenuBtn) return;
-
-    // ========== OPEN/CLOSE FUNCTIONS ==========
     function openMenu() {
       mobileNavWrapper.classList.add("active");
       document.body.classList.add("mobile-nav-open");
@@ -136,24 +122,15 @@
       mobileMenuBtn.setAttribute("aria-expanded", "false");
       mobileMenuBtn.classList.remove("is-open");
     }
-
-    // ========== EVENT LISTENERS ==========
-    // Open menu on hamburger click
     mobileMenuBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       openMenu();
     });
-
-    // Close menu on close button click
     mobileNavClose.addEventListener("click", (e) => {
       e.stopPropagation();
       closeMenu();
     });
-
-    // Close menu on backdrop click
     mobileNavBackdrop.addEventListener("click", closeMenu);
-
-    // ========== SUBMENU TOGGLE ==========
     const submenuItems = mobileNavMenu.querySelectorAll(".has-submenu > a");
     submenuItems.forEach((item) => {
       item.addEventListener("click", (e) => {
@@ -162,33 +139,24 @@
         parentLi.classList.toggle("active");
       });
     });
-
-    // ========== CLOSE ON LINK CLICK ==========
     const allLinks = mobileNavMenu.querySelectorAll("a");
     allLinks.forEach((link) => {
-      // Don't close for submenu toggles
       if (!link.classList.contains("mobile-nav-main-link")) {
         link.addEventListener("click", () => {
           closeMenu();
         });
       }
     });
-
-    // Close CTA button link
     const ctaLinks = document.querySelectorAll(".mobile-nav-cta a");
     ctaLinks.forEach((ctaLink) => {
       ctaLink.addEventListener("click", closeMenu);
     });
-
-    // ========== PREVENT SCROLL PROPAGATION ==========
     const mobileNavPanel = document.getElementById("mobileNavPanel");
     if (mobileNavPanel) {
       mobileNavPanel.addEventListener("touchmove", (e) => {
         e.stopPropagation();
       });
     }
-
-    // ========== PREVENT BODY SCROLL WHEN MENU OPEN ==========
     document.addEventListener(
       "touchmove",
       (e) => {
@@ -200,27 +168,20 @@
       },
       { passive: false }
     );
-
-    // ========== CLOSE MENU ON ESCAPE KEY ==========
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && mobileNavWrapper.classList.contains("active")) {
         closeMenu();
       }
     });
-
-    // ========== WINDOW RESIZE HANDLING ==========
     let resizeTimer;
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        // Close menu if window is resized to desktop size
         if (window.innerWidth > 1199) {
           closeMenu();
         }
       }, 250);
     });
-
-    // ========== EXPOSE API ==========
     window.MobileNav = {
       open: openMenu,
       close: closeMenu,
@@ -233,8 +194,6 @@
       },
     };
   }
-
-  // ========== HELPER FUNCTIONS ==========
   function getImagePath(imagePath) {
     const pathname = window.location.pathname.replace(/\\/g, "/");
     const isNestedPage = pathname.includes("/pages/") || pathname.includes("/blog/");
@@ -259,8 +218,6 @@
     }
     return isPage || isBlog ? `../${path}` : path;
   }
-
-  // ========== INITIALIZE ==========
   function init() {
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", init);

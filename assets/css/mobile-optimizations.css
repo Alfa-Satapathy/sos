@@ -1,9 +1,6 @@
-/* ====================================================
-   MOBILE OPTIMIZATION STYLESHEET
-   Applied to all pages for enhanced mobile experience
-   ==================================================== */
 
-/* ROOT - Mobile Font Scaling */
+
+
 @media only screen and (max-width: 768px) {
   :root {
     --font-size-b1: 14px;
@@ -20,7 +17,7 @@
   }
 }
 
-/* ====== CONTAINER & LAYOUT ====== */
+
 @media only screen and (max-width: 767px) {
   .container,
   .container-faq {
@@ -50,7 +47,7 @@
   }
 }
 
-/* ====== HEADER & NAVIGATION ====== */
+
 @media only screen and (max-width: 1199px) {
   .header-wrapper-main {
     padding: 15px 0 !important;
@@ -91,7 +88,7 @@
     display: block !important;
   }
 
-  /* Mobile menu toggle button */
+  
   .mobile-menu-toggle {
     display: block !important;
     background: none;
@@ -109,7 +106,7 @@
   }
 }
 
-/* ====== TYPOGRAPHY - MOBILE FRIENDLY ====== */
+
 @media only screen and (max-width: 768px) {
   h1,
   .title {
@@ -161,7 +158,7 @@
   }
 }
 
-/* ====== BUTTONS & LINKS ====== */
+
 @media only screen and (max-width: 768px) {
   .rts-btn,
   button,
@@ -193,7 +190,7 @@
   }
 }
 
-/* ====== SPACING - MOBILE FRIENDLY ====== */
+
 @media only screen and (max-width: 768px) {
   .rts-section-gap {
     padding: 40px 0 !important;
@@ -248,7 +245,7 @@
   }
 }
 
-/* ====== IMAGES - RESPONSIVE ====== */
+
 @media only screen and (max-width: 768px) {
   img {
     height: auto;
@@ -269,7 +266,7 @@
   }
 }
 
-/* ====== FORM ELEMENTS ====== */
+
 @media only screen and (max-width: 768px) {
   input,
   textarea,
@@ -307,7 +304,7 @@
   }
 }
 
-/* ====== FEATURE AREAS ====== */
+
 @media only screen and (max-width: 768px) {
   .feature-area-left-three {
     margin-bottom: 30px;
@@ -334,7 +331,7 @@
   }
 }
 
-/* ====== CARDS & BOXES ====== */
+
 @media only screen and (max-width: 768px) {
   .single-feature-area-three,
   .card,
@@ -352,7 +349,7 @@
   }
 }
 
-/* ====== ACCORDIONS ====== */
+
 @media only screen and (max-width: 768px) {
   .accordion {
     margin-bottom: 0;
@@ -386,7 +383,7 @@
   }
 }
 
-/* ====== SIDE-BY-SIDE LAYOUTS ====== */
+
 @media only screen and (max-width: 768px) {
   .about-three-wrapper .row {
     flex-direction: column;
@@ -410,7 +407,7 @@
   }
 }
 
-/* ====== TABLE RESPONSIVENESS ====== */
+
 @media only screen and (max-width: 768px) {
   table {
     font-size: 12px !important;
@@ -427,7 +424,7 @@
   }
 }
 
-/* ====== FOOTER ====== */
+
 @media only screen and (max-width: 768px) {
   .rts-footer-one {
     padding: 30px 0 !important;
@@ -456,7 +453,7 @@
   }
 }
 
-/* ====== CALL TO ACTION ====== */
+
 @media only screen and (max-width: 768px) {
   .call-to-action-wrapper-three,
   .cta-wrapper {
@@ -479,7 +476,7 @@
   }
 }
 
-/* ====== BANNER SECTIONS ====== */
+
 @media only screen and (max-width: 768px) {
   .banner-style-one-wrapper-inner h2 {
     font-size: 28px !important;
@@ -502,7 +499,7 @@
   }
 }
 
-/* ====== MODALS & OVERLAYS ====== */
+
 @media only screen and (max-width: 768px) {
   .modal-dialog {
     margin: 20px;
@@ -522,7 +519,7 @@
   }
 }
 
-/* ====== TOUCH TARGETS (WCAG 2.5.5) ====== */
+
 @media only screen and (max-width: 768px) {
   button,
   a,
@@ -541,7 +538,7 @@
   }
 }
 
-/* ====== DROPDOWN MENUS ====== */
+
 @media only screen and (max-width: 1199px) {
   .mega-menu,
   .dropdown-menu,
@@ -554,7 +551,7 @@
   }
 }
 
-/* ====== SIDEBAR ====== */
+
 @media only screen and (max-width: 768px) {
   .side-bar {
     width: 100%;
@@ -589,7 +586,7 @@
   }
 }
 
-/* ====== SLIDERS & CAROUSELS ====== */
+
 @media only screen and (max-width: 768px) {
   .swiper {
     margin-left: -15px;
@@ -613,7 +610,7 @@
   }
 }
 
-/* ====== STICKY ELEMENTS ====== */
+
 @media only screen and (max-width: 768px) {
   .progress-wrap {
     display: none;
@@ -626,7 +623,7 @@
   }
 }
 
-/* ====== TEXT ANIMATION SAFETY ====== */
+
 @media only screen and (max-width: 768px) {
   .rts-text-anime-style-1,
   .text-animation,
@@ -641,7 +638,7 @@
   }
 }
 
-/* ====== MOBILE PERFORMANCE MODE ====== */
+
 @media only screen and (max-width: 768px) {
   .network-bg-overlay {
     display: none !important;
@@ -662,7 +659,7 @@
   }
 }
 
-/* ====== PRODUCT SHOWCASE ====== */
+
 @media only screen and (max-width: 768px) {
   .product-wrapper {
     margin-bottom: 30px;
@@ -683,7 +680,7 @@
   }
 }
 
-/* ====== UTILITY CLASSES FOR MOBILE ====== */
+
 .hide-on-mobile {
   display: none !important;
 }
@@ -698,7 +695,7 @@
   }
 }
 
-/* ====== LANDSCAPE ORIENTATION ====== */
+
 @media only screen and (max-width: 900px) and (orientation: landscape) {
   .banner-video-wrapper,
   .full-screen-hero {
@@ -716,7 +713,7 @@
   }
 }
 
-/* ====== SMALL PHONES (320px+) ====== */
+
 @media only screen and (max-width: 360px) {
   .container,
   .container-faq {
@@ -744,9 +741,9 @@
   }
 }
 
-/* ====== SPECIFIC DEVICE OPTIMIZATIONS ====== */
 
-/* iPhone notch compensation */
+
+
 @supports (padding: max(0px)) {
   body {
     padding-left: max(0px, env(safe-area-inset-left));
@@ -760,7 +757,7 @@
   }
 }
 
-/* ====== PRINT STYLES ====== */
+
 @media print {
   .header-one,
   .rts-footer-one,
@@ -782,8 +779,8 @@
   }
 }
 
-/* ====== PROJECT SECTION MOBILE OPTIMIZATION ====== */
-/* Types of Projects Delivered Section */
+
+
 @media only screen and (max-width: 1199px) {
   .project-two .outer-box {
     display: flex;

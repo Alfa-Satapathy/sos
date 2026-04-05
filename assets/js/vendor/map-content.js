@@ -40,7 +40,7 @@
         locationData(
           "assets/images/banner/contact.jpg",
           "cha, 100 , haji sonamia road, sobji goli, Badda",
-          "support@reactheme.com",
+          "support@sosinfocity.in",
           "1-333-345-6868"
         ),
         40.709327,

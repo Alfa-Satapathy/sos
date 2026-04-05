@@ -1,10 +1,10 @@
-/* ================= HIDE SCROLLBAR ================= */
+
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
 
-/* ================= HERO VIDEO ================= */
+
 .banner-video-wrapper {
   position: relative;
   width: 100%;
@@ -14,12 +14,12 @@
   isolation: isolate;
 }
 
-/* hide mobile accordion by default */
+
 .mobile-case-study {
   display: none;
 }
 
-/* show accordion only on mobile */
+
 @media (max-width: 768px) {
   .desktop-case-study {
     display: none;
@@ -48,7 +48,7 @@
   background: rgba(10, 25, 47, 0.79);
 }
 
-/* ================= NAV CTA GROUP ================= */
+
 .home-navbar-overlay .nav-area ul {
   gap: 34px;
 }
@@ -117,7 +117,7 @@
   color: #ffffff;
 }
 
-/* ================= HERO CONTENT ================= */
+
 .banner-content-layer {
   position: absolute;
   inset: 0;
@@ -227,7 +227,7 @@
   box-shadow: 0 20px 44px rgba(255, 98, 36, 0.48);
 }
 
-/* ================= TYPOGRAPHY RHYTHM ================= */
+
 .rts-section-gap {
   padding: clamp(82px, 9vw, 110px) 0;
 }
@@ -266,7 +266,7 @@
   color: #ff6f35;
 }
 
-/* ================= CARD DEPTH (SCOPED, NO NAV) ================= */
+
 .rts-feature-area-three .single-feature-area-three {
   height: 100%;
   border-radius: 20px;
@@ -594,7 +594,7 @@
   margin-top: 14px;
 }
 
-/* ================= CTA POLISH ================= */
+
 .rts-call-to-action-area .call-to-action-wrapper-three {
   position: relative;
   overflow: hidden;
@@ -680,7 +680,7 @@
   box-shadow: none;
 }
 
-/* ================= DARK SECTION SVG BACKGROUND ================= */
+
 .network-bg-overlay {
   position: absolute;
   top: 0;
@@ -716,7 +716,7 @@
   bottom: 0;
 }
 
-/* ================= ANIMATIONS ================= */
+
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -739,7 +739,7 @@
   }
 }
 
-/* ================= RESPONSIVE ================= */
+
 @media (max-width: 991px) {
   .banner-style-one-wrapper-inner {
     border-radius: 0;

@@ -28,8 +28,6 @@ body {
     overflow-x: hidden;
     margin: 0;
     background: #fff;
-
-    // background: var(--background-color-2);
     @media #{$lg-layout} {
         overflow: hidden;
     }
@@ -49,9 +47,7 @@ body {
         position: absolute;
         left: 0;
         top: 0;
-        // background-image: url("../images/bg/noise.gif");
         z-index: -1;
-        // background-color: rebeccapurple;
         opacity: 0.05;
     }
 }
@@ -371,9 +367,7 @@ var {
     font-family: "Inter Tight", sans-serif;
 }
 
-/*---------------------------
-	List Style 
----------------------------*/
+
 ul,
 ol {
     padding-left: 18px;

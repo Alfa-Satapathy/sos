@@ -1,10 +1,4 @@
-/*!
-Animate.css - http://daneden.me/animate
-Version - 3.4.0
-Licensed under the MIT license - http://opensource.org/licenses/MIT
 
-Copyright (c) 2015 Daniel Eden
-*/
 
 .animated {
     -webkit-animation-duration: 1s;
@@ -112,7 +106,7 @@ Copyright (c) 2015 Daniel Eden
 
 
 
-/*jump animation */
+
 @keyframes jump-1 {
     0% {
         -webkit-transform: translate3d(0, 0, 0);
@@ -537,8 +531,6 @@ Copyright (c) 2015 Daniel Eden
     -webkit-animation-name: tada;
     animation-name: tada;
 }
-
-/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 
 @-webkit-keyframes wobble {
     from {
@@ -2691,8 +2683,6 @@ Copyright (c) 2015 Daniel Eden
     animation-name: hinge;
 }
 
-/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
-
 @-webkit-keyframes rollIn {
     from {
         opacity: 0;
@@ -2725,8 +2715,6 @@ Copyright (c) 2015 Daniel Eden
     -webkit-animation-name: rollIn;
     animation-name: rollIn;
 }
-
-/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 
 @-webkit-keyframes rollOut {
     from {
@@ -3622,11 +3610,6 @@ Copyright (c) 2015 Daniel Eden
         transform: rotate(1turn);
     }
 }
-
-
-
-// ravel animation start form hear
-// espam
 .reveal-item {
     position: relative;
     display: block;
@@ -3782,12 +3765,6 @@ Copyright (c) 2015 Daniel Eden
 }
 
 
-
-
-
-// custom animation
-
-
 @keyframes scaleIn {
     from {
         opacity: 0;
@@ -3874,7 +3851,7 @@ Copyright (c) 2015 Daniel Eden
     100% {
         opacity: 1;
         -webkit-transform: none;
-        transform: none;
+        transform: none
     }
 }
 
