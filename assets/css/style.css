@@ -1,4 +1,4 @@
-/* Global image placeholder rules */
+
 .img-slot,
 .thumbnail,
 .thumbnail-1,
@@ -24,51 +24,8 @@
   object-fit: cover;
   display: block;
 }
-/*=================Scss Indexing=============
-1.variables
-2.typography
-3.spacing
-4.reset
-5.forms
-6.mixins
-7.shortcode
-8.animations
-9.text-animation
-10.sal
-11.header
-12.mobile-menu
-13.button
-14.nav
-15.banner
-16.swiper
-17.funfacts
-18.cta
-19.about
-20.common
-21.service
-22.projects
-23.working-process
-24.blog
-25.blog-details
-26.footer
-27.search-input
-28./side-bar
-29.team
-30.testimonials
-31.faq
-32.pricing
-33.date-picker
-34.time-picker
-35.appoinment
-36.awesome-feedback
-37.contact
-38.pre-loader.scss
-39.back-to-top
 
 
-
-==============================================  */
-/* Default  */
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
@@ -485,9 +442,7 @@ var {
   font-family: "Inter Tight", sans-serif;
 }
 
-/*---------------------------
-	List Style 
----------------------------*/
+
 ul,
 ol {
   padding-left: 18px;
@@ -987,7 +942,7 @@ em {
   font-style: italic;
 }
 
-/* BlockQuote  */
+
 blockquote,
 q {
   -webkit-hyphens: none;
@@ -1027,7 +982,7 @@ blockquote b {
   font-weight: 700;
 }
 
-/* ========= Forms Styles ========= */
+
 input,
 button,
 select,
@@ -1079,7 +1034,7 @@ textarea {
   outline: none;
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius);
-  /* -- Placeholder -- */
+  
 }
 input[type="text"]::placeholder,
 input[type="password"]::placeholder,
@@ -1088,7 +1043,7 @@ input[type="number"]::placeholder,
 input[type="tel"]::placeholder,
 textarea::placeholder {
   color: var(--body-color);
-  /* Firefox */
+  
   opacity: 1;
 }
 input[type="text"]:-ms-input-placeholder,
@@ -1097,7 +1052,7 @@ input[type="email"]:-ms-input-placeholder,
 input[type="number"]:-ms-input-placeholder,
 input[type="tel"]:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
+  
   color: var(--body-color);
 }
 input[type="text"]::-ms-input-placeholder,
@@ -1106,7 +1061,7 @@ input[type="email"]::-ms-input-placeholder,
 input[type="number"]::-ms-input-placeholder,
 input[type="tel"]::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
-  /* Microsoft Edge */
+  
   color: var(--body-color);
 }
 input[type="text"].p-holder__active,
@@ -1127,7 +1082,7 @@ input[type="tel"].input-active,
 textarea.p-holder__active,
 textarea.input-active {
   border-color: var(--color-primary);
-  /* -- Placeholder -- */
+  
 }
 input[type="text"].p-holder__active::placeholder,
 .input-active input[type="text"]::placeholder,
@@ -1147,7 +1102,7 @@ input[type="tel"].input-active::placeholder,
 textarea.p-holder__active::placeholder,
 textarea.input-active::placeholder {
   color: var(--color-primary);
-  /* Firefox */
+  
   opacity: 1;
 }
 input[type="text"].p-holder__active:-ms-input-placeholder,
@@ -1167,7 +1122,7 @@ input[type="tel"].p-holder__active:-ms-input-placeholder,
 input[type="tel"].input-active:-ms-input-placeholder,
 textarea.p-holder__active:-ms-input-placeholder,
 textarea.input-active:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
+  
   color: var(--color-primary);
 }
 input[type="text"].p-holder__active::-ms-input-placeholder,
@@ -1187,7 +1142,7 @@ input[type="tel"].p-holder__active::-ms-input-placeholder,
 input[type="tel"].input-active::-ms-input-placeholder,
 textarea.p-holder__active::-ms-input-placeholder,
 textarea.input-active::-ms-input-placeholder {
-  /* Microsoft Edge */
+  
   color: var(--color-primary);
 }
 input[type="text"].p-holder__error,
@@ -1208,7 +1163,7 @@ input[type="tel"].input-error,
 textarea.p-holder__error,
 textarea.input-error {
   border-color: #f4282d;
-  /* -- Placeholder -- */
+  
 }
 input[type="text"].p-holder__error::placeholder,
 .input-error input[type="text"]::placeholder,
@@ -1228,7 +1183,7 @@ input[type="tel"].input-error::placeholder,
 textarea.p-holder__error::placeholder,
 textarea.input-error::placeholder {
   color: #f4282d;
-  /* Firefox */
+  
   opacity: 1;
 }
 input[type="text"].p-holder__error:-ms-input-placeholder,
@@ -1248,7 +1203,7 @@ input[type="tel"].p-holder__error:-ms-input-placeholder,
 input[type="tel"].input-error:-ms-input-placeholder,
 textarea.p-holder__error:-ms-input-placeholder,
 textarea.input-error:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
+  
   color: #f4282d;
 }
 input[type="text"].p-holder__error::-ms-input-placeholder,
@@ -1268,7 +1223,7 @@ input[type="tel"].p-holder__error::-ms-input-placeholder,
 input[type="tel"].input-error::-ms-input-placeholder,
 textarea.p-holder__error::-ms-input-placeholder,
 textarea.input-error::-ms-input-placeholder {
-  /* Microsoft Edge */
+  
   color: #f4282d;
 }
 input[type="text"].p-holder__error:focus,
@@ -1428,9 +1383,7 @@ input[type="submit"]:hover {
   transform: translateY(-5px);
 }
 
-/*==============================
- *  Utilities
-=================================*/
+
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -1460,18 +1413,14 @@ iframe {
   width: 100%;
 }
 
-/*===========================
-Background Image 
-=============================*/
+
 .bg_image {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
-/*===================
-Custom Row
-======================*/
+
 .row--0 {
   margin-left: 0px;
   margin-right: 0px;
@@ -1871,9 +1820,7 @@ Custom Row
   }
 }
 
-/*===========================
-    Input Placeholder
-=============================*/
+
 input:-moz-placeholder,
 textarea:-moz-placeholder {
   opacity: 1;
@@ -1898,9 +1845,7 @@ textarea:-ms-input-placeholder {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
-/*=============================
-	Overlay styles 
-==============================*/
+
 [data-overlay],
 [data-black-overlay],
 [data-white-overlay] {
@@ -2002,13 +1947,7 @@ textarea:-ms-input-placeholder {
   opacity: 1;
 }
 
-/*!
-Animate.css - http://daneden.me/animate
-Version - 3.4.0
-Licensed under the MIT license - http://opensource.org/licenses/MIT
 
-Copyright (c) 2015 Daniel Eden
-*/
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -2103,7 +2042,7 @@ Copyright (c) 2015 Daniel Eden
   transform-origin: center bottom;
 }
 
-/*jump animation */
+
 @keyframes jump-1 {
   0% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -5419,9 +5358,7 @@ Copyright (c) 2015 Daniel Eden
   animation-name: zoomIn;
 }
 
-/*=========================
-    Section Separation 
-==========================*/
+
 .mb_dec--25 {
   margin-bottom: -25px;
 }
@@ -12031,7 +11968,7 @@ Copyright (c) 2015 Daniel Eden
   --bs-gutter-y: 40px;
 }
 
-/* Elements  */
+
 .rts-banner-area-one {
   height: 910px;
   background-image: url(../images/banner/01.webp);
@@ -14383,7 +14320,7 @@ body.demo-app-development .rts-mega-menu.sm-mega-70 {
   object-fit: contain;
 }
 
-/* Pop Animation */
+
 @keyframes popLoader {
   0% {
     transform: scale(0.85);
@@ -14398,7 +14335,7 @@ body.demo-app-development .rts-mega-menu.sm-mega-70 {
   }
 }
 
-/* Loaded Styles - Optimized for faster hide */
+
 .loaded .loader-wrapper .loader-section.section-left {
   transition: all 0.3s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 0;
@@ -14434,7 +14371,7 @@ body.demo-app-development .rts-mega-menu.sm-mega-70 {
   overflow: hidden;
 }
 
-/* Video */
+
 .banner-video {
   position: absolute;
   top: 0;
@@ -14445,7 +14382,7 @@ body.demo-app-development .rts-mega-menu.sm-mega-70 {
   z-index: 1;
 }
 
-/* Dark overlay */
+
 .banner-video-overlay {
   position: absolute;
   inset: 0;
@@ -14454,7 +14391,7 @@ body.demo-app-development .rts-mega-menu.sm-mega-70 {
   pointer-events: none;
 }
 
-/* Content */
+
 .banner-content-layer {
   position: relative;
   z-index: 3;
@@ -20365,7 +20302,7 @@ button {
   position: sticky;
   position: -webkit-sticky;
   top: 50px;
-  /* required */
+  
 }
 
 .apply-now-card {
@@ -21626,7 +21563,7 @@ hr {
   color: var(--color-white);
 }
 
-/* Header  */
+
 .header-one {
   position: absolute;
   top: 0;
@@ -24374,7 +24311,6 @@ header.header-three .sub-dropdown .submenu.third-lvl.base {
 .extra-space {
   margin-bottom: 85px !important;
 }
-/*# sourceMappingURL=../maps/style.css.map */
 .extra-space-t2 {
   margin-bottom: 107px !important;
 }
@@ -24485,33 +24421,33 @@ header.header-three .sub-dropdown .submenu.third-lvl.base {
   }
 }
 
-/* ========================================
-   ENHANCED INTERACTIVITY & ANIMATIONS
-   ======================================== */
 
-/* Global text animation on scroll */
+
+
 .rts-text-anime-style-1 {
-  animation: slideUpText 0.8s ease-out;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
 
-@keyframes slideUpText {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.rts-text-anime-style-1.rts-text-reveal:not(.rts-text-visible) {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
 }
 
-/* Smooth animations for all sections */
+.rts-text-anime-style-1.rts-text-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+
 section, [class*="area"], [class*="section"] {
   scroll-behavior: smooth;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Enhanced feature cards with glow on hover */
+
 .single-feature-area-three::before {
   content: "";
   position: absolute;
@@ -24527,22 +24463,22 @@ section, [class*="area"], [class*="section"] {
   opacity: 1;
 }
 
-/* Enhanced heading animations */
+
 h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Paragraph text smooth transitions */
+
 p, .disc {
   transition: all 0.3s ease;
 }
 
-/* Improved link styling */
+
 a {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Tab navigation improvements */
+
 .nav-tabs {
   gap: 12px;
 }
@@ -24572,12 +24508,12 @@ a {
   transform: scaleX(1);
 }
 
-/* Enhanced section padding */
+
 .rts-section-gap {
   scroll-margin-top: 100px;
 }
 
-/* Accordion improvements */
+
 .accordion-button {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 600;
@@ -24593,7 +24529,7 @@ a {
   transition: transform 0.4s ease;
 }
 
-/* Icon animations */
+
 i[class*="fa"],
 i[class*="icon"] {
   transition: all 0.3s ease;
@@ -24603,17 +24539,17 @@ i[class*="icon"] {
   color: var(--color-primary);
 }
 
-/* Shadow effects for depth */
+
 .thumbnail, .img-slot, .single-feature-area-three {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-/* Hover image transform */
+
 .thumbnail:hover, .img-slot:hover {
   transform: scale(1.02);
 }
 
-/* Button group spacing */
+
 .button-wrapper, .button-area {
   gap: 12px;
   display: flex;
@@ -24633,9 +24569,7 @@ i[class*="icon"] {
   }
 }
 
-/* ========================================
-   MOBILE RESPONSIVE SECTION SPACING
-   ======================================== */
+
 
 @media only screen and (max-width: 1199px) {
   .rts-section-gap {
@@ -24670,9 +24604,7 @@ i[class*="icon"] {
   }
 }
 
-/* ========================================
-   FAQ SECTION SPECIFIC ENHANCEMENTS
-   ======================================== */
+
 
 .rts-faq-area-start .row.mt--40 {
   margin-top: 60px !important;
@@ -24696,12 +24628,12 @@ i[class*="icon"] {
   margin-top: 30px;
 }
 
-/* Ensure proper spacing between accordion items */
+
 .accordon-pricing-wrapper-three.full-width {
   padding-top: 30px;
 }
 
-/* Hover state for accordion for better visual feedback */
+
 .accordion-button:focus {
   box-shadow: none;
   border-color: transparent;
@@ -24710,7 +24642,7 @@ i[class*="icon"] {
 .accordion-item:focus-within {
   box-shadow: 0 0 0 3px rgba(254, 91, 15, 0.1);
 }
-/* ================= NETWORK BACKGROUND OVERLAY ================= */
+
 .network-bg-overlay {
   position: absolute;
   top: 0;
@@ -24734,7 +24666,7 @@ i[class*="icon"] {
   z-index: 1;
 }
 
-/* Ensure footer SVG doesn't create extra space */
+
 .rts-footer-one.bg_dark {
   position: relative;
 }
@@ -24749,11 +24681,9 @@ i[class*="icon"] {
   height: 100%;
 }
 
-/* ============================================
-   GLASSY NAVBAR EFFECT FOR ALL PAGES
-   ============================================ */
 
-/* Floating navbar shell (all pages) */
+
+
 .header-one {
   padding-top: 10px;
 }
@@ -24768,7 +24698,7 @@ i[class*="icon"] {
   }
 }
 
-/* Home page only: keep navbar over video (no white gap area) */
+
 .header-one.header-relative.home-navbar-overlay {
   position: absolute;
 }
@@ -24781,7 +24711,7 @@ i[class*="icon"] {
   box-shadow: 0 18px 42px rgba(7, 20, 49, 0.08);
 }
 
-/* Sticky: blue transparent glassy effect */
+
 .header-one.header--sticky.sticky {
   background: transparent !important;
   box-shadow: none !important;
@@ -24800,7 +24730,7 @@ i[class*="icon"] {
   color: #ffffff !important;
 }
 
-/* Hide scrollbars globally */
+
 ::-webkit-scrollbar {
   width: 0 !important;
   height: 0 !important;
@@ -24812,7 +24742,7 @@ html {
 
 
 
-/* Global Transitions */
+
 a,
 button,
 input,
@@ -24825,7 +24755,7 @@ select,
   transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Enhanced Form Elements */
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -24862,13 +24792,13 @@ textarea:focus::placeholder {
   color: rgba(100, 200, 255, 0.7);
 }
 
-/* Premium Link Styling */
+
 a {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
-/* Premium Button Enhancements */
+
 .rts-btn,
 button,
 input[type="submit"],
@@ -24878,7 +24808,7 @@ input[type="button"] {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Text Selection Enhancement */
+
 ::selection {
   background: #64c8ff;
   color: #050d20;
@@ -24891,12 +24821,12 @@ input[type="button"] {
   text-shadow: none;
 }
 
-/* Enhanced Image Styling */
+
 img {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Focus States for Accessibility */
+
 button:focus,
 input:focus,
 textarea:focus,
@@ -24905,13 +24835,13 @@ select:focus {
   outline-offset: 2px;
 }
 
-/* Enhanced List Items */
+
 ul li,
 ol li {
   transition: all 0.2s ease;
 }
 
-/* Table Enhancements */
+
 table tr {
   transition: all 0.2s ease;
 }
@@ -24925,7 +24855,7 @@ table th {
   border-color: rgba(100, 200, 255, 0.15);
 }
 
-/* Premium Code Block Styling */
+
 code,
 pre {
   background: rgba(0, 0, 0, 0.1);
@@ -24933,14 +24863,14 @@ pre {
   transition: all 0.3s ease;
 }
 
-/* Blockquote Enhancement */
+
 blockquote {
   border-left: 4px solid #64c8ff;
   padding-left: 20px;
   transition: all 0.3s ease;
 }
 
-/* Premium Loading Animation */
+
 @keyframes premiumPulse {
   0%, 100% {
     opacity: 1;
@@ -24957,12 +24887,12 @@ blockquote {
   animation: premiumPulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Smooth Scroll Behavior */
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Premium Utility Classes */
+
 .premium-shadow {
   box-shadow: 0 10px 30px rgba(100, 200, 255, 0.15) !important;
   transition: box-shadow 0.3s ease;
@@ -24990,10 +24920,7 @@ html {
   text-shadow: 0 0 20px rgba(100, 200, 255, 0.6);
 }
 
-/* ============================================
-   GLOBAL NAVBAR CTA STYLE (ALL PAGES)
-   Match "Explore Our Solutions" button look
-   ============================================ */
+
 header .button-wrapper-flex > .rts-btn.btn-primary {
   background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
   color: #10213d;
@@ -25138,14 +25065,14 @@ header .button-wrapper-flex > .rts-btn.btn-primary:focus-visible {
   }
 }
 
-/* Enhanced Hrule */
+
 hr {
   background: linear-gradient(90deg, transparent 0%, rgba(100, 200, 255, 0.3) 50%, transparent 100%);
   border: none;
   height: 1px;
 }
 
-/* Reduce Motion for Users who Prefer It */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

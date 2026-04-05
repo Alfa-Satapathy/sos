@@ -89,15 +89,11 @@
 .test-img {
     width: 100%;
     height: auto;
-    // clip-path: path("M0,50 h146 v288 h-171 z M162,0 h213 v397 h-213 z M393,50 h155 v288 h-155 z");
 
     max-width: 526px;
     margin: auto;
     height: 397px;
     overflow: hidden;
-
-
-    // animation: clipMorph 7s ease-in-out infinite;
     clip-path: path("M0,50 h146 v288 h-171 z M162,0 h213 v397 h-213 z M393,50 h155 v288 h-155 z");
 }
 

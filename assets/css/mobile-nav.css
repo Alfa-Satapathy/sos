@@ -1,9 +1,6 @@
-/* ====================================================
-   NEW MOBILE NAVIGATION STYLESHEET
-   Fresh implementation, not dependent on existing sidebar
-   ==================================================== */
 
-/* Mobile Nav Container */
+
+
 .mobile-nav-wrapper {
   position: fixed;
   top: 0;
@@ -29,7 +26,7 @@
     visibility 0s linear 0s;
 }
 
-/* Mobile Nav Backdrop/Overlay */
+
 .mobile-nav-backdrop {
   position: absolute;
   top: 0;
@@ -45,7 +42,7 @@
   opacity: 1;
 }
 
-/* Mobile Nav Menu Panel */
+
 .mobile-nav-panel {
   position: absolute;
   top: 0;
@@ -67,7 +64,7 @@
   transform: translateX(0);
 }
 
-/* Mobile Nav Header */
+
 .mobile-nav-header {
   display: flex;
   justify-content: space-between;
@@ -108,7 +105,7 @@
   color: #fe5b0f;
 }
 
-/* Mobile Nav Menu List */
+
 .mobile-nav-menu {
   flex: 1;
   overflow-y: auto;
@@ -152,7 +149,7 @@
   color: #fe5b0f;
 }
 
-/* Mobile Nav Submenu Handling */
+
 .mobile-nav-submenu {
   display: none;
   background-color: #f9f9f9;
@@ -199,7 +196,7 @@
   background-color: #f5f5f5;
 }
 
-/* Mobile Nav Toggle Arrow */
+
 .mobile-nav-toggle-arrow {
   position: absolute;
   right: 20px;
@@ -211,7 +208,7 @@
   display: none;
 }
 
-/* Only show arrow on items with submenu */
+
 .mobile-nav-menu > li.has-submenu .mobile-nav-toggle-arrow {
   display: inline-block;
 }
@@ -220,12 +217,12 @@
   transform: translateY(-50%) rotate(180deg);
 }
 
-/* Ensure hidden on non-submenu items */
+
 .mobile-nav-menu > li:not(.has-submenu) .mobile-nav-toggle-arrow {
   display: none !important;
 }
 
-/* Mobile Nav CTA Button */
+
 .mobile-nav-cta {
   padding: 20px;
   border-top: 1px solid #f0f0f0;
@@ -281,7 +278,7 @@
   transform: scale(0.98);
 }
 
-/* Hamburger Button - Add to Header */
+
 .mobile-menu-btn {
   background: none;
   border: none;
@@ -337,7 +334,7 @@
   color: #fe5b0f;
 }
 
-/* Show hamburger on mobile */
+
 @media only screen and (max-width: 1199px) {
   .mobile-menu-btn {
     display: flex;
@@ -352,7 +349,7 @@
   }
 }
 
-/* Scrollbar Styling */
+
 .mobile-nav-menu::-webkit-scrollbar,
 .mobile-nav-panel::-webkit-scrollbar {
   width: 6px;
@@ -374,12 +371,12 @@
   background: #888;
 }
 
-/* Prevent Body Scroll When Menu Open */
+
 body.mobile-nav-open {
   overflow: hidden;
 }
 
-/* Additional Mobile Optimizations */
+
 @media only screen and (max-width: 768px) {
   .mobile-nav-panel {
     width: min(360px, 92vw);
@@ -420,7 +417,7 @@ body.mobile-nav-open {
   }
 }
 
-/* Header Adjustments for Mobile Nav Button */
+
 @media only screen and (max-width: 1199px) {
   .header-wrapper-main {
     display: flex;
@@ -494,7 +491,7 @@ body.mobile-nav-open {
   }
 }
 
-/* Fix for smooth animations */
+
 * {
   -webkit-tap-highlight-color: transparent;
 }
@@ -509,7 +506,7 @@ body.mobile-nav-open {
   }
 }
 
-/* Focus visible styles */
+
 .mobile-nav-menu > li > a:focus-visible,
 .mobile-nav-submenu a:focus-visible,
 .mobile-nav-close:focus-visible,

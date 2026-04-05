@@ -1,6 +1,4 @@
-/*
- * Licensed under the MIT license.
- */
+
 
 .animated {
     -webkit-animation-duration: 1s;
@@ -108,7 +106,7 @@
 
 
 
-/*jump animation */
+
 @keyframes jump-1 {
     0% {
         -webkit-transform: translate3d(0, 0, 0);
@@ -3612,11 +3610,6 @@
         transform: rotate(1turn);
     }
 }
-
-
-
-// ravel animation start form hear
-// espam
 .reveal-item {
     position: relative;
     display: block;
@@ -3770,12 +3763,6 @@
 [data-aos=reveal-item].aos-animate {
     visibility: visible;
 }
-
-
-
-
-
-// custom animation
 
 
 @keyframes scaleIn {

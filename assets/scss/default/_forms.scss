@@ -1,4 +1,4 @@
-/* ========= Forms Styles ========= */
+
 input,
 button,
 select,
@@ -28,21 +28,6 @@ input {
     padding: 0 15px;
 }
 
-// select {
-//     transition: 0.3s;
-//     height: 40px;
-//     padding: 0 20px;
-//     outline: none;
-//     color: var(--color-body);
-//     -moz-appearance: none;
-//     -webkit-appearance: none;
-//     appearance: none;
-//     border: 1px solid var(--color-border);
-//     border-radius: 4px;
-//     background: url(../images/icons/arrow-icon.png) 95% center no-repeat transparent;
-//     padding-right: 32px;
-// }
-
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -61,40 +46,40 @@ textarea {
     border: var(--border-width) solid var(--color-border);
     border-radius: var(--radius);
 
-    /* -- Placeholder -- */
+    
     &::placeholder {
         color: var(--body-color);
-        /* Firefox */
+        
         opacity: 1;
     }
 
     &:-ms-input-placeholder {
-        /* Internet Explorer 10-11 */
+        
         color: var(--body-color);
     }
 
     &::-ms-input-placeholder {
-        /* Microsoft Edge */
+        
         color: var(--body-color);
     }
 
     &.p-holder__active {
         border-color: var(--color-primary);
 
-        /* -- Placeholder -- */
+        
         &::placeholder {
             color: var(--color-primary);
-            /* Firefox */
+            
             opacity: 1;
         }
 
         &:-ms-input-placeholder {
-            /* Internet Explorer 10-11 */
+            
             color: var(--color-primary);
         }
 
         &::-ms-input-placeholder {
-            /* Microsoft Edge */
+            
             color: var(--color-primary);
         }
     }
@@ -102,20 +87,20 @@ textarea {
     &.p-holder__error {
         border-color: #f4282d;
 
-        /* -- Placeholder -- */
+        
         &::placeholder {
             color: #f4282d;
-            /* Firefox */
+            
             opacity: 1;
         }
 
         &:-ms-input-placeholder {
-            /* Internet Explorer 10-11 */
+            
             color: #f4282d;
         }
 
         &::-ms-input-placeholder {
-            /* Microsoft Edge */
+            
             color: #f4282d;
         }
 
@@ -144,9 +129,6 @@ textarea {
         @extend .p-holder__error;
     }
 }
-
-// Custom Checkbox and radio button 
-// Custom Checkbox and radio button 
 input[type="checkbox"],
 input[type="radio"] {
     opacity: 1;

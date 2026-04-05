@@ -1,23 +1,4 @@
-/*=== Javascript function indexing hear===========
 
-1.counterUp ----------(Its use for counting number)
-2.stickyHeader -------(header class sticky)
-3.wowActive ----------( Waw js plugins activation)
-4.swiperJs -----------(All swiper in this website hear)
-5.salActive ----------(Sal animation for card and all text)
-6.textChanger --------(Text flip for banner section)
-7.timeLine -----------(History Time line)
-8.datePicker ---------(On click date calender)
-9.timePicker ---------(On click time picker)
-10.timeLineStory -----(History page time line)
-11.vedioActivation----(Vedio activation)
-12.searchOption ------(search open)
-13.cartBarshow -------(Cart sode bar)
-14.sideMenu ----------(Open side menu for desktop)
-15.Back to top -------(back to top)
-16.filterPrice -------(Price filtering)
-
-==================================================*/
 
 
 (function ($) {
@@ -60,79 +41,17 @@
       runWhenBrowserIdle(function () {
         rtsJs.swiperActivation();
 
+        rtsJs.splitText(lowPowerMode);
+
         if (!lowPowerMode) {
-          rtsJs.fonklsAnimation();
-          rtsJs.splitText();
           rtsJs.productStickyAnimation();
         }
       });
     },
     fonklsAnimation: function () {
-          let endTl = gsap.timeline({
-              repeat: -1,
-              delay: 0.2,
-              scrollTrigger: {
-                  trigger: '.end',
-                  start: 'bottom 100%-=50px'
-              }
-          });
-          gsap.set('.end', {
-              opacity: 0
-          });
-          gsap.to('.end', {
-              opacity: 1,
-              duration: 1,
-              ease: 'power2.out',
-              scrollTrigger: {
-                  trigger: '.end',
-                  start: 'bottom 100%-=50px',
-                  once: true
-              }
-          });
-          let mySplitText = new SplitText(".end", {
-              type: "words,chars"
-          });
-          let chars = mySplitText.chars;
-          endTl.to(chars, {
-              duration: 0.5,
-              scaleY: 0.9,
-              ease: "power3.out",
-              stagger: 0.04,
-              transformOrigin: 'center bottom'
-          });
-          endTl.to(chars, {
-              yPercent: -10,
-              ease: "elastic",
-              stagger: 0.03,
-              duration: 0.8
-          }, 0.5);
-          endTl.to(chars, {
-              scaleY: 1,
-              ease: "elastic.out(2.5, 0.2)",
-              stagger: 0.03,
-              duration: 1.5
-          }, 0.5);
-          endTl.to(chars, {
-
-              ease: "power2.out",
-              stagger: 0.03,
-              duration: 0.3
-          }, 0.5);
-          endTl.to(chars, {
-              yPercent: 0,
-              ease: "back",
-              stagger: 0.03,
-              duration: 0.8
-          }, 0.7);
-          endTl.to(chars, {
-              // color: '#b19777',
-              duration: 1.4,
-              stagger: 0.05
-          });
+        return;
     },
     preloader: function () {
-      // Hide loader quickly using DOMContentLoaded (when HTML is parsed)
-      // instead of waiting for all resources (images, videos, fonts) to load
       const hideLoader = function () {
         document.querySelector('body').classList.add("loaded");
         const loaderWrapper = document.querySelector('.loader-wrapper');
@@ -140,23 +59,15 @@
           loaderWrapper.classList.add("loaded");
         }
       };
-
-      // Use DOMContentLoaded - fires when HTML is parsed, not when all resources load
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', hideLoader);
       } else {
-        // DOM already loaded
         hideLoader();
       }
-
-      // Fallback: Force hide loader after a short delay (mobile-friendly)
       setTimeout(hideLoader, 1500);
     },
     sideMenu: function () {
-      // metismenu active
       $('#mobile-menu-active').metisMenu();
-
-      // collups menu side right
       $(document).on('click', '.menu-btn-toggle', function () {
         $("#side-bar").addClass("show");
         $("#anywhere-home").addClass("bgshow");
@@ -877,44 +788,36 @@
       }
     },
 
-    splitText: function (e) {
-      if (!$('.rts-text-anime-style-1').length || typeof SplitText === 'undefined' || typeof gsap === 'undefined') {
+    splitText: function (lowPowerMode) {
+      if (!$('.rts-text-anime-style-1').length) {
         return;
       }
 
-      const animatedTextElements = document.querySelectorAll('.rts-text-anime-style-1');
+      const animatedTextElements = Array.from(document.querySelectorAll('.rts-text-anime-style-1'));
 
-      const createCustomAnimation = function (element) {
+      const revealElement = function (element) {
         if (!element || element.dataset.animationInitialized === 'true') {
           return;
         }
 
         element.dataset.animationInitialized = 'true';
-
-        gsap.set(element, { perspective: 400 });
-
-        gsap.set(element, {
-          opacity: 0,
-          x: "50",
-        });
-
-        gsap.to(element, {
-          scrollTrigger: { trigger: element, start: "top 95%" },
-          x: "0",
-          y: "0",
-          rotateX: "0",
-          opacity: 1,
-          duration: 1,
-          ease: Back.easeOut,
-          stagger: 0.02,
-        });
+        element.classList.add('rts-text-visible');
       };
+
+      animatedTextElements.forEach(function (element) {
+        element.classList.add('rts-text-reveal');
+      });
+
+      if (lowPowerMode) {
+        animatedTextElements.forEach(revealElement);
+        return;
+      }
 
       if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver(function (entries, observer) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-              createCustomAnimation(entry.target);
+              revealElement(entry.target);
               observer.unobserve(entry.target);
             }
           });
@@ -930,9 +833,7 @@
         return;
       }
 
-      animatedTextElements.forEach(function (element) {
-        createCustomAnimation(element);
-      });
+      animatedTextElements.forEach(revealElement);
     },
 
     productStickyAnimation: function () {
@@ -1074,11 +975,7 @@
             }
           });
         }
-
-        // Check on page load
         handleOdometer();
-
-        // Check on scroll
         $(window).on('scroll', function () {
           handleOdometer();
         });
@@ -1101,8 +998,6 @@
   $(document).ready(function () {
       $('#ce-toggle').change(function () {
         const isChecked = $(this).is(':checked');
-
-        // Toggle active class based on checked state
         if (isChecked) {
           $('.plan-toggle-wrap').removeClass('active');
           $('#monthly').show();
@@ -1113,8 +1008,6 @@
           $('#yearly').show();
         }
       });
-
-      // Optional: Set initial state on page load
       $('#ce-toggle').trigger('change');
     });
 
