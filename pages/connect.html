@@ -187,7 +187,7 @@
         <div class="col-lg-12">
           <div class="breadcrumb-area">
             <h1 class="title rts-text-anime-style-1">Get in Touch</h1>
-            <p class="disc" style="max-width: 384px; margin: auto; margin-top: 25px">
+            <p class="disc contact-breadcrumb-copy">
               For project discussions, partnerships, or general enquiries, our
               team is available to connect.
             </p>
@@ -289,8 +289,8 @@
             </div>
             <div class="single-input">
               <label for="message">Message *</label>
-              <textarea name="message" id="message" placeholder="Brief details about your requirement" required
-                style="height: 150px"></textarea>
+              <textarea name="message" id="message" class="contact-message-field"
+                placeholder="Brief details about your requirement" required></textarea>
             </div>
             <div class="single-input with-checkbox">
               <input type="checkbox" name="checkbox" id="checkbox" required />
@@ -416,28 +416,9 @@
   <div class="rts-footer-one pt--50 bg_dark"> <svg class="network-bg-overlay" viewBox="0 0 1200 600"
       xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
       <defs>
-        <style>
-          .network-line {
-            stroke: rgba(255, 255, 255, 0.15);
-            stroke-width: 1;
-          }
-
-          .network-node {
-            fill: rgba(100, 200, 255, 0.3);
-          }
-
-          .network-node-small {
-            fill: rgba(100, 200, 255, 0.2);
-          }
-
-          .neuron-connection {
-            stroke: rgba(70, 150, 255, 0.2);
-            stroke-width: 1.5;
-          }
-        </style>
         <radialGradient id="nodeGradient14" cx="40%" cy="40%">
-          <stop offset="0%" style="stop-color:rgba(150, 200, 255, 0.4);stop-opacity:1" />
-          <stop offset="100%" style="stop-color:rgba(70, 150, 255, 0.1);stop-opacity:1" />
+          <stop offset="0%" stop-color="rgba(150, 200, 255, 0.4)" stop-opacity="1" />
+          <stop offset="100%" stop-color="rgba(70, 150, 255, 0.1)" stop-opacity="1" />
         </radialGradient>
       </defs>
       <line x1="100" y1="80" x2="300" y2="150" class="network-line" />
@@ -544,16 +525,16 @@
               <h6 class="title">Follow Us</h6>
               <ul>
                 <li>
-                  <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+                  <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+                  <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </li>
                 <li>
-                  <a href="https://www.twitter.com/" target="_blank">Twitter</a>
+                  <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
                 </li>
                 <li>
-                  <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+                  <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
                 </li>
               </ul>
             </div>
@@ -572,7 +553,7 @@
                   document.write(new Date().getFullYear());
                 </script>
                 SOS Infocity. All Rights Reserved. <br /> Designed & Developed by <a href="https://greyplatforms.com"
-                  target="_blank">Grey Platforms</a>
+                  target="_blank" rel="noopener noreferrer">Grey Platforms</a>
               </p>
             </div>
           </div>
@@ -586,11 +567,7 @@
   </div>
   <div class="progress-wrap">
     <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="
-            transition: stroke-dashoffset 10ms linear 0s;
-            stroke-dasharray: 307.919, 307.919;
-            stroke-dashoffset: 307.919;
-          "></path>
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" class="progress-circle-path"></path>
     </svg>
   </div>
 

@@ -25,6 +25,183 @@
   display: block;
 }
 
+.network-bg-overlay .network-line {
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 1;
+}
+
+.network-bg-overlay .network-node {
+  fill: rgba(100, 200, 255, 0.3);
+}
+
+.network-bg-overlay .network-node-small {
+  fill: rgba(100, 200, 255, 0.2);
+}
+
+.network-bg-overlay .neuron-connection {
+  stroke: rgba(70, 150, 255, 0.2);
+  stroke-width: 1.5;
+}
+
+.network-bg-overlay .glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    r: 3;
+    opacity: 0.3;
+  }
+
+  50% {
+    r: 5;
+    opacity: 0.5;
+  }
+}
+
+.progress-circle-path {
+  transition: stroke-dashoffset 10ms linear 0s;
+  stroke-dasharray: 307.919, 307.919;
+  stroke-dashoffset: 307.919;
+}
+
+.industry-card-link {
+  text-align: center;
+}
+
+.industry-card-link-label {
+  display: block;
+}
+
+.content-media-full {
+  display: block;
+  width: 100%;
+}
+
+.content-media-full img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+  max-width: 100%;
+}
+
+.content-media-radius-3 img {
+  border-radius: 3px;
+}
+
+.content-media-radius-5 img {
+  border-radius: 5px;
+}
+
+.contact-breadcrumb-copy {
+  max-width: 384px;
+  margin: 25px auto 0;
+}
+
+.contact-message-field {
+  height: 150px;
+}
+
+.mobile-case-study {
+  display: none;
+}
+
+@media (max-width: 1399px) {
+  .project-two.desktop-case-study .project-block-four.active {
+    flex: 2.4;
+  }
+
+  .project-two.desktop-case-study .project-block-four.active .image-box {
+    width: 300px;
+  }
+
+  .project-two.desktop-case-study .project-block-four.active .image-box .image {
+    min-width: 300px;
+  }
+
+  .project-two.desktop-case-study .project-block-four.active .content-box {
+    width: 280px;
+    padding: 30px 24px;
+  }
+
+  .project-two.desktop-case-study .project-block-four .content-rotate {
+    padding: 32px 16px;
+  }
+
+  .project-two.desktop-case-study .project-block-four .content-rotate span {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-case-study {
+    display: none;
+  }
+
+  .mobile-case-study {
+    display: block;
+  }
+}
+
+@media (max-width: 1199px) {
+  .desktop-case-study {
+    display: none;
+  }
+
+  .mobile-case-study {
+    display: block;
+  }
+}
+
+.rts-case-studies .accordion-item {
+  border-radius: 14px;
+  border: 1px solid #e5ebf4;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 35, 68, 0.07);
+}
+
+.rts-case-studies .accordion-item + .accordion-item {
+  margin-top: 14px;
+}
+
+.impact-hero-slide-1 {
+  background-image: url('../Impact page Gallery section/1.webp');
+}
+
+.impact-hero-slide-2 {
+  background-image: url('../Impact page Gallery section/2.webp');
+}
+
+.impact-hero-slide-3 {
+  background-image: url('../Impact page Gallery section/3.webp');
+}
+
+.impact-hero-slide-4 {
+  background-image: url('../Impact page Gallery section/4.webp');
+}
+
+.impact-hero-slide-5 {
+  background-image: url('../Impact page Gallery section/5.webp');
+}
+
+.impact-hero-slide-6 {
+  background-image: url('../Impact page Gallery section/6.webp');
+}
+
+.life-hero-slide-1 {
+  background-image: url('../Life at SOS page gallery Section/1.webp');
+}
+
+.life-hero-slide-2 {
+  background-image: url('../Life at SOS page gallery Section/2.webp');
+}
+
+.life-hero-slide-3 {
+  background-image: url('../Life at SOS page gallery Section/3.webp');
+}
+
 
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
@@ -11980,6 +12157,33 @@ textarea:-ms-input-placeholder {
 }
 .rts-banner-area-one.three {
   background-image: url(../images/banner/06.webp);
+}
+.rts-banner-area-one.impact-hero-slide-1 {
+  background-image: url('../Impact page Gallery section/1.webp');
+}
+.rts-banner-area-one.impact-hero-slide-2 {
+  background-image: url('../Impact page Gallery section/2.webp');
+}
+.rts-banner-area-one.impact-hero-slide-3 {
+  background-image: url('../Impact page Gallery section/3.webp');
+}
+.rts-banner-area-one.impact-hero-slide-4 {
+  background-image: url('../Impact page Gallery section/4.webp');
+}
+.rts-banner-area-one.impact-hero-slide-5 {
+  background-image: url('../Impact page Gallery section/5.webp');
+}
+.rts-banner-area-one.impact-hero-slide-6 {
+  background-image: url('../Impact page Gallery section/6.webp');
+}
+.rts-banner-area-one.life-hero-slide-1 {
+  background-image: url('../Life at SOS page gallery Section/1.webp');
+}
+.rts-banner-area-one.life-hero-slide-2 {
+  background-image: url('../Life at SOS page gallery Section/2.webp');
+}
+.rts-banner-area-one.life-hero-slide-3 {
+  background-image: url('../Life at SOS page gallery Section/3.webp');
 }
 
 .banner-style-one-wrapper-inner {
