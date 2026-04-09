@@ -1,8 +1,11 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://maps.gstatic.com https://maps.googleapis.com; font-src 'self' data:; connect-src 'self' https://maps.googleapis.com; media-src 'self'; object-src 'none'; frame-ancestors 'self';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="About SOS Infocity - Leading IT Solutions & Cybersecurity Provider" />
   <link rel="shortcut icon" type="image/x-icon" href="../assets/images/fav.webp" />
@@ -327,7 +330,8 @@
             </div>
             <div class="wized-body">
               <div class="rts-search-wrapper">
-                <input class="Search" type="text" placeholder="Enter Keyword">
+                <label for="blog-search" class="sr-only">Search blog posts</label>
+                <input id="blog-search" name="q" class="Search" type="search" placeholder="Enter Keyword" aria-label="Search blog posts">
                 <button aria-label="Search blog"><i class="fal fa-search"></i></button>
               </div>
             </div>
@@ -543,11 +547,7 @@
           <div class="col-lg-12">
             <div class="copyright-1">
               <p class="disc">
-                Copyright
-                <script>
-                  document.write(new Date().getFullYear());
-                </script>
-                . SOS Infocity. All Rights Reserved. <br /> Designed & Developed by <a href="https://greyplatforms.com" target="_blank" rel="noopener noreferrer">Grey Platforms</a>
+                Copyright <span id="footer-year"></span>. SOS Infocity. All Rights Reserved. <br /> Designed &amp; Developed by <a href="https://greyplatforms.com" target="_blank" rel="noopener noreferrer">Grey Platforms</a>
               </p>
             </div>
           </div>

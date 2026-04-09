@@ -3,6 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://maps.gstatic.com https://maps.googleapis.com; font-src 'self' data:; connect-src 'self' https://maps.googleapis.com; media-src 'self'; object-src 'none'; frame-ancestors 'self';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Contact Us - SOS Infocity" />
   <link rel="shortcut icon" type="image/x-icon" href="../assets/images/fav.webp" />
@@ -260,27 +263,27 @@
             <div class="single-input-wrapper">
               <div class="single-input">
                 <label for="firstName">First Name *</label>
-                <input name="firstName" id="firstName" type="text" placeholder="Your First Name" required />
+                <input name="firstName" id="firstName" type="text" placeholder="Your First Name" autocomplete="given-name" required />
               </div>
               <div class="single-input">
                 <label for="lastName">Last Name *</label>
-                <input id="lastName" name="lastName" type="text" placeholder="Your Last Name" required />
+                <input id="lastName" name="lastName" type="text" placeholder="Your Last Name" autocomplete="family-name" required />
               </div>
             </div>
             <div class="single-input-wrapper">
               <div class="single-input">
                 <label for="email">Email *</label>
-                <input id="email" name="email" type="email" placeholder="your@email.com" required />
+                <input id="email" name="email" type="email" placeholder="your@email.com" autocomplete="email" required />
               </div>
               <div class="single-input">
                 <label for="phone">Phone *</label>
-                <input id="phone" name="phone" type="tel" placeholder="Your contact number" required />
+                <input id="phone" name="phone" type="tel" placeholder="Your contact number" autocomplete="tel" required />
               </div>
             </div>
             <div class="single-input-wrapper">
               <div class="single-input">
                 <label for="company">Company</label>
-                <input id="company" name="company" type="text" placeholder="Organisation name" />
+                <input id="company" name="company" type="text" placeholder="Organisation name" autocomplete="organization" />
               </div>
               <div class="single-input">
                 <label for="subject">Subject *</label>
@@ -548,11 +551,7 @@
           <div class="col-lg-12">
             <div class="copyright-1">
               <p class="disc">
-                Copyright
-                <script>
-                  document.write(new Date().getFullYear());
-                </script>
-                SOS Infocity. All Rights Reserved. <br /> Designed & Developed by <a href="https://greyplatforms.com"
+                Copyright <span id="footer-year"></span> SOS Infocity. All Rights Reserved. <br /> Designed &amp; Developed by <a href="https://greyplatforms.com"
                   target="_blank" rel="noopener noreferrer">Grey Platforms</a>
               </p>
             </div>
@@ -598,7 +597,7 @@
         const onScroll = () => {
           if (isTicking) return;
           isTicking = true;
-          window.requestAnimationFrame(updateStickyState);
+          globalThis.requestAnimationFrame(updateStickyState);
         };
 
         window.addEventListener('scroll', onScroll, { passive: true });

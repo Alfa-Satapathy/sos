@@ -3,6 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://maps.gstatic.com https://maps.googleapis.com; font-src 'self' data:; connect-src 'self' https://maps.googleapis.com; media-src 'self'; object-src 'none'; frame-ancestors 'self';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Solutions - SOS Infocity IT & Cybersecurity Services" />
   <link rel="shortcut icon" type="image/x-icon" href="../assets/images/fav.webp" />
@@ -385,7 +388,7 @@
         </div>
         <div class="offset-lg-1 col-lg-6 mt_sm--50 mt_md--50">
           <div class="why-choose-iamge-two content-media-full content-media-radius-3">
-            <img src="../assets/Solution Page/32.webp" alt="image"
+            <img src="../assets/Solution Page/32.webp" alt="New age technology solutions"
               />
           </div>
         </div>
@@ -480,10 +483,29 @@
             </a>
             <div class="inner-content-blog">
               <span>IoT</span>
-              <defs>
+              <a href="#">
+                <h5 class="title">How IoT enables real-time asset tracking and automation.</h5>
               </a>
-                  <stop offset="0%" stop-color="rgba(150, 200, 255, 0.4)" stop-opacity="1" />
-                  <stop offset="100%" stop-color="rgba(70, 150, 255, 0.1)" stop-opacity="1" />
+              <a href="#" class="btn-line">
+                <span>Learn More</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="single-blog-style-one in-cyber-security br-8">
+            <a href="#" class="thumbnail-blog br-10">
+              <img src="../assets/images/blog/11.webp" alt="Smart Automation" />
+            </a>
+            <div class="inner-content-blog">
+              <span>Smart Automation</span>
+              <a href="#">
+                <h5 class="title">Automating repetitive tasks with intelligent systems.</h5>
+              </a>
+              <a href="#" class="btn-line">
+                <span>Learn More</span>
                 <i class="fa-solid fa-chevron-right"></i>
               </a>
             </div>
@@ -653,16 +675,16 @@
               <h6 class="title">Follow Us</h6>
               <ul>
                 <li>
-                  <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+                  <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+                  <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </li>
                 <li>
-                  <a href="https://www.twitter.com/" target="_blank">Twitter</a>
+                  <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
                 </li>
                 <li>
-                  <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+                  <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
                 </li>
               </ul>
             </div>
@@ -674,12 +696,8 @@
       <div class="container">
         <div class="col-lg-12">
           <p class="disc">
-            Copyright
-            <script>
-              document.write(new Date().getFullYear());
-            </script>
-            . SOS Infocity. All Rights Reserved. <br /> Designed & Developed by <a href="https://greyplatforms.com"
-              target="_blank">Grey Platforms</a>
+            Copyright <span id="footer-year"></span>. SOS Infocity. All Rights Reserved. <br /> Designed &amp; Developed by <a href="https://greyplatforms.com"
+              target="_blank" rel="noopener noreferrer">Grey Platforms</a>
           </p>
         </div>
       </div>
@@ -722,7 +740,7 @@
         const onScroll = () => {
           if (isTicking) return;
           isTicking = true;
-          window.requestAnimationFrame(updateStickyState);
+          globalThis.requestAnimationFrame(updateStickyState);
         };
 
         window.addEventListener('scroll', onScroll, { passive: true });

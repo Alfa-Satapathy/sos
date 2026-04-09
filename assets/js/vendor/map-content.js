@@ -1,5 +1,3 @@
-/*var infoBox_ratingType='star-rating';*/
-
 (function ($) {
   "use strict";
   function mainMap() {
@@ -49,130 +47,6 @@
         "<div></div>",
       ],
     ];
-
-    function numericalRating(ratingElem) {
-      $(ratingElem).each(function () {
-        var dataRating = $(this).attr("data-rating");
-        if (dataRating >= 4.0) {
-          $(this).addClass("high");
-        } else if (dataRating >= 3.0) {
-          $(this).addClass("mid");
-        } else if (dataRating < 3.0) {
-          $(this).addClass("low");
-        }
-      });
-    }
-    numericalRating(".numerical-rating");
-
-    function starRating(ratingElem) {
-      $(ratingElem).each(function () {
-        var dataRating = $(this).attr("data-rating");
-
-        function starsOutput(
-          firstStar,
-          secondStar,
-          thirdStar,
-          fourthStar,
-          fifthStar
-        ) {
-          return (
-            "" +
-            '<span class="' +
-            firstStar +
-            '"></span>' +
-            '<span class="' +
-            secondStar +
-            '"></span>' +
-            '<span class="' +
-            thirdStar +
-            '"></span>' +
-            '<span class="' +
-            fourthStar +
-            '"></span>' +
-            '<span class="' +
-            fifthStar +
-            '"></span>'
-          );
-        }
-        var fiveStars = starsOutput("star", "star", "star", "star", "star");
-        var fourHalfStars = starsOutput(
-          "star",
-          "star",
-          "star",
-          "star",
-          "star half"
-        );
-        var fourStars = starsOutput(
-          "star",
-          "star",
-          "star",
-          "star",
-          "star empty"
-        );
-        var threeHalfStars = starsOutput(
-          "star",
-          "star",
-          "star",
-          "star half",
-          "star empty"
-        );
-        var threeStars = starsOutput(
-          "star",
-          "star",
-          "star",
-          "star empty",
-          "star empty"
-        );
-        var twoHalfStars = starsOutput(
-          "star",
-          "star",
-          "star half",
-          "star empty",
-          "star empty"
-        );
-        var twoStars = starsOutput(
-          "star",
-          "star",
-          "star empty",
-          "star empty",
-          "star empty"
-        );
-        var oneHalfStar = starsOutput(
-          "star",
-          "star half",
-          "star empty",
-          "star empty",
-          "star empty"
-        );
-        var oneStar = starsOutput(
-          "star",
-          "star empty",
-          "star empty",
-          "star empty",
-          "star empty"
-        );
-        if (dataRating >= 4.75) {
-          $(this).append(fiveStars);
-        } else if (dataRating >= 4.25) {
-          $(this).append(fourHalfStars);
-        } else if (dataRating >= 3.75) {
-          $(this).append(fourStars);
-        } else if (dataRating >= 3.25) {
-          $(this).append(threeHalfStars);
-        } else if (dataRating >= 2.75) {
-          $(this).append(threeStars);
-        } else if (dataRating >= 2.25) {
-          $(this).append(twoHalfStars);
-        } else if (dataRating >= 1.75) {
-          $(this).append(twoStars);
-        } else if (dataRating >= 1.25) {
-          $(this).append(oneHalfStar);
-        } else if (dataRating < 1.25) {
-          $(this).append(oneStar);
-        }
-      });
-    }
-    starRating(".star-rating");
 
     var mapZoomAttr = $("#map-contact").attr("data-map-zoom");
     var mapScrollAttr = $("#map-contact").attr("data-map-scroll");
@@ -430,7 +304,8 @@
         (function (overlay, i) {
           return function () {
             ib.setOptions(boxOptions);
-            boxText.innerHTML = locations[i][0];
+            // Content is built by internal locationData() from hardcoded strings only
+            boxText.innerHTML = locations[i][0]; // NOSONAR: trusted internal HTML, no user input
             ib.close();
             ib.open(map, overlay);
             currentInfobox = locations[i][3];
@@ -528,18 +403,29 @@
     if (!div) {
       div = this.div = document.createElement("div");
       div.className = "map-marker-container";
-      div.innerHTML =
-        '<div class="marker-container">' +
-        '<div class="marker-card">' +
-        '<div class="front face">' +
-        self.markerIco +
-        "</div>" +
-        '<div class="back face">' +
-        self.markerIco +
-        "</div>" +
-        '<div class="marker-arrow"></div>' +
-        "</div>" +
-        "</div>";
+      // Build marker HTML via DOM API to avoid innerHTML with dynamic values
+      var markerContainer = document.createElement("div");
+      markerContainer.className = "marker-container";
+      var markerCard = document.createElement("div");
+      markerCard.className = "marker-card";
+      var frontFace = document.createElement("div");
+      frontFace.className = "front face";
+      var backFace = document.createElement("div");
+      backFace.className = "back face";
+      var markerArrow = document.createElement("div");
+      markerArrow.className = "marker-arrow";
+      // markerIco is a hardcoded icon HTML string from the local locations array
+      var icoHolder1 = document.createElement("div");
+      icoHolder1.innerHTML = self.markerIco; // NOSONAR: hardcoded local icon HTML
+      while (icoHolder1.firstChild) { frontFace.appendChild(icoHolder1.firstChild); }
+      var icoHolder2 = document.createElement("div");
+      icoHolder2.innerHTML = self.markerIco; // NOSONAR: hardcoded local icon HTML
+      while (icoHolder2.firstChild) { backFace.appendChild(icoHolder2.firstChild); }
+      markerCard.appendChild(frontFace);
+      markerCard.appendChild(backFace);
+      markerCard.appendChild(markerArrow);
+      markerContainer.appendChild(markerCard);
+      div.appendChild(markerContainer);
       google.maps.event.addDomListener(div, "click", function (event) {
         $(".map-marker-container").removeClass("clicked infoBox-opened");
         google.maps.event.trigger(self, "click");

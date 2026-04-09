@@ -3,29 +3,64 @@
 
 (function ($) {
   'use strict';
-  let device_width = window.innerWidth;
   const isLowPowerDevice = () => {
-    return window.matchMedia('(max-width: 991px)').matches ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    return globalThis.matchMedia('(max-width: 991px)').matches ||
+      globalThis.matchMedia('(prefers-reduced-motion: reduce)').matches;
   };
   const runWhenBrowserIdle = (callback, fallbackDelay = 120) => {
-    if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(callback, { timeout: 1200 });
+    if ('requestIdleCallback' in globalThis) {
+      globalThis.requestIdleCallback(callback, { timeout: 1200 });
       return;
     }
 
-    window.setTimeout(callback, fallbackDelay);
+    globalThis.setTimeout(callback, fallbackDelay);
   };
-  var rtsJs = {
+  const attemptPlay = function (video) {
+    if (!video) {
+      return;
+    }
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(function () { });
+    }
+  };
+
+  const registerPlaybackHooks = function (video) {
+    ['loadedmetadata', 'loadeddata', 'canplay'].forEach(function (eventName) {
+      video.addEventListener(eventName, function () {
+        attemptPlay(video);
+      }, { passive: true });
+    });
+  };
+
+  const revealElement = function (element) {
+    if (!element || element.dataset.animationInitialized === 'true') {
+      return;
+    }
+
+    element.dataset.animationInitialized = 'true';
+    element.classList.add('rts-text-visible');
+  };
+
+  const rtsJs = {
     m: function (e) {
       rtsJs.d();
       rtsJs.methods();
     },
     d: function (e) {
-      this._window = $(window),
-        this._document = $(document),
-        this._body = $('body'),
-        this._html = $('html')
+      this._window = $(globalThis);
+      this._document = $(document);
+      this._body = $('body');
+      this._html = $('html');
     },
     methods: function (e) {
       const lowPowerMode = isLowPowerDevice();
@@ -43,14 +78,10 @@
 
         rtsJs.splitText(lowPowerMode);
 
-        if (!lowPowerMode) {
-          rtsJs.productStickyAnimation();
-        }
+
       });
     },
-    fonklsAnimation: function () {
-        return;
-    },
+
     preloader: function () {
       const hideLoader = function () {
         document.querySelector('body').classList.add("loaded");
@@ -95,7 +126,7 @@
       };
 
       $(document).ready(function () {
-        var swiper = createSwiper(".mySwiper-digital-agency-brand", {
+        createSwiper(".mySwiper-digital-agency-brand", {
           slidesPerView: 6,
           spaceBetween: 30,
           loop: true,
@@ -136,7 +167,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = createSwiper(".mySwiper-testimonails", {
+        createSwiper(".mySwiper-testimonails", {
           slidesPerView: 3.8,
           spaceBetween: 30,
           loop: true,
@@ -178,7 +209,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = createSwiper(".mySwiper-testimonails-four", {
+        createSwiper(".mySwiper-testimonails-four", {
           slidesPerView: 3.8,
           spaceBetween: 30,
           loop: true,
@@ -220,7 +251,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = createSwiper(".mySwiper-testimonials-three", {
+        createSwiper(".mySwiper-testimonials-three", {
           slidesPerView: 1,
           spaceBetween: 30,
           loop: true,
@@ -257,8 +288,7 @@
           },
         });
       });
-      $(document).ready(function () {
-        var productSwiper = createSwiper(".mySwiper-product-cards", {
+        const productSwiper = createSwiper(".mySwiper-product-cards", {
           slidesPerView: 2,
           spaceBetween: 24,
           loop: true,
@@ -285,14 +315,14 @@
           },
         });
 
-        var productSliderEl = document.querySelector(".mySwiper-product-cards");
+        const productSliderEl = document.querySelector(".mySwiper-product-cards");
 
         if (productSliderEl && productSwiper) {
-          var productWheelLocked = false;
-          var productWheelUnlockTimeout;
+          let productWheelLocked = false;
+          let productWheelUnlockTimeout;
 
           productSliderEl.addEventListener("wheel", function (event) {
-            var wheelDelta = Math.abs(event.deltaY) > Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
+            const wheelDelta = Math.abs(event.deltaY) > Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
 
             if (wheelDelta === 0) {
               return;
@@ -318,9 +348,7 @@
             }, 280);
           }, { passive: false });
         }
-      });
-      $(document).ready(function () {
-        var caseSwiper = createSwiper(".mySwiper-case-one", {
+        const caseSwiper = createSwiper(".mySwiper-case-one", {
           slidesPerView: 4,
           spaceBetween: 30,
           loop: true,
@@ -357,14 +385,14 @@
           },
         });
 
-        var caseSliderEl = document.querySelector(".mySwiper-case-one");
+        const caseSliderEl = document.querySelector(".mySwiper-case-one");
 
         if (caseSliderEl && caseSwiper) {
-          var caseWheelLocked = false;
-          var caseWheelUnlockTimeout;
+          let caseWheelLocked = false;
+          let caseWheelUnlockTimeout;
 
           caseSliderEl.addEventListener("wheel", function (event) {
-            var wheelDelta = Math.abs(event.deltaY) > Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
+            const wheelDelta = Math.abs(event.deltaY) > Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
 
             if (wheelDelta === 0) {
               return;
@@ -390,9 +418,8 @@
             }, 280);
           }, { passive: false });
         }
-      });
       $(document).ready(function () {
-        var swiper = createSwiper(".mySwiper-service-main", {
+        createSwiper(".mySwiper-service-main", {
           slidesPerView: 3.8,
           spaceBetween: 30,
           loop: true,
@@ -430,7 +457,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = createSwiper(".mySwiper-blog", {
+        createSwiper(".mySwiper-blog", {
           slidesPerView: 3,
           spaceBetween: 30,
           loop: true,
@@ -468,7 +495,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = createSwiper(".mySwiper-brand-three", {
+        createSwiper(".mySwiper-brand-three", {
           slidesPerView: 6,
           spaceBetween: 30,
           loop: true,
@@ -502,7 +529,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = createSwiper(".mySwiper-testimoanils-agency", {
+        createSwiper(".mySwiper-testimoanils-agency", {
           slidesPerView: 1,
           spaceBetween: 0,
           loop: true,
@@ -518,7 +545,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = createSwiper(".mySwiper-brand-2", {
+        createSwiper(".mySwiper-brand-2", {
           slidesPerView: 5,
           spaceBetween: 60,
           loop: true,
@@ -549,7 +576,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = createSwiper(".mySwiper-team-one", {
+        createSwiper(".mySwiper-team-one", {
           slidesPerView: 4,
           spaceBetween: 30,
           loop: true,
@@ -591,7 +618,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = createSwiper(".mySwiper-banner-one", {
+        createSwiper(".mySwiper-banner-one", {
           slidesPerView: 1,
           spaceBetween: 0,
           effect: "fade",
@@ -621,7 +648,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = createSwiper(".mySwiper-brand-7", {
+        createSwiper(".mySwiper-brand-7", {
           slidesPerView: 3,
           spaceBetween: 30,
           loop: true,
@@ -658,7 +685,7 @@
         });
       });
       $(document).ready(function () {
-        var swiper = createSwiper(".mySwiper-brand-list", {
+        createSwiper(".mySwiper-brand-list", {
           slidesPerView: 6,
           spaceBetween: 30,
           loop: true,
@@ -706,33 +733,6 @@
       const backgroundVideos = document.querySelectorAll('.cta-bg-video, .banner-video');
       if (!backgroundVideos.length) return;
 
-      const attemptPlay = function (video) {
-        if (!video) {
-          return;
-        }
-
-        video.muted = true;
-        video.defaultMuted = true;
-        video.loop = true;
-        video.playsInline = true;
-        video.setAttribute('muted', '');
-        video.setAttribute('playsinline', '');
-        video.setAttribute('webkit-playsinline', '');
-
-        const playPromise = video.play();
-        if (playPromise && typeof playPromise.catch === 'function') {
-          playPromise.catch(function () { });
-        }
-      };
-
-      const registerPlaybackHooks = function (video) {
-        ['loadedmetadata', 'loadeddata', 'canplay'].forEach(function (eventName) {
-          video.addEventListener(eventName, function () {
-            attemptPlay(video);
-          }, { passive: true });
-        });
-      };
-
       backgroundVideos.forEach(function (video) {
         registerPlaybackHooks(video);
         attemptPlay(video);
@@ -764,7 +764,7 @@
       document.addEventListener('touchstart', replayOnFirstInteraction, { passive: true, once: true });
       document.addEventListener('click', replayOnFirstInteraction, { passive: true, once: true });
 
-      if ('IntersectionObserver' in window) {
+      if ('IntersectionObserver' in globalThis) {
         const observer = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
             const video = entry.target;
@@ -795,15 +795,6 @@
 
       const animatedTextElements = Array.from(document.querySelectorAll('.rts-text-anime-style-1'));
 
-      const revealElement = function (element) {
-        if (!element || element.dataset.animationInitialized === 'true') {
-          return;
-        }
-
-        element.dataset.animationInitialized = 'true';
-        element.classList.add('rts-text-visible');
-      };
-
       animatedTextElements.forEach(function (element) {
         element.classList.add('rts-text-reveal');
       });
@@ -813,7 +804,7 @@
         return;
       }
 
-      if ('IntersectionObserver' in window) {
+      if ('IntersectionObserver' in globalThis) {
         const observer = new IntersectionObserver(function (entries, observer) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
@@ -836,9 +827,7 @@
       animatedTextElements.forEach(revealElement);
     },
 
-    productStickyAnimation: function () {
-      return;
-    },
+
 
     backtoTop: function () {
       $(document).ready(function () {
@@ -850,39 +839,39 @@
         if (isLowPowerDevice()) {
           const offset = 50;
           const toggleProgress = function () {
-            progressWrap.classList.toggle('active-progress', window.scrollY > offset);
+            progressWrap.classList.toggle('active-progress', globalThis.scrollY > offset);
           };
 
-          window.addEventListener('scroll', toggleProgress, { passive: true });
+          globalThis.addEventListener('scroll', toggleProgress, { passive: true });
           toggleProgress();
 
           progressWrap.addEventListener('click', function (event) {
             event.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            globalThis.scrollTo({ top: 0, behavior: 'smooth' });
           });
 
           return;
         }
 
-        var progressPath = progressWrap.querySelector('path');
+        const progressPath = progressWrap.querySelector('path');
         if (!progressPath) return;
-        var pathLength = progressPath.getTotalLength();
+        const pathLength = progressPath.getTotalLength();
         progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
         progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
         progressPath.style.strokeDashoffset = pathLength;
         progressPath.getBoundingClientRect();
         progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
-        var updateProgress = function () {
-          var scroll = $(window).scrollTop();
-          var height = $(document).height() - $(window).height();
-          var progress = pathLength - (scroll * pathLength / height);
+        const updateProgress = function () {
+          const scroll = $(globalThis).scrollTop();
+          const height = $(document).height() - $(globalThis).height();
+          const progress = pathLength - (scroll * pathLength / height);
           progressPath.style.strokeDashoffset = progress;
         }
         updateProgress();
-        $(window).scroll(updateProgress);
-        var offset = 50;
-        var duration = 550;
-        jQuery(window).on('scroll', function () {
+        $(globalThis).scroll(updateProgress);
+        const offset = 50;
+        const duration = 550;
+        jQuery(globalThis).on('scroll', function () {
           if (jQuery(this).scrollTop() > offset) {
             jQuery('.progress-wrap').addClass('active-progress');
           } else {
@@ -901,7 +890,7 @@
 
     stickyHeader: function (e) {
       
-      $(window).scroll(function () {
+      $(globalThis).scroll(function () {
         if ($(this).scrollTop() > 150) {
           $('.header--sticky').addClass('sticky')
         } else {
@@ -924,8 +913,7 @@
     },
 
     odoMeter: function () {
-      $(document).ready(function () {
-        function triggerOdometer(element) {
+      function triggerOdometer(element) {
           const $element = $(element);
           if (!$element.hasClass('odometer-triggered')) {
             const countNumber = $element.attr('data-count');
@@ -937,7 +925,7 @@
         const odometerElements = document.querySelectorAll('.odometer');
         if (!odometerElements.length) return;
 
-        if ('IntersectionObserver' in window) {
+        if ('IntersectionObserver' in globalThis) {
           const observer = new IntersectionObserver(
             function (entries, obs) {
               entries.forEach(function (entry) {
@@ -964,7 +952,7 @@
           const rect = element.getBoundingClientRect();
           return (
             rect.top >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+            rect.bottom <= (globalThis.innerHeight || document.documentElement.clientHeight)
           );
         }
 
@@ -976,10 +964,9 @@
           });
         }
         handleOdometer();
-        $(window).on('scroll', function () {
+        $(globalThis).on('scroll', function () {
           handleOdometer();
         });
-      });
     },
 
     smoothScroll: function (e) {
@@ -1012,17 +999,23 @@
     });
 
   document.addEventListener('DOMContentLoaded', function () {
+      // Set copyright year in footer
+      const yearEl = document.getElementById('footer-year');
+      if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+
+      // Apply background images from data-bg-src — validate to local image paths only
+      const bgPattern = /^[a-zA-Z0-9_/.-]+\.(?:webp|jpg|jpeg|png|gif|svg)(?:\?[a-zA-Z0-9=&_-]*)?$/;
       document.querySelectorAll('[data-bg-src]').forEach(function (el) {
-        const bg = el.getAttribute('data-bg-src');
-        if (bg) {
-          el.style.backgroundImage = `url(${bg})`;
-          el.style.backgroundSize = 'cover';        // Optional
-          el.style.backgroundPosition = 'center';   // Optional
-          el.style.backgroundRepeat = 'no-repeat';  // Optional
+        const bg = el.dataset.bgSrc;
+        if (bg && bgPattern.test(bg)) {
+          el.style.backgroundImage = 'url(' + bg + ')';
+          el.style.backgroundSize = 'cover';
+          el.style.backgroundPosition = 'center';
+          el.style.backgroundRepeat = 'no-repeat';
         }
       });
     });
-})(jQuery, window)
+})(jQuery)
 
 
 
