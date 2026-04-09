@@ -6,7 +6,6 @@
     const menuToggle = document.querySelector(".mobile-menu-toggle");
     const closeBtn = document.querySelector(".close-icon-menu");
     const sidebar = document.getElementById("side-bar");
-    const menuOverlay = document.querySelector(".body-overlay");
 
     if (!menuToggle && !sidebar) return;
     let overlay = document.querySelector(".mobile-menu-overlay");
@@ -76,13 +75,13 @@
   }
   function fixViewportHeight() {
     function updateViewportHeight() {
-      const vh = window.innerHeight * 0.01;
+      const vh = globalThis.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
     }
 
     updateViewportHeight();
-    window.addEventListener("resize", updateViewportHeight);
-    window.addEventListener("orientationchange", updateViewportHeight);
+    globalThis.addEventListener("resize", updateViewportHeight);
+    globalThis.addEventListener("orientationchange", updateViewportHeight);
   }
   function preventZoomOnFocus() {
     const inputs = document.querySelectorAll("input, textarea, select");
@@ -116,31 +115,16 @@
       });
     });
   }
-  function initTouchFeedback() {
-    const buttons = document.querySelectorAll(
-      "button, a.rts-btn, a.button, .round-btn",
-    );
-
-    buttons.forEach((btn) => {
-      btn.addEventListener("touchstart", function () {
-        this.style.opacity = "0.8";
-      });
-
-      btn.addEventListener("touchend", function () {
-        this.style.opacity = "1";
-      });
-    });
-  }
   function initLazyLoad() {
-    if ("IntersectionObserver" in window) {
+    if ("IntersectionObserver" in globalThis) {
       const images = document.querySelectorAll("img[data-src]");
 
       const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const img = entry.target;
-            img.src = img.getAttribute("data-src");
-            img.removeAttribute("data-src");
+            img.src = img.dataset.src;
+            delete img.dataset.src;
             observer.unobserve(img);
           }
         });
@@ -162,14 +146,11 @@
     }
   }
   function handleOrientationChange() {
-    window.addEventListener("orientationchange", () => {
+    globalThis.addEventListener("orientationchange", () => {
       setTimeout(() => {
         const header = document.querySelector(".header-one");
         if (header) {
-          header.style.transition = "none";
-          setTimeout(() => {
-            header.style.transition = "";
-          }, 100);
+          header.style.transition = "";
         }
       }, 100);
     });
@@ -179,37 +160,6 @@
     elements.forEach((el) => {
       el.style.height = "calc(var(--vh, 1vh) * 100)";
     });
-  }
-  function disableDoubleTapZoom() {
-    let lastTouchEnd = 0;
-    document.addEventListener(
-      "touchend",
-      function (event) {
-        const now = Date.now();
-        if (now - lastTouchEnd <= 300) {
-          event.preventDefault();
-        }
-        lastTouchEnd = now;
-      },
-      false,
-    );
-  }
-  function handleBackButton() {
-    if (
-      window.location.pathname !== "/" &&
-      window.location.pathname !== "/index.html"
-    ) {
-    }
-  }
-  function initNetworkStatus() {
-    function updateNetworkStatus() {
-      if (!navigator.onLine) {
-        console.warn("Device is offline");
-      }
-    }
-
-    window.addEventListener("online", updateNetworkStatus);
-    window.addEventListener("offline", updateNetworkStatus);
   }
   function init() {
     if (document.readyState === "loading") {
@@ -224,12 +174,10 @@
     initLazyLoad();
     handleOrientationChange();
     fixFullHeight();
-    handleBackButton();
-    initNetworkStatus();
     initMobileMenu();
   }
   init();
-  window.MobileOptimizer = {
+  globalThis.MobileOptimizer = {
     init: init,
     fixViewportHeight: fixViewportHeight,
     initMobileMenu: initMobileMenu,

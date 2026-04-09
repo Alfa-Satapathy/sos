@@ -2001,25 +2001,21 @@ iframe {
 input:-moz-placeholder,
 textarea:-moz-placeholder {
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 
@@ -5200,17 +5196,14 @@ textarea:-ms-input-placeholder {
     -webkit-transform: scale(0.2, 0.2);
     transform: scale(0.2, 0.2);
     opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   }
   50% {
     opacity: 0.9;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
   }
   100% {
     -webkit-transform: scale(0.9, 0.9);
     transform: scale(0.9, 0.9);
     opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   }
 }
 @keyframes vsmorph {
@@ -12197,6 +12190,7 @@ textarea:-ms-input-placeholder {
   display: inline-block;
   padding: 8px 20px;
   background: rgba(255, 255, 255, 0.0745098039);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   color: #fff;
   opacity: 0;
@@ -19184,6 +19178,7 @@ button {
   text-align: center;
   padding: 10px;
   background-color: transparent;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
@@ -20222,6 +20217,7 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.05);
   border-radius: 50%;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   z-index: -1;
 }
@@ -20503,8 +20499,8 @@ button {
   height: 100%;
 }
 .apply-right-area-sticky .sticky-inner {
-  position: sticky;
   position: -webkit-sticky;
+  position: sticky;
   top: 50px;
   
 }
@@ -22808,6 +22804,7 @@ header.header--sticky.sticky .nav-area ul li.main-nav {
   height: 100%;
   display: block;
   background-color: rgba(18, 18, 18, 0.7490196078);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   z-index: 1900;
   transition: all 600ms ease;
@@ -23800,6 +23797,15 @@ header.header-three .sub-dropdown .submenu.third-lvl.base {
   }
   .product-wrapper .inner .image-area {
     order: -1;
+    width: 100%;
+  }
+  .product-wrapper .inner .image-area img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+  .product-wrapper .inner .left-content {
+    max-width: 100%;
   }
   .single-testimonails-three {
     flex-direction: column;
@@ -24534,8 +24540,8 @@ header.header-three .sub-dropdown .submenu.third-lvl.base {
   position: relative;
   overflow: hidden;
   padding: 12px 0;
-  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
 }
 
 .partner-marquee {
@@ -24924,8 +24930,8 @@ i[class*="icon"] {
 .header-one.header--sticky.sticky .header-wrapper-main {
   background: rgba(5, 13, 32, 0.72) !important;
   border: 1px solid rgba(255, 255, 255, 0.14) !important;
-  backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
+  backdrop-filter: blur(16px) !important;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22) !important;
 }
 

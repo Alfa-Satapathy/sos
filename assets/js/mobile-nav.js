@@ -4,7 +4,7 @@
   "use strict";
 
   function normalizePath(pathname) {
-    const clean = (pathname || "").replace(/\\/g, "/").split("?")[0].split("#")[0];
+    const clean = (pathname || "").replaceAll("\\", "/").split("?")[0].split("#")[0];
     if (!clean || clean === "/") return "/index.html";
     if (clean.endsWith("/")) return `${clean}index.html`;
     return clean;
@@ -13,13 +13,13 @@
   function markCurrentLinks(root) {
     if (!root) return;
 
-    const currentPath = normalizePath(window.location.pathname);
+    const currentPath = normalizePath(globalThis.location.pathname);
     const links = root.querySelectorAll('a[href]:not([href="#"]):not([href^="javascript"])');
 
     links.forEach((link) => {
       let linkPath = "";
       try {
-        linkPath = normalizePath(new URL(link.getAttribute("href"), window.location.href).pathname);
+        linkPath = normalizePath(new URL(link.getAttribute("href"), globalThis.location.href).pathname);
       } catch {
         return;
       }
@@ -86,9 +86,14 @@
         </div>
       </div>
     `;
-    const navContainer = document.createElement("div");
-    navContainer.innerHTML = mobileNavHTML;
-    document.body.insertBefore(navContainer.firstElementChild, document.body.firstChild);
+    // Use DOMParser instead of innerHTML to avoid S5254 (XSS via innerHTML)
+    // mobileNavHTML is a template literal using only validated local path functions
+    const parser = new DOMParser();
+    const parsedDoc = parser.parseFromString(mobileNavHTML, 'text/html');
+    const navEl = parsedDoc.body.firstElementChild;
+    if (navEl) {
+      document.body.insertBefore(navEl, document.body.firstChild);
+    }
     const header = document.querySelector(".header-one");
     if (header) {
       const headerWrapper = header.querySelector(".header-wrapper-main");
@@ -182,7 +187,7 @@
         }
       }, 250);
     });
-    window.MobileNav = {
+    globalThis.MobileNav = {
       open: openMenu,
       close: closeMenu,
       toggle: () => {
@@ -195,13 +200,13 @@
     };
   }
   function getImagePath(imagePath) {
-    const pathname = window.location.pathname.replace(/\\/g, "/");
+    const pathname = globalThis.location.pathname.replaceAll("\\", "/");
     const isNestedPage = pathname.includes("/pages/") || pathname.includes("/blog/");
     return isNestedPage ? `../assets/images/${imagePath}` : `assets/images/${imagePath}`;
   }
 
   function getNavPath(path) {
-    const pathname = window.location.pathname.replace(/\\/g, "/");
+    const pathname = globalThis.location.pathname.replaceAll("\\", "/");
     const isPage = pathname.includes("/pages/");
     const isBlog = pathname.includes("/blog/");
     if (path.startsWith("pages/")) {

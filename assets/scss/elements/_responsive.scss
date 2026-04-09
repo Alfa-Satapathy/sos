@@ -35,17 +35,6 @@
     .our-vission.area-4 .our-vision-right-content .content-area{
         padding: 0;
     }
-    .thumbnail-security-area-right .thumbnail{
-        margin-right: -100px;
-    }
-    .thumbnail-security-area-right .left-bottom{
-        left: 13%;
-        bottom: -4%;
-    }
-    .thumbnail-security-area-right .right-top-area{
-        right: -22%;
-        top: -12.5%;
-    }
     .marquee .marquee__item .main--wrapper-tt .single-inner-marquree{
         flex: 0 0 88%;
     }
@@ -420,6 +409,15 @@
         align-items: flex-start;
         .image-area{
             order: -1;
+            width: 100%;
+            img{
+                width: 100%;
+                height: auto;
+                max-width: 100%;
+            }
+        }
+        .left-content{
+            max-width: 100%;
         }
     }
     .single-testimonails-three{
@@ -430,9 +428,6 @@
     .single-testimonails-three .left-thumbnmail .small-image{
         left: 10px;
         bottom: -40px;
-    }
-    .rts-cta-area .cta-inner{
-        gap: 10px;
     }
     .rts-cta-area .cta-inner .image-area .float-image {
         left: -15%;
@@ -801,9 +796,6 @@
         }
     }
 }
-@media(max-width:768px) and (min-width:576px) {
-
-}
 @media(max-width:576px) {
     .demo-software-company header.header-one.header-relative .button-wrapper-flex .btn-primary{
         display: none;
@@ -978,9 +970,6 @@
     .rts-keyfeature-area.saas-landing .section-inner{
         padding: 9% 5%;
     }
-}
-@media(max-width:576px) and (min-width:450px) {
-
 }
 @media(max-width:450px) {
     .rts-banner-area-four .banner-content-two-style h1{
